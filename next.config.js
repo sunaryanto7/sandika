@@ -5,6 +5,8 @@ const webpack = require('webpack');
 const path = require('path');
 
 const nextConfig = {
+    generateEtags: false,
+
     webpack: (config) => {
         config.resolve.alias['@components/core'] = path.join(__dirname, 'src/components/core');
         config.resolve.alias['@components/widget'] = path.join(__dirname, 'src/components/widget');
