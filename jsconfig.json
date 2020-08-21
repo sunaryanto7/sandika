@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components/core/*": "src/components/core/*",
+            "@components/widget/*": "src/components/widget/*",
+            "@components/commons/*": "src/components/commons/*",
+            "@helper/*": "src/helper/*",
+            "@media/*": "public/media/*",
+            "@redux/*": "src/redux/*"
+        }
+    }
+}

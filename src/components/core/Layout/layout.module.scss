@@ -1,0 +1,12 @@
+.wrapper {
+	max-width: 480px;
+    margin: auto;
+    height: 100vh;
+    position: relative;
+
+    .mainContent{
+        overflow: scroll;
+        height: auto;
+        padding-bottom: 50px;
+    }
+}
