@@ -23,7 +23,7 @@ const ProductItem = ({
                 </div>
                 <div className={theme.productDescription}>
                     <h5 className={theme.productName}>{productName}</h5>
-                    <small className={theme.productBrand}>productBrand</small>
+                    <small className={theme.productBrand}>{productBrand}</small>
                     <span className={theme.productPrice}>
                         <small className={theme.oldPrice}>{productOldPrice}</small>
                         <strong className={theme.finalPrice}>{productFinalPrice}</strong>
