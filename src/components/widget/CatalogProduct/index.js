@@ -12,6 +12,7 @@ const CatalogProduct = ({ productData }) => {
                             alt={data.title}
                             productName={data.title}
                             productFinalPrice={data.price}
+                            productBrand={data.category}
                             className={theme.productItem}
                             key={i}
                         />

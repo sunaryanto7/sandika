@@ -6,7 +6,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import theme from "./productslider.module.scss";
 
-const Slider = dynamic(() => import('react-owl-carousel2'), {
+const Slider = dynamic(() => import('react-owl-carousel'), {
     ssr: false,
 });
 
@@ -25,13 +25,14 @@ const ProductSlider = ({ config, productData }) => {
     if (isMount) {
         return (
             <>
-                <Slider options={config}>
+                <Slider {...config}>
                     {productData.map((data, i) => {
                         return (
                             <ProductItem
                                 src={data.image}
                                 alt={data.title}
                                 productName={data.title}
+                                productBrand={data.category}
                                 productFinalPrice={data.price}
                                 key={i}
                             />

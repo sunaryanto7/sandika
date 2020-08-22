@@ -1,10 +1,10 @@
-.product_item{
+.productItem{
     display: block;
     border-radius: 5px;
     padding: 15px;
     background: white;
 
-    .product_image{
+    .productImage{
         max-height: 125px;
         height: 100px;
         overflow: hidden;
@@ -20,19 +20,25 @@
         }
     }
 
-    .product_description{
+    .productDescription{
         position: relative;
-        max-height: 80px;
-        height: 80px;
+        max-height: 100px;
+        height: 100px;
 
-        .product_name{
+        .productName{
             line-height: 1.1rem;
             font-weight: 500;
             font-size: 0.8rem;
-            margin: 10px 0;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .productBrand{
+            text-transform: capitalize;
+            font-size: 12px;
         }
         
-        .product_price{
+        .productPrice{
             position: absolute;
             bottom: 0;
             left: 0;
