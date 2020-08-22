@@ -5,7 +5,6 @@ const Tabs = ({ children }) => {
 
     const [active, setActive] = useState(children[0].props.dataLabel);
     const handleActiveTabs = (params) => {
-        console.log(params);
         setActive(params);
     };
 

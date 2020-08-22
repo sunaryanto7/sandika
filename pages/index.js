@@ -2,6 +2,7 @@ import Layout from '@components/core/Layout';
 import Block from '@components/core/Block';
 import Banner from '@components/widget/Banner';
 import ProductSlider from "@components/widget/ProductSlider";
+import CatalogProduct from '@components/widget/CatalogProduct';
 import Tabs from "@components/widget/Tabs";
 
 const Home = ({ mainBanner, productSlider }) => {
@@ -31,14 +32,12 @@ const Home = ({ mainBanner, productSlider }) => {
             >
                 <Tabs>
                     <div dataLabel={"Men"}>
-                        <ProductSlider
-                            config={productSliderOptions}
+                        <CatalogProduct
                             productData={productSlider}
                         />
                     </div>
                     <div dataLabel={"Women"}>
-                        <ProductSlider
-                            config={productSliderOptions}
+                        <CatalogProduct
                             productData={productSlider}
                         />
                     </div>

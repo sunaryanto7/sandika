@@ -6,13 +6,13 @@
 
     .product_image{
         max-height: 125px;
-        height: 125px;
+        height: 100px;
         overflow: hidden;
         position: relative;
         padding: 10px;
 
         img{
-            max-width: 100px;
+            max-width: 60px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -22,8 +22,8 @@
 
     .product_description{
         position: relative;
-        max-height: 100px;
-        height: 100px;
+        max-height: 80px;
+        height: 80px;
 
         .product_name{
             line-height: 1.1rem;

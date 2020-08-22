@@ -1,0 +1,24 @@
+.catalogProduct{
+    display: inline-flex;
+    flex-wrap: wrap;
+    
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .productItem {
+        flex: 0 0 calc((100% / 2) - 7px);
+        margin-bottom: 15px;
+        
+    }
+
+    .productItem:nth-child(odd){
+        margin-right: 14px;
+    }
+
+    .productItem:nth-child(even){
+        float: right;
+    }
+}
