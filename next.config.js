@@ -13,6 +13,9 @@ const localeSubpaths = {
 const nextConfig = {
     // Translation (Language)
     rewrites: async () => nextI18NextRewrites(localeSubpaths),
+    publicRuntimeConfig: {
+        localeSubpaths,
+    },
 
     // Webpack Config
     webpack: (config) => {
