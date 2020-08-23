@@ -7,6 +7,7 @@ import Tabs from "@components/widget/Tabs";
 
 const Home = ({ mainBanner, productSlider, promoBanner }) => {
     const bannerOptions = { items: 1, center: true, nav: false, dots: false, autoplay: true, loop: true, stagePadding: 20, margin: 10 }
+    const promoOptions = { items: 1, center: true, nav: false, dots: false, autoplay: true, loop: true, stagePadding: 20, margin: 10 }
     const productSliderOptions = { items: 2, center: false, nav: false, dots: false, autoplay: false, margin: 15 }
 
     return (
@@ -28,7 +29,7 @@ const Home = ({ mainBanner, productSlider, promoBanner }) => {
             </Block>
             <Block>
                 <Banner
-                    config={bannerOptions}
+                    config={promoOptions}
                     images={promoBanner}
                 />
             </Block>
