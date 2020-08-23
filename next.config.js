@@ -13,10 +13,8 @@ const localeSubpaths = {
 const nextConfig = {
     // Translation (Language)
     rewrites: async () => nextI18NextRewrites(localeSubpaths),
-    publicRuntimeConfig: {
-        localeSubpaths,
-    },
 
+    // Webpack Config
     webpack: (config) => {
         config.resolve.alias['@components/commons'] = path.join(__dirname, 'src/components/commons');
         config.resolve.alias['@components/core'] = path.join(__dirname, 'src/components/core');
