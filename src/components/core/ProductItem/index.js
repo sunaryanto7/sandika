@@ -20,13 +20,16 @@ const ProductItem = ({
                     <LazyLoad>
                         <img src={src} alt={alt} />
                     </LazyLoad>
+                    <div className={theme.productDiscount}>
+                        <small>{"10%"}</small>
+                    </div>
                 </div>
                 <div className={theme.productDescription}>
                     <h5 className={theme.productName}>{productName}</h5>
                     <small className={theme.productBrand}>{productBrand}</small>
                     <span className={theme.productPrice}>
-                        <small className={theme.oldPrice}>{productOldPrice}</small>
-                        <strong className={theme.finalPrice}>{productFinalPrice}</strong>
+                        <small className={theme.oldPrice}>{`$ ${productFinalPrice}`}</small>
+                        <strong className={theme.finalPrice}>{`$ ${productFinalPrice}`}</strong>
                     </span>
                 </div>
             </a>

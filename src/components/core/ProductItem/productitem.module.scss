@@ -18,12 +18,24 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .productDiscount{
+            position: absolute;
+            right: 0;
+            top: 0;
+            small{
+                background: rgb(255, 179, 105);
+                color: white;
+                padding: 3px 5px;
+                border-radius: 3px;
+            }
+        }
     }
 
     .productDescription{
         position: relative;
-        max-height: 100px;
-        height: 100px;
+        max-height: 120px;
+        height: 120px;
 
         .productName{
             line-height: 1.1rem;
@@ -44,9 +56,13 @@
             left: 0;
             .oldPrice{
                 text-decoration: line-through;
+                display: block;
+                color: rgb(255, 179, 105);
+                font-style: italic;
             }
             .finalPrice{
                 color: #0eac32;
+                display: block;
             }
         }
     }
