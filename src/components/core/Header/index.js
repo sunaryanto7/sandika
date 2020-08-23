@@ -2,7 +2,7 @@ import MenuIcon from '@media/icons/menu.svg';
 import BasketIcon from '@media/icons/supermarket.svg';
 import theme from './header.module.scss';
 
-const Header = () => {
+const Header = ({ headerTitle }) => {
     return (
         <>
             <div className={theme.header}>
@@ -10,7 +10,7 @@ const Header = () => {
                     <MenuIcon className={theme.menu_icon} />
                 </div>
                 <div className={theme.app_name}>
-                    <h1>Sandika</h1>
+                    <h1>{headerTitle}</h1>
                 </div>
                 <div className={theme.minicartblock}>
                     <BasketIcon className={theme.shop_icon} />

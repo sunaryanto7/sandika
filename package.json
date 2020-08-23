@@ -19,6 +19,7 @@
     "jquery": "^3.5.1",
     "next": "9.5.1",
     "next-compose-plugins": "^2.2.0",
+    "next-i18next": "^6.0.2",
     "node-sass": "^4.14.1",
     "owl.carousel": "^2.3.4",
     "react": "16.13.1",

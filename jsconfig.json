@@ -2,12 +2,13 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
+            "@components/commons/*": "src/components/commons/*",
             "@components/core/*": "src/components/core/*",
             "@components/widget/*": "src/components/widget/*",
-            "@components/commons/*": "src/components/commons/*",
-            "@helper/*": "src/helper/*",
+            "@i18n/*": "i18n/*",
             "@media/*": "public/media/*",
-            "@redux/*": "src/redux/*"
+            "@redux/*": "src/redux/*",
+            "@styles/*": "src/styles/*"
         }
     }
 }

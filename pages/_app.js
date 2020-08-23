@@ -2,6 +2,9 @@
 import { Provider } from 'react-redux';
 import storeWrapper from "@redux";
 
+// Locales / Translation / Language
+import { appWithTranslation } from '@i18n';
+
 // FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -19,4 +22,12 @@ function Sandika({ Component, pageProps }) {
     );
 };
 
-export default Sandika;
+Sandika.getInitialProps = async ({ Component, ctx }) => {
+    let pageProps = {}
+    if (Component.getInitialProps) {
+        pageProps = await Component.getInitialProps(ctx);
+    }
+    return { pageProps }
+}
+
+export default appWithTranslation(Sandika);

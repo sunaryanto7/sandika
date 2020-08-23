@@ -4,14 +4,17 @@ import Banner from '@components/widget/Banner';
 import ProductSlider from "@components/widget/ProductSlider";
 import CatalogProduct from '@components/widget/CatalogProduct';
 import Tabs from "@components/widget/Tabs";
+import { withTranslation } from '@i18n';
 
-const Home = ({ mainBanner, productSlider, promoBanner }) => {
+const Home = ({ t, mainBanner, productSlider, promoBanner }) => {
     const bannerOptions = { items: 1, center: true, nav: false, dots: false, autoplay: true, loop: true, stagePadding: 20, margin: 10 }
     const promoOptions = { items: 1, center: true, nav: false, dots: false, autoplay: true, loop: true, stagePadding: 20, margin: 10 }
     const productSliderOptions = { items: 2, center: false, nav: false, dots: false, autoplay: false, margin: 15 }
 
     return (
-        <Layout >
+        <Layout
+            headerTitle={t('core:Sandika')}
+        >
             <Block>
                 <Banner
                     config={bannerOptions}
@@ -71,10 +74,11 @@ Home.getInitialProps = async (ctx) => {
     ];
 
     return {
+        namespacesRequired: ['core'],
         mainBanner: mainBannerImages,
         promoBanner: promoBannerImages,
         productSlider: productJson
     };
 };
 
-export default Home;
+export default withTranslation()(Home);
