@@ -1,9 +1,10 @@
 import Header from '@components/core/Header';
 import Navigation from '@components/core/Navigation';
+import FilterNavigation from '@components/core/FilterNavigation';
 import GlobalNotification from '@components/core/GlobalNotification';
 import theme from './layout.module.scss';
 
-const Layout = ({ children, headerTitle }) => {
+const Layout = ({ children, headerTitle, enableBottomNavigation, enableFilterNavigation }) => {
     return (
         <>
             <div className={theme.wrapper}>
@@ -14,7 +15,8 @@ const Layout = ({ children, headerTitle }) => {
                 <div className={theme.mainContent}>
                     {children}
                 </div>
-                <Navigation />
+                {enableBottomNavigation ? <Navigation /> : null}
+                {enableFilterNavigation ? <FilterNavigation /> : null}
             </div>
         </>
     );

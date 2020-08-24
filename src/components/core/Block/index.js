@@ -6,13 +6,12 @@ const Block = ({ children, title, additional }) => {
             <div className={theme.widget}>
                 {title !== undefined && additional !== undefined ?
                     <div className={theme.widgetHeader}>
-                        <h3 className={theme.widgetTitle}>{title}</h3>
+                        <h4 className={theme.widgetTitle}>{title}</h4>
                         <h5 className={theme.widgetLink}><a href={"#"}>{additional}</a></h5>
                     </div>
                     :
                     null
                 }
-
                 <div className={theme.widgetContent}>
                     {children}
                 </div>

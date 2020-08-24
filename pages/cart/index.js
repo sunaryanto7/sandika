@@ -3,7 +3,7 @@ import Block from '@components/core/Block';
 import Banner from '@components/widget/Banner';
 import ProductSlider from "@components/widget/ProductSlider";
 import CatalogProduct from '@components/widget/CatalogProduct';
-import Tabs from "@components/commons/Tabs";
+import Tabs from "@components/widget/Tabs";
 import { withTranslation } from '@i18n';
 
 const Home = ({ t, mainBanner, productSlider, promoBanner }) => {
