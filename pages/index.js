@@ -57,7 +57,7 @@ const Home = ({ t, mainBanner, productSlider, promoBanner }) => {
     )
 };
 
-Home.getInitialProps = async (ctx) => {
+Home.getInitialProps = async () => {
 
     const productResponse = await fetch('https://fakestoreapi.com/products');
     const productJson = await productResponse.json();
