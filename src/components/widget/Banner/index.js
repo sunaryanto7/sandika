@@ -29,7 +29,7 @@ const Banner = ({ config, images }) => {
                     return (
                         <div className={theme.owl_images} key={i}>
                             <img src={data.src} alt={data.alt} />
-                            <h3 className={theme.owl_descrition}>{data.alt}</h3>
+                            <h2 className={theme.owl_descrition}>{data.alt}</h2>
                         </div>
                     );
                 })}
