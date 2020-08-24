@@ -1,13 +1,23 @@
 const NextI18Next = require('next-i18next').default;
-const path = require('path')
+const path = require('path');
 
-module.exports = new NextI18Next({
+const NextI18NextInstance = new NextI18Next({
     defaultLanguage: 'id',
     otherLanguages: ['en'],
     defaultNS: 'core',
+    fallbackLng: 'id',
     localeSubpaths: {
-        id: 'id',
-        en: 'en'
+        en: 'en',
+        id: 'id'
     },
-    localePath: path.resolve('./public/locales/')
-})
+    detection: {
+        lookupCookie: 'next-i18next',
+        order: ['cookie', 'querystring', 'localStorage', 'path', 'subdomain'],
+        caches: ['cookie'],
+    },
+    localePath: path.resolve('./public/locales/'),
+    browserLanguageDetection: true,
+    serverLanguageDetection: false,
+});
+
+module.exports = NextI18NextInstance;

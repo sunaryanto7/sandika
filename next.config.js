@@ -6,16 +6,13 @@ const { nextI18NextRewrites } = require('next-i18next/rewrites');
 const path = require('path');
 
 const localeSubpaths = {
-    en: 'en',
-    id: 'id'
+    id: 'id',
+    en: 'en'
 }
 
 const nextConfig = {
     // Translation (Language)
     rewrites: async () => nextI18NextRewrites(localeSubpaths),
-    publicRuntimeConfig: {
-        localeSubpaths,
-    },
 
     // Webpack Config
     webpack: (config) => {
