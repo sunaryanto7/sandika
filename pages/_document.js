@@ -17,7 +17,6 @@ class SandikaDocument extends Document {
                 <Head>
                     <meta name="theme-color" content={"#cd134b"} />
                     <meta name="description" content="Buy beautiful, high quality carpets for your home." />
-                    <title>Sandika Developement Site</title>
                 </Head>
                 <body>
                     <Main />

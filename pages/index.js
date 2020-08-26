@@ -1,24 +1,23 @@
-import Layout from '@components/core/Layout';
-import Block from '@components/core/Block';
-import Banner from '@components/widget/Banner';
+import { compose } from 'recompose';
+import { config } from "@environment/config";
+import { withTranslation } from "@environment/i18n";
+
+import Layout from "@components/core/Layout";
+import Block from "@components/core/Block";
+import Banner from "@components/widget/Banner";
 import ProductSlider from "@components/widget/ProductSlider";
-import CatalogProduct from '@components/widget/CatalogProduct';
-import Tabs from "@components/commons/Tabs";
-import { withTranslation } from '@i18n';
+import CatalogProduct from "@components/widget/CatalogProduct";
 
-const Home = ({ t, mainBanner, productSlider, promoBanner }) => {
-    const bannerOptions = { items: 1, center: true, nav: false, dots: false, autoplay: true, loop: true, stagePadding: 20, margin: 10 }
-    const promoOptions = { items: 1, center: true, nav: false, dots: false, autoplay: true, loop: true, stagePadding: 20, margin: 10 }
-    const productSliderOptions = { items: 2, center: false, nav: false, dots: false, autoplay: false, margin: 15 }
-
+const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, productSlider, promoBannerImages }) => {
     return (
         <Layout
-            headerTitle={t('core:Sandika')}
+            headerTitle={t("core:Sandika")}
+            enableBottomNavigation
         >
             <Block>
                 <Banner
-                    config={bannerOptions}
-                    images={mainBanner}
+                    config={configImageSlider}
+                    images={mainBannerImages}
                 />
             </Block>
             <Block
@@ -26,47 +25,43 @@ const Home = ({ t, mainBanner, productSlider, promoBanner }) => {
                 additional={"Lihat Semua"}
             >
                 <ProductSlider
-                    config={productSliderOptions}
+                    config={configProductSlider}
                     productData={productSlider}
                 />
             </Block>
             <Block>
                 <Banner
-                    config={promoOptions}
-                    images={promoBanner}
+                    config={configImageSlider}
+                    images={promoBannerImages}
                 />
             </Block>
             <Block
-                title={"Pilih Kategori"}
-                additional={""}
+                title={"Pilih Produk Yang Kamu Inginkan"}
+                additional={"Lihat Semua"}
             >
-                <Tabs>
-                    <div dataLabel={"Men"}>
-                        <CatalogProduct
-                            productData={productSlider}
-                        />
-                    </div>
-                    <div dataLabel={"Women"}>
-                        <CatalogProduct
-                            productData={productSlider}
-                        />
-                    </div>
-                </Tabs>
+                <CatalogProduct
+                    productData={productSlider}
+                />
             </Block>
         </Layout>
     )
 };
 
 Home.getInitialProps = async () => {
+    // CAROUSEL COMPONENT
+    const { configImageSlider, configProductSlider } = config;
 
-    const productResponse = await fetch('https://fakestoreapi.com/products');
+    // GET PRODUCTS
+    const productResponse = await fetch("https://fakestoreapi.com/products");
     const productJson = await productResponse.json();
 
+    // IMAGE SLIDER DATA - (MAIN BANNER)
     const mainBannerImages = [
         { src: "https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png", alt: "Independence Day" },
         { src: "https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png", alt: "Special Offer" },
     ];
 
+    // IMAGE SLIDER DATA - (PROMO BANNER)
     const promoBannerImages = [
         { src: "https://shop.redq.now.sh/_next/static/images/offer-1-1f7a4c9ea0ba5a216bc7af1f60d044e0.png", alt: "Free Delivery" },
         { src: "https://shop.redq.now.sh/_next/static/images/offer-2-90d3534e1ad62a8b8a977f1290e61e9f.png", alt: "Coupon Saving" },
@@ -74,9 +69,11 @@ Home.getInitialProps = async () => {
     ];
 
     return {
-        namespacesRequired: ['core'],
-        mainBanner: mainBannerImages,
-        promoBanner: promoBannerImages,
+        configImageSlider,
+        configProductSlider,
+        namespacesRequired: ["core"],
+        mainBannerImages: mainBannerImages,
+        promoBannerImages: promoBannerImages,
         productSlider: productJson
     };
 };

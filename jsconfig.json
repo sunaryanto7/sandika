@@ -2,13 +2,17 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
+            // <-- Components -->
             "@components/commons/*": "src/components/commons/*",
             "@components/core/*": "src/components/core/*",
             "@components/widget/*": "src/components/widget/*",
-            "@i18n/*": "i18n/*",
-            "@media/*": "public/media/*",
-            "@redux/*": "src/redux/*",
-            "@styles/*": "src/styles/*"
+            // <-- Environment -->
+            "@environment/styles/*": "src/styles/*",
+            "@environment/i18n/*": "i18n/*",
+            // <-- Redux -->
+            "@library/redux/*": "src/redux/*",
+            // <-- Media -->
+            "@public/media/*": "public/media/*"
         }
     }
 }

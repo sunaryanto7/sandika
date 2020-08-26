@@ -16,37 +16,43 @@ const nextConfig = {
 
     // Webpack Config
     webpack: (config) => {
+        // COMPONENTS ALIAS
         config.resolve.alias['@components/commons'] = path.join(__dirname, 'src/components/commons');
         config.resolve.alias['@components/core'] = path.join(__dirname, 'src/components/core');
         config.resolve.alias['@components/widget'] = path.join(__dirname, 'src/components/widget');
 
-        config.resolve.alias['@i18n'] = path.join(__dirname, 'i18n');
+        // ENVIRONMENT ALIAS
+        config.resolve.alias['@environment/config'] = path.join(__dirname, 'environment/config');
+        config.resolve.alias['@environment/i18n'] = path.join(__dirname, 'environment/i18n');
+        config.resolve.alias['@environment/styles'] = path.join(__dirname, 'environment/styles');
 
-        config.resolve.alias['@media'] = path.join(__dirname, 'public/media');
-        config.resolve.alias['@redux'] = path.join(__dirname, 'src/redux');
-        config.resolve.alias['@styles'] = path.join(__dirname, 'src/styles');
+        // REDUX ALIAS
+        config.resolve.alias['@library/redux'] = path.join(__dirname, 'src/redux');
 
-        // JQUERY
-        config.plugins.push(
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                'window.jQuery': 'jquery',
-            })
-        );
+        // MEDIA ALIAS
+        config.resolve.alias['@public/media'] = path.join(__dirname, 'public/media');
 
         // SVG
         config.module.rules.push({
             test: /\.(svg)$/,
-            use: {
-                loader: '@svgr/webpack'
-            }
+            use: [{ loader: '@svgr/webpack' }]
         });
 
         // PNG JPG GIV
         config.module.rules.push({
-            test: /\.(png|jpeg|jpg|gif)$/,
-            loader: 'url-loader?limit=8192'
+            test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
+            use: [
+                { loader: 'file-loader' },
+                {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        publicPath: "/_next/static/",
+                        outputPath: "static/",
+                        name: "[name].[ext]"
+                    }
+                },
+            ]
         })
 
         return config;
@@ -64,5 +70,6 @@ module.exports = withPlugins([
     }],
     [withCSS, {
         cssModules: false,
+        url: false
     }]
 ], nextConfig);

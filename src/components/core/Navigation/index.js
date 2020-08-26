@@ -1,7 +1,7 @@
-import HomeIcon from '@media/icons/home.svg';
-import SearchIcon from '@media/icons/search.svg';
-import HearthIcon from '@media/icons/heart.svg';
-import UserIcon from '@media/icons/user.svg';
+import HomeIcon from '@public/media/icons/home.svg';
+import SearchIcon from '@public/media/icons/search.svg';
+import HearthIcon from '@public/media/icons/heart.svg';
+import UserIcon from '@public/media/icons/user.svg';
 import theme from './navigation.module.scss';
 
 const Navigation = () => {

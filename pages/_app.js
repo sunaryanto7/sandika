@@ -1,20 +1,20 @@
 // REDUX
-import { Provider } from 'react-redux';
-import storeWrapper from "@redux";
+import { Provider } from "react-redux";
+import storeWrapper from "@library/redux";
 
 // Locales / Translation / Language
-import { appWithTranslation } from '@i18n';
+import { appWithTranslation } from "@environment/i18n";
 
 // FONT AWESOME
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faShoppingCart, faBars } from "@fortawesome/free-solid-svg-icons";
 
 // GLOBAL STYLE
-import '@styles/core.scss';
+import "@environment/styles/core.scss";
 
 library.add(faShoppingCart, faBars)
 
-function Sandika({ Component, pageProps }) {
+const Sandika = ({ Component, pageProps }) => {
     return (
         <Provider store={storeWrapper}>
             <Component {...pageProps} />

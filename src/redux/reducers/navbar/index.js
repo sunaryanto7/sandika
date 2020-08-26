@@ -1,4 +1,4 @@
-import NAVBAR_ACTIONS from "@redux/actions/navbar";
+import NAVBAR_ACTIONS from "@library/redux/actions/navbar";
 
 function navbarReducers(initialState = [], actions) {
     switch (actions.type) {
