@@ -3,7 +3,6 @@ import array_unique from "@library/helper/array_unique";
 
 const Category = ({ productCategories }) => {
     const categories = array_unique(productCategories, 'category');
-    console.log(categories);
     return (
         <>
             <div className={theme.categoryRow}>
