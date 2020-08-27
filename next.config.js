@@ -1,7 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css')
-const webpack = require('webpack');
 const { nextI18NextRewrites } = require('next-i18next/rewrites');
 const path = require('path');
 
@@ -11,6 +10,9 @@ const localeSubpaths = {
 }
 
 const nextConfig = {
+    // Trailing Slash Routes
+    trailingSlash: false,
+
     // Translation (Language)
     rewrites: async () => nextI18NextRewrites(localeSubpaths),
 

@@ -1,4 +1,3 @@
-import { compose } from 'recompose';
 import { config } from "@environment/config";
 import { withTranslation } from "@environment/i18n";
 
