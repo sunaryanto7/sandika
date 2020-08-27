@@ -6,6 +6,7 @@ import Block from "@components/core/Block";
 import Banner from "@components/widget/Banner";
 import ProductSlider from "@components/widget/ProductSlider";
 import CatalogProduct from "@components/widget/CatalogProduct";
+import Category from "@components/widget/Category";
 
 const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, productSlider, promoBannerImages }) => {
     return (
@@ -27,6 +28,12 @@ const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, pro
                     config={configProductSlider}
                     productData={productSlider}
                 />
+            </Block>
+            <Block
+                title={"Pilih Category"}
+                additional={null}
+            >
+                <Category />
             </Block>
             <Block>
                 <Banner
