@@ -9,10 +9,12 @@
             // <-- Environment -->
             "@environment/styles/*": "src/styles/*",
             "@environment/i18n/*": "i18n/*",
+            // <-- Media -->
+            "@public/media/*": "public/media/*",
             // <-- Redux -->
             "@library/redux/*": "src/redux/*",
-            // <-- Media -->
-            "@public/media/*": "public/media/*"
+            // <-- Helper -->
+            "@library/helper/*": "src/helper/*"
         }
     }
 }

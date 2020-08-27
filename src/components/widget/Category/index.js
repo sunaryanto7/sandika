@@ -1,8 +1,22 @@
-import theme from "./category.module.scss"
+import theme from "./category.module.scss";
+import array_unique from "@library/helper/array_unique";
 
-const Category = () => {
+const Category = ({ productCategories }) => {
+    const categories = array_unique(productCategories, 'category');
+    console.log(categories);
     return (
         <>
+            <div className={theme.categoryRow}>
+                {categories.map((data, i) => {
+                    return (
+                        <div className={theme.categoryBlock} key={i}>
+                            <div className={theme.categoryCard}>
+                                <span>{data}</span>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
         </>
     );
 };

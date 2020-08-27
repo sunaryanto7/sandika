@@ -31,6 +31,9 @@ const nextConfig = {
         // REDUX ALIAS
         config.resolve.alias['@library/redux'] = path.join(__dirname, 'src/redux');
 
+        // HELPER ALIAS
+        config.resolve.alias['@library/helper'] = path.join(__dirname, 'src/helper');
+
         // MEDIA ALIAS
         config.resolve.alias['@public/media'] = path.join(__dirname, 'public/media');
 

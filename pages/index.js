@@ -8,7 +8,7 @@ import ProductSlider from "@components/widget/ProductSlider";
 import CatalogProduct from "@components/widget/CatalogProduct";
 import Category from "@components/widget/Category";
 
-const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, productSlider, promoBannerImages }) => {
+const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, productData, promoBannerImages }) => {
     return (
         <Layout
             headerTitle={t("core:Sandika")}
@@ -26,14 +26,16 @@ const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, pro
             >
                 <ProductSlider
                     config={configProductSlider}
-                    productData={productSlider}
+                    productData={productData}
                 />
             </Block>
             <Block
                 title={"Pilih Category"}
                 additional={null}
             >
-                <Category />
+                <Category
+                    productCategories={productData}
+                />
             </Block>
             <Block>
                 <Banner
@@ -46,7 +48,7 @@ const Home = ({ t, configImageSlider, configProductSlider, mainBannerImages, pro
                 additional={"Lihat Semua"}
             >
                 <CatalogProduct
-                    productData={productSlider}
+                    productData={productData}
                 />
             </Block>
         </Layout>
@@ -80,7 +82,7 @@ Home.getInitialProps = async () => {
         namespacesRequired: ["core"],
         mainBannerImages: mainBannerImages,
         promoBannerImages: promoBannerImages,
-        productSlider: productJson
+        productData: productJson
     };
 };
 
