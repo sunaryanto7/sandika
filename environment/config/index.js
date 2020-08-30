@@ -18,8 +18,8 @@ const config = {
         loop: true,
         margin: 15
     }
-}
+};
 
 module.exports = {
     config
-}
+};

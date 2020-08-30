@@ -1,18 +1,21 @@
+// PROPTYPES CHECKING
+import PropTypes from 'prop-types';
+
 // REDUX
-import { Provider } from "react-redux";
-import storeWrapper from "@library/redux";
+import { Provider } from 'react-redux';
+import storeWrapper from '@library/redux';
 
 // Locales / Translation / Language
-import { appWithTranslation } from "@environment/i18n";
+import { appWithTranslation } from '@environment/i18n';
 
 // FONT AWESOME
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faShoppingCart, faBars } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 
 // GLOBAL STYLE
-import "@environment/styles/core.scss";
+import '@environment/styles/core.scss';
 
-library.add(faShoppingCart, faBars)
+library.add(faShoppingCart, faBars);
 
 const Sandika = ({ Component, pageProps }) => {
     return (
@@ -22,12 +25,17 @@ const Sandika = ({ Component, pageProps }) => {
     );
 };
 
+Sandika.propTypes = {
+    Component: PropTypes.func,
+    pageProps: PropTypes.object
+};
+
 Sandika.getInitialProps = async ({ Component, ctx }) => {
-    let pageProps = {}
+    let pageProps = {};
     if (Component.getInitialProps) {
         pageProps = await Component.getInitialProps(ctx);
     }
-    return { pageProps }
-}
+    return { pageProps };
+};
 
 export default appWithTranslation(Sandika);

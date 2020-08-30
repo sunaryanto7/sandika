@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import theme from './catalogproduct.module.scss';
-import ProductItem from "@components/core/ProductItem";
+import ProductItem from '@components/core/ProductItem';
 
 const CatalogProduct = ({ productData }) => {
     return (
@@ -12,6 +13,7 @@ const CatalogProduct = ({ productData }) => {
                             alt={data.title}
                             productName={data.title}
                             productFinalPrice={data.price}
+                            productOldPrice={data.price + 20} //Example
                             productBrand={data.category}
                             className={theme.productItem}
                             key={i}
@@ -21,6 +23,10 @@ const CatalogProduct = ({ productData }) => {
             </div>
         </>
     );
+};
+
+CatalogProduct.propTypes = {
+    productData: PropTypes.array
 };
 
 export default CatalogProduct;

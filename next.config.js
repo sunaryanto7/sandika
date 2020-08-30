@@ -1,15 +1,19 @@
 const withPlugins = require('next-compose-plugins');
 const withSass = require('@zeit/next-sass');
-const withCSS = require('@zeit/next-css')
+const withCSS = require('@zeit/next-css');
 const { nextI18NextRewrites } = require('next-i18next/rewrites');
 const path = require('path');
 
 const localeSubpaths = {
     id: 'id',
     en: 'en'
-}
+};
 
 const nextConfig = {
+    devIndicators: {
+        autoPrerender: false
+    },
+
     // Trailing Slash Routes
     trailingSlash: false,
 
@@ -19,7 +23,10 @@ const nextConfig = {
     // Webpack Config
     webpack: (config) => {
         // COMPONENTS ALIAS
-        config.resolve.alias['@components/commons'] = path.join(__dirname, 'src/components/commons');
+        config.resolve.alias['@components/commons'] = path.join(
+            __dirname,
+            'src/components/commons'
+        );
         config.resolve.alias['@components/core'] = path.join(__dirname, 'src/components/core');
         config.resolve.alias['@components/widget'] = path.join(__dirname, 'src/components/widget');
 
@@ -52,29 +59,37 @@ const nextConfig = {
                     loader: 'url-loader',
                     options: {
                         limit: 8192,
-                        publicPath: "/_next/static/",
-                        outputPath: "static/",
-                        name: "[name].[ext]"
+                        publicPath: '/_next/static/',
+                        outputPath: 'static/',
+                        name: '[name].[ext]'
                     }
-                },
+                }
             ]
-        })
+        });
 
         return config;
     }
-}
+};
 
-
-module.exports = withPlugins([
-    [withSass, {
-        poweredByHeader: false,
-        cssModules: true,
-        cssLoaderOptions: {
-            localIdentName: "sandika_[hash:base64:5]",
-        }
-    }],
-    [withCSS, {
-        cssModules: false,
-        url: false
-    }]
-], nextConfig);
+module.exports = withPlugins(
+    [
+        [
+            withSass,
+            {
+                poweredByHeader: false,
+                cssModules: true,
+                cssLoaderOptions: {
+                    localIdentName: 'sandika_[hash:base64:5]'
+                }
+            }
+        ],
+        [
+            withCSS,
+            {
+                cssModules: false,
+                url: false
+            }
+        ]
+    ],
+    nextConfig
+);

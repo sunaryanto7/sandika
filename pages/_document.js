@@ -1,10 +1,10 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class SandikaDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx);
         const { query } = ctx;
-        const lang = query.lang === "en" ? "en" : "id";
+        const lang = query.lang === 'en' ? 'en' : 'id';
 
         return { ...initialProps, lang };
     }
@@ -15,8 +15,11 @@ class SandikaDocument extends Document {
         return (
             <Html lang={lang}>
                 <Head>
-                    <meta name="theme-color" content={"#cd134b"} />
-                    <meta name="description" content="Buy beautiful, high quality carpets for your home." />
+                    <meta name="theme-color" content={'#cd134b'} />
+                    <meta
+                        name="description"
+                        content="Buy beautiful, high quality carpets for your home."
+                    />
                 </Head>
                 <body>
                     <Main />
@@ -24,7 +27,7 @@ class SandikaDocument extends Document {
                 </body>
             </Html>
         );
-    };
-};
+    }
+}
 
-export default SandikaDocument
+export default SandikaDocument;

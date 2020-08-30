@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import MenuIcon from '@public/media/icons/menu.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
 import theme from './header.module.scss';
@@ -18,6 +19,10 @@ const Header = ({ headerTitle }) => {
             </div>
         </>
     );
+};
+
+Header.propTypes = {
+    headerTitle: PropTypes.string
 };
 
 export default Header;

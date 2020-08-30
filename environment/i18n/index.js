@@ -13,11 +13,11 @@ const NextI18NextInstance = new NextI18Next({
     detection: {
         lookupCookie: 'next-i18next',
         order: ['cookie', 'querystring', 'localStorage', 'path', 'subdomain'],
-        caches: ['cookie'],
+        caches: ['cookie']
     },
     localePath: path.resolve('./public/locales/'),
     browserLanguageDetection: true,
-    serverLanguageDetection: false,
+    serverLanguageDetection: false
 });
 
 module.exports = NextI18NextInstance;

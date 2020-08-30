@@ -10,8 +10,12 @@ const Footer = () => {
                     </div>
                     <div className={theme.footerBlockContent}>
                         <ul>
-                            <li><a href={"#"}>Kebijakan</a></li>
-                            <li><a href={"#"}>Syarat Dan Ketentuan</a></li>
+                            <li>
+                                <button>Kebijakan</button>
+                            </li>
+                            <li>
+                                <button>Syarat Dan Ketentuan</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -21,8 +25,12 @@ const Footer = () => {
                     </div>
                     <div className={theme.footerBlockContent}>
                         <ul>
-                            <li><a href={"#"}>FAQ</a></li>
-                            <li><a href={"#"}>Pembayaran</a></li>
+                            <li>
+                                <button>FAQ</button>
+                            </li>
+                            <li>
+                                <button>Pembayaran</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -32,8 +40,12 @@ const Footer = () => {
                     </div>
                     <div className={[theme.footerBlockContent, theme.footerSocialMedia].join(' ')}>
                         <ul>
-                            <li><a href={"#"}>FAQ</a></li>
-                            <li><a href={"#"}>Pembayaran</a></li>
+                            <li>
+                                <button>FAQ</button>
+                            </li>
+                            <li>
+                                <button>Pembayaran</button>
+                            </li>
                         </ul>
                     </div>
                 </div>

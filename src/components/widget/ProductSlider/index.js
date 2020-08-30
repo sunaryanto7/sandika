@@ -1,17 +1,17 @@
+import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from "react";
-import ProductItem from "@components/core/ProductItem";
+import { useEffect, useState } from 'react';
+import ProductItem from '@components/core/ProductItem';
 import $ from 'jquery';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import theme from "./productslider.module.scss";
+// import theme from './productslider.module.scss';
 
 const Slider = dynamic(() => import('react-owl-carousel'), {
-    ssr: false,
+    ssr: false
 });
 
 const ProductSlider = ({ config, productData }) => {
-
     const [isMount, setIsMount] = useState(false);
 
     useEffect(() => {
@@ -19,8 +19,14 @@ const ProductSlider = ({ config, productData }) => {
         window.$ = $;
         global.jQuery = $;
         setIsMount(true);
-    }, []);
 
+        return function cleanup() {
+            window.jQuery = undefined;
+            window.$ = undefined;
+            global.jQuery = undefined;
+            setIsMount(false);
+        };
+    }, []);
 
     if (isMount) {
         return (
@@ -42,9 +48,12 @@ const ProductSlider = ({ config, productData }) => {
             </>
         );
     }
-    return (
-        null
-    );
+    return null;
+};
+
+ProductSlider.propTypes = {
+    config: PropTypes.object,
+    productData: PropTypes.array
 };
 
 export default ProductSlider;
