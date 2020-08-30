@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Button from '@components/commons/Button'
 import is_empty from '@library/helper/is_empty';
 import theme from './block.module.scss';
 
@@ -11,7 +12,7 @@ const Block = ({ children, title, additional }) => {
                         <h4 className={theme.widgetTitle}>{title}</h4>
                         {!is_empty(additional) ? (
                             <h5 className={theme.widgetLink}>
-                                <button>{additional}</button>
+                                <Button>{additional}</Button>
                             </h5>
                         ) : null}
                     </div>
