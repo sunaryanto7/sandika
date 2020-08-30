@@ -40,6 +40,7 @@ const ProductSlider = ({ config, productData }) => {
                                 productName={data.title}
                                 productBrand={data.category}
                                 productFinalPrice={data.price}
+                                productOldPrice={data.price + 20} //Example
                                 key={i}
                             />
                         );
