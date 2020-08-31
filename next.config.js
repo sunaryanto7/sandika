@@ -34,9 +34,7 @@ const nextConfig = {
         config.resolve.alias['@environment/config'] = path.join(__dirname, 'environment/config');
         config.resolve.alias['@environment/i18n'] = path.join(__dirname, 'environment/i18n');
         config.resolve.alias['@environment/styles'] = path.join(__dirname, 'environment/styles');
-
-        // REDUX ALIAS
-        config.resolve.alias['@library/redux'] = path.join(__dirname, 'src/redux');
+        config.resolve.alias['@environment/apollo'] = path.join(__dirname, 'environment/apollo');
 
         // HELPER ALIAS
         config.resolve.alias['@library/helper'] = path.join(__dirname, 'src/helper');

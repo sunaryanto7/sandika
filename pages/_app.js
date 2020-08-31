@@ -1,9 +1,9 @@
 // PROPTYPES CHECKING
 import PropTypes from 'prop-types';
 
-// REDUX
-import { Provider } from 'react-redux';
-import storeWrapper from '@library/redux';
+// APOLLO
+import { ApolloProvider } from '@apollo/client';
+import client from '@environment/apollo';
 
 // Locales / Translation / Language
 import { appWithTranslation } from '@environment/i18n';
@@ -19,9 +19,9 @@ library.add(faShoppingCart, faBars);
 
 const Sandika = ({ Component, pageProps }) => {
     return (
-        <Provider store={storeWrapper}>
+        <ApolloProvider client={client}>
             <Component {...pageProps} />
-        </Provider>
+        </ApolloProvider>
     );
 };
 
