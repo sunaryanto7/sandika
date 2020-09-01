@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import theme from './button.module.scss';
 
-const Button = ({ children, fullWidth, btnDanger, onCLick }) => {
+const Button = ({ children, fullWidth, btnDanger, onClick }) => {
     var className = [
         theme.btn,
         fullWidth ? theme.btnFullWidth : null,
@@ -9,7 +9,7 @@ const Button = ({ children, fullWidth, btnDanger, onCLick }) => {
     ];
     return (
         <>
-            <button className={className.join(' ')} onCLick={() => { onCLick }}>{children}</button>
+            <button className={className.join(' ')} onClick={() => { onClick }}>{children}</button>
         </>
     );
 };

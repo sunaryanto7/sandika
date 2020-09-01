@@ -12,8 +12,8 @@ const CatalogProduct = ({ productData }) => {
                             src={data.image}
                             alt={data.title}
                             productName={data.title}
-                            productFinalPrice={data.price}
-                            productOldPrice={data.price + 20} //Example
+                            productFinalPrice={Math.round(data.price)}
+                            productOldPrice={Math.round(data.price + 20)} //Example
                             productBrand={data.category}
                             className={theme.productItem}
                             key={i}

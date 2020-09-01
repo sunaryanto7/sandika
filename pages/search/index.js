@@ -19,7 +19,7 @@ const Home = ({
 }) => {
     return (
         <Layout headerTitle={t('core:Sandika')}
-            enableHeader
+            enableNavigationHeader
             enableBottomNavigation>
             <Block>
                 <Banner config={configImageSlider} images={mainBannerImages} />

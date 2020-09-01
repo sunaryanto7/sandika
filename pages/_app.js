@@ -1,3 +1,9 @@
+// GLOBAL STYLE
+import '@environment/styles/core.scss';
+
+// REACT
+import { useEffect } from 'react';
+
 // PROPTYPES CHECKING
 import PropTypes from 'prop-types';
 
@@ -6,21 +12,41 @@ import { ApolloProvider } from '@apollo/client';
 import client from '@environment/apollo';
 
 // Locales / Translation / Language
-import { appWithTranslation } from '@environment/i18n';
+import { appWithTranslation, Router } from '@environment/i18n';
 
 // FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
-
-// GLOBAL STYLE
-import '@environment/styles/core.scss';
-
+// ADD THIS LINE TO CALL FONT AWESOME USING NAME OF ICON
 library.add(faShoppingCart, faBars);
 
+// LOADER
+import Loader from '@components/core/Loader';
+
 const Sandika = ({ Component, pageProps }) => {
+    const [loading, setLoading] = React.useState(false);
+    useEffect(() => {
+        const start = () => {
+            console.log("start");
+            setLoading(true);
+        };
+        const end = () => {
+            console.log("findished");
+            setLoading(false);
+        };
+        Router.events.on("routeChangeStart", start);
+        Router.events.on("routeChangeComplete", end);
+        Router.events.on("routeChangeError", end);
+
+        return () => {
+            Router.events.off("routeChangeStart", start);
+            Router.events.off("routeChangeComplete", end);
+            Router.events.off("routeChangeError", end);
+        };
+    }, []);
     return (
         <ApolloProvider client={client}>
-            <Component {...pageProps} />
+            {loading ? <Loader /> : <Component {...pageProps} />}
         </ApolloProvider>
     );
 };

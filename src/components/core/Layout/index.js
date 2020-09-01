@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Header from '@components/core/Header';
+import NavigationHeader from '@components/core/NavigationHeader';
 import Footer from '@components/core/Footer';
 import Navigation from '@components/core/Navigation';
 import FilterNavigation from '@components/core/FilterNavigation';
@@ -9,6 +10,8 @@ import theme from './layout.module.scss';
 const Layout = ({
     children,
     headerTitle,
+    enableHeader,
+    enableNavigationHeader,
     enableFooter,
     enableBottomNavigation,
     enableFilterNavigation
@@ -17,7 +20,8 @@ const Layout = ({
         <>
             <div className={theme.wrapper}>
                 <GlobalNotification />
-                <Header headerTitle={headerTitle} />
+                {enableHeader ? <Header headerTitle={headerTitle} /> : null}
+                {enableNavigationHeader ? <NavigationHeader headerTitle={headerTitle} /> : null}
                 <div className={theme.mainContent}>{children}</div>
                 {enableFooter ? <Footer /> : null}
                 {enableBottomNavigation ? <Navigation /> : null}
@@ -30,6 +34,8 @@ const Layout = ({
 Layout.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     headerTitle: PropTypes.string,
+    enableHeader: PropTypes.bool,
+    enableNavigationHeader: PropTypes.bool,
     enableFooter: PropTypes.bool,
     enableBottomNavigation: PropTypes.bool,
     enableFilterNavigation: PropTypes.bool

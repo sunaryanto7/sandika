@@ -19,7 +19,7 @@ const Banner = ({ config, images }) => {
         global.jQuery = $;
         setIsMount(true);
 
-        return function cleanup() {
+        return () => {
             window.jQuery = undefined;
             window.$ = undefined;
             global.jQuery = undefined;

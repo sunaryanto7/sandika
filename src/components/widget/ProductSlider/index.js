@@ -20,7 +20,7 @@ const ProductSlider = ({ config, productData }) => {
         global.jQuery = $;
         setIsMount(true);
 
-        return function cleanup() {
+        return () => {
             window.jQuery = undefined;
             window.$ = undefined;
             global.jQuery = undefined;
@@ -39,8 +39,8 @@ const ProductSlider = ({ config, productData }) => {
                                 alt={data.title}
                                 productName={data.title}
                                 productBrand={data.category}
-                                productFinalPrice={data.price}
-                                productOldPrice={data.price + 20} //Example
+                                productFinalPrice={Math.round(data.price)}
+                                productOldPrice={Math.round(data.price + 20)} //Example
                                 key={i}
                             />
                         );
