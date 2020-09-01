@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 import theme from './button.module.scss';
 
-const Button = ({ children, fullWidth, btnDanger, onClick }) => {
+const Button = ({ children, fullWidth, btnDanger, btnWhite, btnTransparent, onClick }) => {
     var className = [
         theme.btn,
         fullWidth ? theme.btnFullWidth : null,
-        btnDanger ? theme.btnDanger : null
+        btnDanger ? theme.btnDanger : null,
+        btnWhite ? theme.btnWhite : null,
+        btnTransparent ? theme.btnTransparent : null
     ];
     return (
         <>
-            <button className={className.join(' ')} onClick={() => { onClick }}>{children}</button>
+            <button className={className.join(' ')} onClick={onClick}>
+                {children}
+            </button>
         </>
     );
 };
@@ -17,8 +21,10 @@ const Button = ({ children, fullWidth, btnDanger, onClick }) => {
 Button.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     fullWidth: PropTypes.bool,
+    onClick: PropTypes.func,
     btnDanger: PropTypes.bool,
-    onClick: PropTypes.func
+    btnWhite: PropTypes.bool,
+    btnTransparent: PropTypes.bool
 };
 
 export default Button;

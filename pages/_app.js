@@ -20,31 +20,41 @@ import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 // ADD THIS LINE TO CALL FONT AWESOME USING NAME OF ICON
 library.add(faShoppingCart, faBars);
 
-// LOADER
-import Loader from '@components/core/Loader';
 
 const Sandika = ({ Component, pageProps }) => {
-    const [loading, setLoading] = useState(false);
+    pageProps.isLoading = true;
+
+    const [statePageProps, setPageProps] = useState(pageProps);
+    const start = () => {
+        setPageProps({
+            ...pageProps,
+            isLoading: true // start load page state
+        });
+    };
+    const finish = () => {
+        setPageProps({
+            ...pageProps,
+            isLoading: false // finish load page state
+        })
+    };
+
     useEffect(() => {
-        const start = () => {
-            setLoading(true);
-        };
-        const end = () => {
-            setLoading(false);
-        };
-        Router.events.on("routeChangeStart", start);
-        Router.events.on("routeChangeComplete", end);
-        Router.events.on("routeChangeError", end);
+        finish();
+        Router.events.on('routeChangeStart', start);
+        Router.events.on('routeChangeComplete', finish);
+        Router.events.on('routeChangeError', finish);
 
         return () => {
-            Router.events.off("routeChangeStart", start);
-            Router.events.off("routeChangeComplete", end);
-            Router.events.off("routeChangeError", end);
+            start();
+            Router.events.off('routeChangeStart', start);
+            Router.events.off('routeChangeComplete', finish);
+            Router.events.off('routeChangeError', finish);
         };
     }, []);
+
     return (
         <ApolloProvider client={client}>
-            {loading ? <Loader /> : <Component {...pageProps} />}
+            <Component {...statePageProps} />
         </ApolloProvider>
     );
 };

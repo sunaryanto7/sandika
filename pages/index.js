@@ -10,6 +10,7 @@ import CatalogProduct from '@components/widget/CatalogProduct';
 import Category from '@components/widget/Category';
 
 const Home = ({
+    isLoading,
     t,
     configImageSlider,
     configProductSlider,
@@ -18,9 +19,7 @@ const Home = ({
     promoBannerImages
 }) => {
     return (
-        <Layout headerTitle={t('core:Sandika')}
-            enableHeader
-            enableBottomNavigation>
+        <Layout headerTitle={t('core:Sandika')} isLoading={isLoading} enableHeader enableBottomNavigation>
             <Block>
                 <Banner config={configImageSlider} images={mainBannerImages} />
             </Block>
@@ -41,6 +40,7 @@ const Home = ({
 };
 
 Home.propTypes = {
+    isLoading: PropTypes.bool,
     t: PropTypes.func,
     configImageSlider: PropTypes.object,
     configProductSlider: PropTypes.object,
