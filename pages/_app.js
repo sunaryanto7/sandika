@@ -2,7 +2,7 @@
 import '@environment/styles/core.scss';
 
 // REACT
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // PROPTYPES CHECKING
 import PropTypes from 'prop-types';
@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { ApolloProvider } from '@apollo/client';
 import client from '@environment/apollo';
 
-// Locales / Translation / Language
+// Locales / Translation / Language , ROUTING
 import { appWithTranslation, Router } from '@environment/i18n';
 
 // FONT AWESOME
@@ -24,14 +24,12 @@ library.add(faShoppingCart, faBars);
 import Loader from '@components/core/Loader';
 
 const Sandika = ({ Component, pageProps }) => {
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         const start = () => {
-            console.log("start");
             setLoading(true);
         };
         const end = () => {
-            console.log("findished");
             setLoading(false);
         };
         Router.events.on("routeChangeStart", start);
