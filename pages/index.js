@@ -24,7 +24,7 @@ const Home = ({
             isLoading={isLoading}
             enableHeader
             enableBottomNavigation>
-            <Block>
+            {/* <Block>
                 <Banner config={configImageSlider} images={mainBannerImages} />
             </Block>
             <Block title={'Special Offer'} additional={'Lihat Semua'}>
@@ -35,7 +35,7 @@ const Home = ({
             </Block>
             <Block>
                 <Banner config={configImageSlider} images={promoBannerImages} />
-            </Block>
+            </Block> */}
             <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
                 <CatalogProduct productData={productData} />
             </Block>
