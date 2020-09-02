@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { Router } from '@environment/i18n';
 import Button from '@components/commons/Button';
-import theme from './navigationheader.module.scss';
+import theme from './headernavigation.module.scss';
 import ArrowBackIcon from '@public/media/icons/back.svg';
 import GlobalNotification from '@components/core/GlobalNotification';
 
-const NavigationHeader = ({ headerTitle }) => {
+const HeaderNavigation = ({ headerTitle }) => {
+    console.log(theme.buttonBack);
     return (
         <>
             <div className={theme.header}>
@@ -16,8 +17,7 @@ const NavigationHeader = ({ headerTitle }) => {
                     <div className={theme.nav}>
                         <Button
                             btnTransparent
-                            onClick={() => { Router.back(); }}
-                        >
+                            onClick={() => { Router.back(); }}>
                             <ArrowBackIcon className={theme.menu_icon} />
                         </Button>
                     </div>
@@ -30,8 +30,8 @@ const NavigationHeader = ({ headerTitle }) => {
     );
 };
 
-NavigationHeader.propTypes = {
+HeaderNavigation.propTypes = {
     headerTitle: PropTypes.string
 };
 
-export default NavigationHeader;
+export default HeaderNavigation;

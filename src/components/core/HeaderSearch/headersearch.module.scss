@@ -7,7 +7,7 @@
 	.headerContent{
         display: flex;
         justify-content: start;
-        padding: 0 15px;
+        padding: 10px 15px;
         align-items: center;
         background:white;
         
@@ -17,6 +17,14 @@
             svg {
                 font-size: 1.4rem;
             }
+
+            button{
+                margin: auto;
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+            }
+
             .menu_icon {
                 width: 20px;
                 height: auto;
@@ -26,14 +34,12 @@
             }
         }
 
-        .app_name {
+        .searchForm{
             flex: 0 0 80%;
-            text-align: center;
-
-            h1{
-                font-size: 1.2rem;
-                color: #0eac32;
-                font-weight: 500;
+            
+            input{
+                width: 100%;
+                border-radius: 15px;
             }
         }
     }

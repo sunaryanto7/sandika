@@ -5,7 +5,7 @@ const FilterNavigation = () => {
     return (
         <>
             <div className={theme.filterNavigation}>
-                <Button label={'Filter'} fullWidth btnDanger />
+                <Button fullWidth btnDanger>Filter</Button>
             </div>
         </>
     );

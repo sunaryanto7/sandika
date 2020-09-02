@@ -4,26 +4,27 @@
     width: 100%;
     z-index: 1030;
 
-    .headerPanel{
-        display: block;
-    }
-
-    .headerContent{
-        background: white;
+	.headerContent{
         display: flex;
-        justify-content: space-between;
-        padding: 5px 15px;
+        justify-content: start;
+        padding: 0 15px;
         align-items: center;
-
+        background:white;
+        
         .nav {
             flex: 0 0 10%;
             text-align: left;
-            button{
+
+            .buttonBack{
                 padding: 0;
+                margin: auto;
+                display: block;
             }
+
             svg {
                 font-size: 1.4rem;
             }
+            
             .menu_icon {
                 width: 20px;
                 height: auto;
@@ -35,7 +36,7 @@
 
         .app_name {
             flex: 0 0 80%;
-            text-align: left;
+            text-align: center;
 
             h1{
                 font-size: 1.2rem;
@@ -43,19 +44,6 @@
                 font-weight: 500;
             }
         }
-
-        .minicartblock {
-            flex: 0 0 10%;
-            align-self: center;
-            text-align: right;
-
-            .shop_icon {
-                width: 24px;
-                height: auto;
-                fill: #0eac32;
-                display: inline-block;
-                vertical-align: middle;
-            }
-        }
     }
+
 }

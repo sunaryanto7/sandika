@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import dynamic from "next/dynamic";
-import NavigationHeader from '@components/core/NavigationHeader';
+import HeaderNavigation from '@components/core/HeaderNavigation';
+import HeaderSearch from '@components/core/HeaderSearch';
 import Footer from '@components/core/Footer';
 import FilterNavigation from '@components/core/FilterNavigation';
 import theme from './layout.module.scss';
@@ -9,13 +10,13 @@ import Loader from '@components/core/Loader';
 const Header = dynamic(() => import('@components/core/Header'));
 const Navigation = dynamic(() => import('@components/core/Navigation'));
 
-
 const Layout = ({
     isLoading,
     children,
     headerTitle,
     enableHeader,
     enableNavigationHeader,
+    enableSearchHeader,
     enableFooter,
     enableBottomNavigation,
     enableFilterNavigation,
@@ -24,8 +25,11 @@ const Layout = ({
         <>
             <div className={theme.wrapper}>
                 {enableHeader ? <Header headerTitle={headerTitle} /> : null}
-                {enableNavigationHeader ? <NavigationHeader headerTitle={headerTitle} /> : null}
+                {enableNavigationHeader ? <HeaderNavigation headerTitle={headerTitle} /> : null}
+                {enableSearchHeader ? <HeaderSearch headerTitle={headerTitle} /> : null}
+
                 {isLoading ? <Loader /> : <div className={theme.mainContent}>{children}</div>}
+
                 {enableFooter ? <Footer /> : null}
                 {enableBottomNavigation ? <Navigation /> : null}
                 {enableFilterNavigation ? <FilterNavigation /> : null}
@@ -40,6 +44,7 @@ Layout.propTypes = {
     headerTitle: PropTypes.string,
     enableHeader: PropTypes.bool,
     enableNavigationHeader: PropTypes.bool,
+    enableSearchHeader: PropTypes.bool,
     enableFooter: PropTypes.bool,
     enableBottomNavigation: PropTypes.bool,
     enableFilterNavigation: PropTypes.bool

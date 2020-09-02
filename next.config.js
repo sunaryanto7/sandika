@@ -10,9 +10,6 @@ const localeSubpaths = {
 };
 
 const nextConfig = {
-    devIndicators: {
-        autoPrerender: false
-    },
 
     // Trailing Slash Routes
     trailingSlash: false,

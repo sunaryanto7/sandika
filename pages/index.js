@@ -19,7 +19,11 @@ const Home = ({
     promoBannerImages
 }) => {
     return (
-        <Layout headerTitle={t('core:Sandika')} isLoading={isLoading} enableHeader enableBottomNavigation>
+        <Layout
+            headerTitle={t('core:Sandika')}
+            isLoading={isLoading}
+            enableHeader
+            enableBottomNavigation>
             <Block>
                 <Banner config={configImageSlider} images={mainBannerImages} />
             </Block>

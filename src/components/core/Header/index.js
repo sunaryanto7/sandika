@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import GlobalNotification from '@components/core/GlobalNotification';
 import MenuIcon from '@public/media/icons/menu.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
 import theme from './header.module.scss';
-import GlobalNotification from '@components/core/GlobalNotification';
+
 
 const Header = ({ headerTitle }) => {
     return (
