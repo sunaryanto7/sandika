@@ -5,7 +5,6 @@ import ProductItem from '@components/core/ProductItem';
 import $ from 'jquery';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-// import theme from './productslider.module.scss';
 
 const Slider = dynamic(() => import('react-owl-carousel'), {
     ssr: false

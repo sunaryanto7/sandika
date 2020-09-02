@@ -6,8 +6,8 @@ import FilterNavigation from '@components/core/FilterNavigation';
 import theme from './layout.module.scss';
 import Loader from '@components/core/Loader';
 
-const Header = dynamic(() => import('@components/core/Header'), { ssr: false });
-const Navigation = dynamic(() => import('@components/core/Navigation'), { ssr: false });
+const Header = dynamic(() => import('@components/core/Header'));
+const Navigation = dynamic(() => import('@components/core/Navigation'));
 
 
 const Layout = ({

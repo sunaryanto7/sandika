@@ -12,7 +12,7 @@ const NextI18NextInstance = new NextI18Next({
     },
     detection: {
         lookupCookie: 'next-i18next',
-        order: ['cookie', 'querystring', 'localStorage', 'path', 'subdomain'],
+        order: ['querystring', 'cookie', 'localStorage', 'path', 'subdomain'],
         caches: ['cookie']
     },
     localePath: path.resolve('./public/locales/'),

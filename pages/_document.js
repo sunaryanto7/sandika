@@ -21,6 +21,7 @@ class SandikaDocument extends Document {
                         name="description"
                         content="Buy beautiful, high quality carpets for your home."
                     />
+                    <link rel="preload" />
                 </Head>
                 <body>
                     <Main />
