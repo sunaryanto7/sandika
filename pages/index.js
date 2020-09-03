@@ -53,7 +53,7 @@ Home.propTypes = {
     promoBannerImages: PropTypes.array
 };
 
-Home.getInitialProps = async () => {
+export async function getStaticProps() {
     // CAROUSEL COMPONENT
     const { configImageSlider, configProductSlider } = config;
 
@@ -95,12 +95,14 @@ Home.getInitialProps = async () => {
     ];
 
     return {
-        configImageSlider,
-        configProductSlider,
-        namespacesRequired: ['core'],
-        mainBannerImages: mainBannerImages,
-        promoBannerImages: promoBannerImages,
-        productData: productJson
+        props: {
+            configImageSlider,
+            configProductSlider,
+            namespacesRequired: ['core'],
+            mainBannerImages: mainBannerImages,
+            promoBannerImages: promoBannerImages,
+            productData: productJson
+        }
     };
 };
 
