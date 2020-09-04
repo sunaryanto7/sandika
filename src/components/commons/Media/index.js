@@ -20,10 +20,10 @@ const MediaImage = ({ children }) => {
     );
 };
 
-const Media = ({ children }) => {
+const Media = ({ children, onClick }) => {
     return (
         <>
-            <div className={theme.media}>
+            <div className={theme.media} role="button" onClick={onClick}>
                 {children}
             </div>
         </>

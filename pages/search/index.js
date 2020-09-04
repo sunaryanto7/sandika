@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { withTranslation } from '@environment/i18n';
-
+import { Router } from '@environment/i18n';
 import Layout from '@components/core/Layout';
 import { Media, MediaImage, MediaBody } from '@components/commons/Media';
 import Block from '@components/core/Block';
@@ -21,16 +21,18 @@ const Search = ({
             enableSearchHeader
         >
             <Block title={'Pencarian'} additional={null}>
-                <Media><MediaBody>Payung</MediaBody></Media>
-                <Media><MediaBody>Keripik Singkong</MediaBody></Media>
-                <Media><MediaBody>Kertas Manila</MediaBody></Media>
+                <Media onClick={() => { Router.push('/category') }}><MediaBody>Payung</MediaBody></Media>
+                <Media onClick={() => { Router.push('/category') }}><MediaBody>Keripik Singkong</MediaBody></Media>
+                <Media onClick={() => { Router.push('/category') }}><MediaBody>Kertas Manila</MediaBody></Media>
             </Block>
 
             <Block title={'Pencarian Terakhir'} additional={null}>
                 {productSearch.map((data, i) => {
                     if (i < 5) {
                         return (
-                            <Media key={i}>
+                            <Media
+                                key={i}
+                                onClick={() => { Router.push('/category') }}>
                                 <MediaImage><img src={data.image} /></MediaImage>
                                 <MediaBody>{data.title}</MediaBody>
                             </Media>
