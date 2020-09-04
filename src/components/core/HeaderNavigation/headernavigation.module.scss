@@ -16,10 +16,11 @@
             flex: 0 0 10%;
             text-align: left;
 
-            .buttonBack{
-                padding: 0;
+            button{
                 margin: auto;
                 display: block;
+                width: 100%;
+                padding: 10px 0;
             }
 
             svg {

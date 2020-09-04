@@ -6,7 +6,6 @@ import ArrowBackIcon from '@public/media/icons/back.svg';
 import GlobalNotification from '@components/core/GlobalNotification';
 
 const HeaderNavigation = ({ headerTitle }) => {
-    console.log(theme.buttonBack);
     return (
         <>
             <div className={theme.header}>

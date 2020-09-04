@@ -4,36 +4,21 @@ import { withTranslation } from '@environment/i18n';
 
 import Layout from '@components/core/Layout';
 import Block from '@components/core/Block';
-import Banner from '@components/widget/Banner';
-import ProductSlider from '@components/widget/ProductSlider';
 import CatalogProduct from '@components/widget/CatalogProduct';
 
 
 const Category = ({
     isLoading,
     t,
-    configImageSlider,
-    configProductSlider,
-    mainBannerImages,
     productData,
-    promoBannerImages
 }) => {
     return (
         <Layout
             headerTitle={t('core:Sandika')}
             isLoading={isLoading}
-            enableHeader
-            enableBottomNavigation>
-            <Block>
-                <Banner config={configImageSlider} images={mainBannerImages} />
-            </Block>
-            <Block title={'Special Offer'} additional={'Lihat Semua'}>
-                <ProductSlider config={configProductSlider} productData={productData} />
-            </Block>
-            <Block>
-                <Banner config={configImageSlider} images={promoBannerImages} />
-            </Block>
-            <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
+            enableNavigationHeader
+            enableFilterNavigation>
+            <Block title={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>
                 <CatalogProduct productData={productData} />
             </Block>
         </Layout>
