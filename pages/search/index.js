@@ -4,6 +4,8 @@ import { withTranslation } from '@environment/i18n';
 
 import Layout from '@components/core/Layout';
 import { Media, MediaImage, MediaBody } from '@components/commons/Media';
+import Block from '@components/core/Block';
+
 
 const Search = ({
     isLoading,
@@ -11,21 +13,32 @@ const Search = ({
     productData
 }) => {
     const [productSearch, setProductSearch] = useState(productData);
-    console.log(productSearch);
+
     return (
         <Layout
             headerTitle={t('core:Sandika')}
             isLoading={isLoading}
             enableSearchHeader
         >
-            {productSearch.map((data, i) => {
-                return (
-                    <Media key={i}>
-                        <MediaImage><img src={data.image} /></MediaImage>
-                        <MediaBody>{data.title}</MediaBody>
-                    </Media>
-                );
-            })}
+            <Block title={'Pencarian'} additional={null}>
+                <Media><MediaBody>Payung</MediaBody></Media>
+                <Media><MediaBody>Keripik Singkong</MediaBody></Media>
+                <Media><MediaBody>Kertas Manila</MediaBody></Media>
+            </Block>
+
+            <Block title={'Pencarian Terakhir'} additional={null}>
+                {productSearch.map((data, i) => {
+                    if (i < 5) {
+                        return (
+                            <Media key={i}>
+                                <MediaImage><img src={data.image} /></MediaImage>
+                                <MediaBody>{data.title}</MediaBody>
+                            </Media>
+                        );
+                    }
+                    return;
+                })}
+            </Block>
         </Layout>
     );
 };
