@@ -1,0 +1,22 @@
+.form__input{
+    &[type="text"],
+    &[type="password"],
+    &[type="email"]{
+        padding: 10px;
+        border-radius: .25rem;
+        border: 1px solid #ced4da;
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    &[type="radio"] {
+        display: none;
+    }
+
+    &:focus
+    {
+        outline: none;
+    }
+}

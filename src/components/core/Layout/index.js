@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import HeaderNavigation from '@components/core/HeaderNavigation';
 import HeaderSearch from '@components/core/HeaderSearch';
 import Footer from '@components/core/Footer';
-import FilterNavigation from '@components/core/FilterNavigation';
+import Filter from '@components/core/Filter';
 import theme from './layout.module.scss';
 import Loader from '@components/core/Loader';
 
@@ -32,7 +32,7 @@ const Layout = ({
 
                 {enableFooter ? <Footer /> : null}
                 {enableBottomNavigation ? <Navigation /> : null}
-                {enableFilterNavigation ? <FilterNavigation /> : null}
+                {enableFilterNavigation ? <Filter /> : null}
             </div>
         </>
     );

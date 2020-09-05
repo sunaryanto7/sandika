@@ -11,11 +11,11 @@ const Button = ({
 }) => {
 
     var classNames = [
-        theme.btn,
-        fullWidth ? theme.btnFullWidth : null,
-        btnDanger ? theme.btnDanger : null,
-        btnWhite ? theme.btnWhite : null,
-        btnTransparent ? theme.btnTransparent : null,
+        theme.button,
+        fullWidth ? theme.button__full_width : null,
+        btnDanger ? theme.button__danger : null,
+        btnWhite ? theme.button__white : null,
+        btnTransparent ? theme.button__transparent : null,
     ].filter(Boolean).join(" ");
 
     return (

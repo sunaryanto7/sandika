@@ -1,0 +1,18 @@
+.form__radio{
+    display: none;
+}
+.form__radio:checked+label {
+    background-color: #0eac32;
+    span{
+        color: white;
+    }
+}
+.form__radio+label {
+    text-align: center;
+    display: inline-block;
+    background-color: rgb(238, 238, 238);
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+}

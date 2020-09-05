@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import Button from '@components/commons/Button';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '@components/commons/Modal';
-import { Form, FormRow, FormGroup, InputGroup } from '@components/commons/Form';
-import theme from './filternavigation.module.scss';
+import { Form, FormRow, FormGroup, Radio } from '@components/commons/Form';
+import theme from './filter.module.scss';
 
 
-const FilterNavigation = () => {
+const Filter = () => {
     const [showFilter, setShowFilter] = useState(false);
     const formik = useFormik({
         initialValues: {
@@ -36,7 +36,7 @@ const FilterNavigation = () => {
                     <ModalBody>
                         <FormRow>
                             <FormGroup title={"Kategori"}>
-                                <InputGroup
+                                <Radio
                                     type={"radio"}
                                     name={"category"}
                                     id={"category_1"}
@@ -44,7 +44,7 @@ const FilterNavigation = () => {
                                     value={"Roti"}
                                     label={"Roti"}
                                 />
-                                <InputGroup
+                                <Radio
                                     type={"radio"}
                                     name={"category"}
                                     id={"category_2"}
@@ -52,7 +52,7 @@ const FilterNavigation = () => {
                                     value={"Kue"}
                                     label={"Kue"}
                                 />
-                                <InputGroup
+                                <Radio
                                     type={"radio"}
                                     name={"category"}
                                     id={"category_3"}
@@ -60,7 +60,7 @@ const FilterNavigation = () => {
                                     value={"Kerpipik Singkong"}
                                     label={"Kerpipik Singkong"}
                                 />
-                                <InputGroup
+                                <Radio
                                     type={"radio"}
                                     name={"category"}
                                     id={"category_4"}
@@ -94,4 +94,4 @@ const FilterNavigation = () => {
     );
 };
 
-export default FilterNavigation;
+export default Filter;

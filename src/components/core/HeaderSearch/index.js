@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Router } from '@environment/i18n';
 import GlobalNotification from '@components/core/GlobalNotification';
 import Button from '@components/commons/Button';
+import { Input } from '@components/commons/Form'
 import ArrowBackIcon from '@public/media/icons/back.svg';
 import theme from './headersearch.module.scss';
 
@@ -23,7 +24,12 @@ const HeaderSearch = ({ headerTitle }) => {
                     </div>
                     <div className={theme.searchForm}>
                         <form>
-                            <input type={"text"} placeholder={"Cari Produk UMKM Disini..."} />
+                            <Input
+                                id={"search"}
+                                name={"search"}
+                                type={"text"}
+                                placeholder={"Cari Produk UMKM Disini..."}
+                            />
                         </form>
                     </div>
                 </div>

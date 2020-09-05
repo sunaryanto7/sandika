@@ -6,9 +6,7 @@ class SandikaDocument extends Document {
 
         ctx.renderPage = () =>
             originalRenderPage({
-                // useful for wrapping the whole react tree
                 enhanceApp: (App) => App,
-                // useful for wrapping in a per-page basis
                 enhanceComponent: (Component) => Component,
             })
 
@@ -25,7 +23,7 @@ class SandikaDocument extends Document {
         return (
             <Html lang={lang}>
                 <Head>
-                    <title>Sandika</title>
+                    {/* <title>Sandika</title> */}
                     <meta name="theme-color" content={'#cd134b'} />
                     <meta
                         name="description"
