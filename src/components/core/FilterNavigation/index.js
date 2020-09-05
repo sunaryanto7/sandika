@@ -72,7 +72,12 @@ const FilterNavigation = () => {
                         </FormRow>
                     </ModalBody>
                     <ModalFooter>
-                        <Button fullWidth type={"submit"}>Submit</Button>
+                        <Button
+                            btnDanger
+                            fullWidth
+                            type={"submit"}>
+                            Submit
+                        </Button>
                     </ModalFooter>
                 </Form>
             </Modal>
