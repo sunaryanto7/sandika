@@ -29,9 +29,9 @@ const FilterNavigation = () => {
             >
                 <Form onSubmit={formik.handleSubmit}>
                     <ModalHeader>
-                        <h4>Filter Produk<br />
+                        <h3>Filter Produk<br />
                             <small>Cari Produk Sesuai Yang Kamu Inginkan</small>
-                        </h4>
+                        </h3>
                     </ModalHeader>
                     <ModalBody>
                         <FormRow>
