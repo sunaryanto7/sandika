@@ -82,7 +82,7 @@ const Filter = () => {
                 </Form>
             </Modal>
 
-            <div className={theme.filterNavigation}>
+            <div className={theme.filter__navigation}>
                 <Button
                     fullWidth
                     btnDanger

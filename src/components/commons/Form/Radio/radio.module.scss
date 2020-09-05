@@ -9,7 +9,8 @@
 }
 .form__radio+label {
     text-align: center;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     background-color: rgb(238, 238, 238);
     padding: 10px 15px;
     border-radius: 15px;
