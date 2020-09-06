@@ -28,13 +28,14 @@ const Filter = () => {
                 title={"Filter Pencarian"}
                 caption={"Cari Barang Sesuai Kebutuhanmu"}
             >
-                <Form onSubmit={formik.handleSubmit}>
-                    <ModalHeader>
-                        <h3>Filter Produk<br />
-                            <small>Cari Produk Sesuai Yang Kamu Inginkan</small>
-                        </h3>
-                    </ModalHeader>
-                    <ModalBody>
+
+                <ModalHeader>
+                    <h3>Filter Produk<br />
+                        <small>Cari Produk Sesuai Yang Kamu Inginkan</small>
+                    </h3>
+                </ModalHeader>
+                <ModalBody>
+                    <Form onSubmit={formik.handleSubmit}>
                         <FormRow>
                             <FormGroup title={"Kategori"}>
                                 <Radio
@@ -170,17 +171,25 @@ const Filter = () => {
                                     label={"Harga Termahal"}
                                 />
                             </FormGroup>
+                            <FormGroup>
+                                <Button
+                                    btnDanger
+                                    fullWidth
+                                    type={"submit"}>
+                                    Submit
+                                </Button>
+                            </FormGroup>
                         </FormRow>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button
-                            btnDanger
-                            fullWidth
-                            type={"submit"}>
-                            Submit
-                        </Button>
-                    </ModalFooter>
-                </Form>
+                    </Form>
+                </ModalBody>
+                <ModalFooter>
+                    <Button
+                        btnDanger
+                        fullWidth
+                        type={"submit"}>
+                        Submit
+                    </Button>
+                </ModalFooter>
             </Modal>
 
             <div className={theme.filter__navigation}>

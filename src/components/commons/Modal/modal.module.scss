@@ -24,17 +24,18 @@
         background: white;
         height: 70%;
         padding:10px;
-        position: inherit;
+        position: fixed;
         top: 30%;
         width: 100%;
         max-width: inherit;
+        overflow: scroll;
     }
 
-    .modal__body{
-        overflow: scroll;
-        height: inherit;
-        padding-bottom: 100px;
-    }
+    // .modal__body{
+    //     overflow: scroll;
+    //     height: inherit;
+    //     padding-bottom: 100px;
+    // }
 
     .modal__footer{
         position: fixed;
