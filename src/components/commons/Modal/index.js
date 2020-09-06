@@ -39,14 +39,14 @@ const Modal = ({ active, close, title, caption, children, footer }) => {
 
     var classNames = [
         active ? theme.active : theme.deactive,
-        theme.modalWrapper
+        theme.modal__wrapper
     ].filter(Boolean).join(" ");
 
     return (
         <>
             <div className={classNames}>
                 <div className={theme.close} onClick={close} />
-                <div className={theme.modalInner}>
+                <div className={theme.modal__inner}>
                     {children}
                 </div>
             </div>

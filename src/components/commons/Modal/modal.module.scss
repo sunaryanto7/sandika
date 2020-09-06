@@ -1,5 +1,5 @@
 
-.modalWrapper{
+.modal__wrapper{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -20,7 +20,7 @@
         display: none;
     }
 
-    .modalInner{
+    .modal__inner{
         background: white;
         height: 70%;
         padding:10px;
@@ -30,12 +30,16 @@
         max-width: inherit;
     }
 
+    .modal__body{
+        overflow: scroll;
+    }
     .modal__footer{
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         padding: 15px;
+        background: white;
     }
     
     .close{
