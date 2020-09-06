@@ -171,14 +171,15 @@ const Filter = () => {
                                     label={"Harga Termahal"}
                                 />
                             </FormGroup>
-                            <FormGroup>
-                                <Button
-                                    btnDanger
-                                    fullWidth
-                                    type={"submit"}>
-                                    Submit
-                                </Button>
-                            </FormGroup>
+
+                        </FormRow>
+                        <FormRow>
+                            <Button
+                                btnDanger
+                                fullWidth
+                                type={"submit"}>
+                                Submit
+                            </Button>
                         </FormRow>
                     </Form>
                 </ModalBody>
