@@ -182,14 +182,6 @@ const Filter = () => {
                         </FormRow>
                     </Form>
                 </ModalBody>
-                <ModalFooter>
-                    <Button
-                        btnDanger
-                        fullWidth
-                        type={"submit"}>
-                        Submit
-                    </Button>
-                </ModalFooter>
             </Modal>
 
             <div className={theme.filter__navigation}>
