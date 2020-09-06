@@ -4,9 +4,9 @@
     padding-right: 15px;
     padding-bottom: 80px;
     padding-top: 15px;
-    .footerBlock{
+    .footer__block{
         margin-bottom: 20px;
-        .footerBlockTitle{
+        .footer__block_title{
             color: rgb(63, 63, 63);
             h3{
                 margin-top: 0;
@@ -15,7 +15,7 @@
                 font-size: 1rem;
             }
         }
-        .footerBlockContent{
+        .footer__block_content{
             ul{
                 list-style-type: none;
                 padding:0;
@@ -26,7 +26,7 @@
                     margin-bottom: 5px;
                 }
             }
-            &.footerSocialMedia{
+            &.footer__social_media{
                 ul li{
                     float: left;
                     margin-right: 15px;

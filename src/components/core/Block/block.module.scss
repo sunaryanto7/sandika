@@ -1,13 +1,15 @@
 .widget{
     padding: 5px 0;
 
-    .widgetHeader{
+    .widget__header{
         display: flex;
         align-items: center;
-        .widgetTitle{
+
+        .widget__title{
             flex: 0 0 50%;
         }
-        .widgetLink{
+        
+        .widget__link{
             flex: 0 0 50%;
             text-align: right;
             font-weight: 400;
@@ -15,7 +17,8 @@
             margin: 0;
         }
     }
-    .widgetContent{
+
+    .widget__content{
         display: block;
     }
 }

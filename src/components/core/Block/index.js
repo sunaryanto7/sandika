@@ -8,16 +8,16 @@ const Block = ({ children, title, additional }) => {
         <>
             <div className={theme.widget}>
                 {!is_empty(title) ? (
-                    <div className={theme.widgetHeader}>
-                        <h4 className={theme.widgetTitle}>{title}</h4>
+                    <div className={theme.widget__header}>
+                        <h4 className={theme.widget__title}>{title}</h4>
                         {!is_empty(additional) ? (
-                            <h5 className={theme.widgetLink}>
+                            <h5 className={theme.widget__link}>
                                 <Button btnTransparent>{additional}</Button>
                             </h5>
                         ) : null}
                     </div>
                 ) : null}
-                <div className={theme.widgetContent}>{children}</div>
+                <div className={theme.widget__content}>{children}</div>
             </div>
         </>
     );

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import PropTypes from 'prop-types';
 import { config } from '@environment/config';
 import { withTranslation } from '@environment/i18n';
@@ -19,27 +20,33 @@ const Home = ({
     promoBannerImages
 }) => {
     return (
-        <Layout
-            headerTitle={t('core:Sandika')}
-            isLoading={isLoading}
-            enableHeader
-            enableBottomNavigation>
-            <Block>
-                <Banner config={configImageSlider} images={mainBannerImages} />
-            </Block>
-            <Block title={'Special Offer'} additional={'Lihat Semua'}>
-                <ProductSlider config={configProductSlider} productData={productData} />
-            </Block>
-            <Block title={'Pilih Category'} additional={null}>
-                <Category productCategories={productData} />
-            </Block>
-            <Block>
-                <Banner config={configImageSlider} images={promoBannerImages} />
-            </Block>
-            <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
-                <CatalogProduct productData={productData} />
-            </Block>
-        </Layout>
+        <>
+            <Head>
+                <title>Sandika</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <Layout
+                headerTitle={t('core:Sandika')}
+                isLoading={isLoading}
+                enableHeader
+                enableBottomNavigation>
+                <Block>
+                    <Banner config={configImageSlider} images={mainBannerImages} />
+                </Block>
+                <Block title={'Special Offer'} additional={'Lihat Semua'}>
+                    <ProductSlider config={configProductSlider} productData={productData} />
+                </Block>
+                <Block title={'Pilih Category'} additional={null}>
+                    <Category productCategories={productData} />
+                </Block>
+                <Block>
+                    <Banner config={configImageSlider} images={promoBannerImages} />
+                </Block>
+                <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
+                    <CatalogProduct productData={productData} />
+                </Block>
+            </Layout>
+        </>
     );
 };
 

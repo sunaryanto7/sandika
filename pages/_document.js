@@ -23,12 +23,8 @@ class SandikaDocument extends Document {
         return (
             <Html lang={lang}>
                 <Head>
-                    {/* <title>Sandika</title> */}
                     <meta name="theme-color" content={'#cd134b'} />
-                    <meta
-                        name="description"
-                        content="Buy beautiful, high quality carpets for your home."
-                    />
+                    <meta name="description" content="Buy beautiful, high quality carpets for your home." />
                     <link rel="preload" />
                 </Head>
                 <body>
