@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import dynamic from "next/dynamic";
+import I18NContextProvider from '@environment/context/i18n_context';
+
 import HeaderNavigation from '@components/core/HeaderNavigation';
 import HeaderSearch from '@components/core/HeaderSearch';
 import Footer from '@components/core/Footer';
@@ -23,17 +25,19 @@ const Layout = ({
 }) => {
     return (
         <>
-            <div className={theme.wrapper}>
-                {enableHeader ? <Header headerTitle={headerTitle} /> : null}
-                {enableNavigationHeader ? <HeaderNavigation headerTitle={headerTitle} /> : null}
-                {enableSearchHeader ? <HeaderSearch headerTitle={headerTitle} /> : null}
+            <I18NContextProvider>
+                <div className={theme.wrapper}>
+                    {enableHeader ? <Header headerTitle={headerTitle} /> : null}
+                    {enableNavigationHeader ? <HeaderNavigation headerTitle={headerTitle} /> : null}
+                    {enableSearchHeader ? <HeaderSearch headerTitle={headerTitle} /> : null}
 
-                {isLoading ? <Loader /> : <div className={theme.mainContent}>{children}</div>}
+                    {isLoading ? <Loader /> : <div className={theme.mainContent}>{children}</div>}
 
-                {enableFooter ? <Footer /> : null}
-                {enableBottomNavigation ? <Navigation /> : null}
-                {enableFilterNavigation ? <Filter /> : null}
-            </div>
+                    {enableFooter ? <Footer /> : null}
+                    {enableBottomNavigation ? <Navigation /> : null}
+                    {enableFilterNavigation ? <Filter /> : null}
+                </div>
+            </I18NContextProvider>
         </>
     );
 };

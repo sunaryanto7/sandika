@@ -1,7 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { config } from '@environment/config';
-import { withTranslation } from '@environment/i18n';
+
+import { useContext } from 'react';
+import { AppContext } from '@environment/context/app_context';
 
 import Layout from '@components/core/Layout';
 import Block from '@components/core/Block';
@@ -12,35 +13,29 @@ import Category from '@components/widget/Category';
 
 const Home = ({
     isLoading,
-    t,
-    configImageSlider,
-    configProductSlider,
     mainBannerImages,
     productData,
     promoBannerImages
 }) => {
+    const { config } = useContext(AppContext);
     return (
         <>
-            <Head>
-                <title>Sandika</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </Head>
+            <Head><title>Sandika</title></Head>
             <Layout
-                headerTitle={t('core:Sandika')}
                 isLoading={isLoading}
                 enableHeader
                 enableBottomNavigation>
                 <Block>
-                    <Banner config={configImageSlider} images={mainBannerImages} />
+                    <Banner config={config.imageSlider} images={mainBannerImages} />
                 </Block>
                 <Block title={'Special Offer'} additional={'Lihat Semua'}>
-                    <ProductSlider config={configProductSlider} productData={productData} />
+                    <ProductSlider config={config.productSlider} productData={productData} />
                 </Block>
                 <Block title={'Pilih Category'} additional={null}>
                     <Category productCategories={productData} />
                 </Block>
                 <Block>
-                    <Banner config={configImageSlider} images={promoBannerImages} />
+                    <Banner config={config.imageSlider} images={promoBannerImages} />
                 </Block>
                 <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
                     <CatalogProduct productData={productData} />
@@ -52,9 +47,6 @@ const Home = ({
 
 Home.propTypes = {
     isLoading: PropTypes.bool,
-    t: PropTypes.func,
-    configImageSlider: PropTypes.object,
-    configProductSlider: PropTypes.object,
     mainBannerImages: PropTypes.array,
     productData: PropTypes.array,
     promoBannerImages: PropTypes.array
@@ -62,7 +54,7 @@ Home.propTypes = {
 
 Home.getInitialProps = async () => {
     // CAROUSEL COMPONENT
-    const { configImageSlider, configProductSlider } = config;
+    // const { configImageSlider, configProductSlider } = config;
 
     // GET PRODUCTS
     const productResponse = await fetch('https://fakestoreapi.com/products');
@@ -102,8 +94,6 @@ Home.getInitialProps = async () => {
     ];
 
     return {
-        configImageSlider,
-        configProductSlider,
         namespacesRequired: ['core'],
         mainBannerImages: mainBannerImages,
         promoBannerImages: promoBannerImages,
@@ -111,4 +101,4 @@ Home.getInitialProps = async () => {
     };
 };
 
-export default withTranslation()(Home);
+export default Home;

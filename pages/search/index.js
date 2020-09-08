@@ -1,6 +1,8 @@
+import Head from 'next/head';
 import PropTypes from 'prop-types';
+
 import { useState } from 'react';
-import { withTranslation } from '@environment/i18n';
+
 import { Router } from '@environment/i18n';
 import Layout from '@components/core/Layout';
 import { Media, MediaImage, MediaBody } from '@components/commons/Media';
@@ -9,50 +11,46 @@ import Block from '@components/core/Block';
 
 const Search = ({
     isLoading,
-    t,
     productData
 }) => {
     const [productSearch, setProductSearch] = useState(productData);
 
     return (
-        <Layout
-            headerTitle={t('core:Sandika')}
-            isLoading={isLoading}
-            enableSearchHeader
-        >
-            <Block title={'Pencarian'} additional={null}>
-                <Media onClick={() => { Router.push('/category') }}><MediaBody>Payung</MediaBody></Media>
-                <Media onClick={() => { Router.push('/category') }}><MediaBody>Keripik Singkong</MediaBody></Media>
-                <Media onClick={() => { Router.push('/category') }}><MediaBody>Kertas Manila</MediaBody></Media>
-            </Block>
+        <>
+            <Head><title>Sandika - Cari Produk</title></Head>
+            <Layout
+                isLoading={isLoading}
+                enableSearchHeader
+            >
+                <Block title={'Pencarian'} additional={null}>
+                    <Media onClick={() => { Router.push('/category') }}><MediaBody>Payung</MediaBody></Media>
+                    <Media onClick={() => { Router.push('/category') }}><MediaBody>Keripik Singkong</MediaBody></Media>
+                    <Media onClick={() => { Router.push('/category') }}><MediaBody>Kertas Manila</MediaBody></Media>
+                </Block>
 
-            <Block title={'Pencarian Terakhir'} additional={null}>
-                {productSearch.map((data, i) => {
-                    if (i < 5) {
-                        return (
-                            <Media
-                                key={i}
-                                onClick={() => { Router.push('/category') }}>
-                                <MediaImage><img src={data.image} /></MediaImage>
-                                <MediaBody>{data.title}</MediaBody>
-                            </Media>
-                        );
-                    }
-                    return;
-                })}
-            </Block>
-        </Layout>
+                <Block title={'Pencarian Terakhir'} additional={null}>
+                    {productSearch.map((data, i) => {
+                        if (i < 5) {
+                            return (
+                                <Media
+                                    key={i}
+                                    onClick={() => { Router.push('/category') }}>
+                                    <MediaImage><img src={data.image} /></MediaImage>
+                                    <MediaBody>{data.title}</MediaBody>
+                                </Media>
+                            );
+                        }
+                        return;
+                    })}
+                </Block>
+            </Layout>
+        </>
     );
 };
 
 Search.propTypes = {
     isLoading: PropTypes.bool,
-    t: PropTypes.func,
-    configImageSlider: PropTypes.object,
-    configProductSlider: PropTypes.object,
-    mainBannerImages: PropTypes.array,
     productData: PropTypes.array,
-    promoBannerImages: PropTypes.array
 };
 
 Search.getInitialProps = async () => {
@@ -66,4 +64,4 @@ Search.getInitialProps = async () => {
     };
 };
 
-export default withTranslation()(Search);
+export default Search;

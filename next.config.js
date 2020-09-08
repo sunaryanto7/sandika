@@ -1,21 +1,12 @@
 const withPlugins = require('next-compose-plugins');
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
-const { nextI18NextRewrites } = require('next-i18next/rewrites');
 const path = require('path');
-
-const localeSubpaths = {
-    id: 'id',
-    en: 'en'
-};
 
 const nextConfig = {
 
     // Trailing Slash Routes
     trailingSlash: false,
-
-    // Translation (Language)
-    rewrites: async () => nextI18NextRewrites(localeSubpaths),
 
     // Webpack Config
     webpack: (config) => {
@@ -28,7 +19,7 @@ const nextConfig = {
         config.resolve.alias['@components/widget'] = path.join(__dirname, 'src/components/widget');
 
         // ENVIRONMENT ALIAS
-        config.resolve.alias['@environment/config'] = path.join(__dirname, 'environment/config');
+        config.resolve.alias['@environment/context'] = path.join(__dirname, 'environment/context');
         config.resolve.alias['@environment/i18n'] = path.join(__dirname, 'environment/i18n');
         config.resolve.alias['@environment/styles'] = path.join(__dirname, 'environment/styles');
         config.resolve.alias['@environment/apollo'] = path.join(__dirname, 'environment/apollo');

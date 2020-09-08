@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { I18NContext } from '@environment/context/i18n_context';
 import { Router } from '@environment/i18n';
 import Button from '@components/commons/Button';
 import theme from './headernavigation.module.scss';
 import ArrowBackIcon from '@public/media/icons/back.svg';
 import GlobalNotification from '@components/core/GlobalNotification';
 
-const HeaderNavigation = ({ headerTitle }) => {
+const HeaderNavigation = () => {
+    const { t } = useContext(I18NContext);
+
     return (
         <>
             <div className={theme.header}>
@@ -21,7 +25,7 @@ const HeaderNavigation = ({ headerTitle }) => {
                         </Button>
                     </div>
                     <div className={theme.app_name}>
-                        <h1>{headerTitle}</h1>
+                        <h1>{t('core:Sandika')}</h1>
                     </div>
                 </div>
             </div>
@@ -30,7 +34,7 @@ const HeaderNavigation = ({ headerTitle }) => {
 };
 
 HeaderNavigation.propTypes = {
-    headerTitle: PropTypes.string
+
 };
 
 export default HeaderNavigation;

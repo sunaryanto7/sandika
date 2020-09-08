@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 // APOLLO
 import { ApolloProvider } from '@apollo/client';
 import client from '@environment/apollo';
+import { AppContextProvider } from '@environment/context/app_context';
 
 // Locales / Translation / Language , ROUTING
 import { appWithTranslation, Router } from '@environment/i18n';
@@ -53,9 +54,11 @@ const Sandika = ({ Component, pageProps }) => {
     }, []);
 
     return (
-        <ApolloProvider client={client}>
-            <Component {...statePageProps} />
-        </ApolloProvider>
+        <AppContextProvider>
+            <ApolloProvider client={client}>
+                <Component {...statePageProps} />
+            </ApolloProvider>
+        </AppContextProvider>
     );
 };
 

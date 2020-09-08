@@ -6,10 +6,6 @@ const NextI18NextInstance = new NextI18Next({
     otherLanguages: ['en'],
     defaultNS: 'core',
     fallbackLng: 'id',
-    localeSubpaths: {
-        en: 'en',
-        id: 'id'
-    },
     detection: {
         lookupCookie: 'next-i18next',
         order: ['querystring', 'cookie', 'localStorage', 'path', 'subdomain'],
