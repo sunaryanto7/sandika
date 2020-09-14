@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import LazyLoad from 'react-lazyload';
 import theme from './productitem.module.scss';
 
 const ProductItem = ({
@@ -24,9 +23,7 @@ const ProductItem = ({
         <>
             <div role="button" className={[theme.product__item, className].join(' ')}>
                 <div className={theme.product__image}>
-                    <LazyLoad>
-                        <img src={src} alt={alt} />
-                    </LazyLoad>
+                    <img src={src} alt={alt} />
                     <div className={theme.product__discount}>
                         <small>{'10%'}</small>
                     </div>
