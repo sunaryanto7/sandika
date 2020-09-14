@@ -16,7 +16,7 @@ const Layout = ({
 
     return (
         <>
-            <div className={theme.wrapper}>
+            <div className={theme.wrapper} id={"maincontent"}>
                 {(header !== undefined && header.enable && <Header {...header.props} />)}
                 <div className={theme.main__content}>{children}</div>
                 {(navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />)}

@@ -1,11 +1,13 @@
 .drawer{
-    position: absolute;
+    position: fixed;
     width: 100%;
     max-width: 480px;
     display: flex;
     height: 100%;
     z-index: 1031;
     top: 0;
+    right: 0;
+    margin: auto;
     bottom: 0;
 }
 

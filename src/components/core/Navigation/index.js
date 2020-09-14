@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Router } from '@environment/i18n';
 import Button from '@components/commons/Button';
 import SearchDrawer from '@components/core/SearchDrawer';
@@ -17,6 +17,12 @@ const Navigation = ({ active, search }) => {
         theme.navigation__item,
         active ? theme.navigation__item_active : null,
     ].filter(Boolean).join(" ");
+
+    useEffect(() => {
+        openSearch ?
+            document.getElementById('maincontent').style.overflowY = 'hidden' :
+            document.getElementById('maincontent').style.overflowY = 'initial'
+    }, [openSearch])
 
     return (
         <>
@@ -67,7 +73,9 @@ const Navigation = ({ active, search }) => {
                 isOpen={openSearch}
                 direction={'right'}
                 handleClose={() => { setOpenSearch(!openSearch) }}
-            />)}
+            >
+                hai
+            </SearchDrawer>)}
         </>
     );
 };
