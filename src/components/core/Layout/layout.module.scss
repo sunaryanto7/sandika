@@ -3,8 +3,9 @@
     margin: auto;
     height: 100vh;
     position: relative;
+    overflow-x: hidden;
 
-    .mainContent{
+    .main__content{
         overflow: scroll;
         height: auto;
         padding-top: 100px;

@@ -11,6 +11,7 @@ const Category = ({
     return (
         <Layout
             isLoading={isLoading}
+            enableHeader
             enableNavigationHeader
             enableFilterNavigation>
             <Block title={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>

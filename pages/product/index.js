@@ -12,32 +12,19 @@ import CatalogProduct from '@components/widget/CatalogProduct';
 import Category from '@components/widget/Category';
 
 const Home = ({
+    isLoading,
     mainBannerImages,
     productData,
     promoBannerImages
 }) => {
-    const { config } = useContext(AppContext).ctx.config.slider;
-    const {
-        header,
-        navigation,
-        filter,
-        footer
-    } = useContext(AppContext).ctx.page.home.layout;
-
+    const { config } = useContext(AppContext);
     return (
         <>
-            {/* Head */}
-            <Head>
-                <title>Sandika</title>
-            </Head>
-
-            {/* Body */}
+            <Head><title>Sandika</title></Head>
             <Layout
-                header={header}
-                navigation={navigation}
-                filter={filter}
-                footer={footer}
-            >
+                isLoading={isLoading}
+                enableHeader
+                enableBottomNavigation>
                 <Block>
                     <Banner config={config.imageSlider} images={mainBannerImages} />
                 </Block>
@@ -59,12 +46,16 @@ const Home = ({
 };
 
 Home.propTypes = {
+    isLoading: PropTypes.bool,
     mainBannerImages: PropTypes.array,
     productData: PropTypes.array,
     promoBannerImages: PropTypes.array
 };
 
 Home.getInitialProps = async () => {
+    // CAROUSEL COMPONENT
+    // const { configImageSlider, configProductSlider } = config;
+
     // GET PRODUCTS
     const productResponse = await fetch('https://fakestoreapi.com/products');
     const productJson = await productResponse.json();

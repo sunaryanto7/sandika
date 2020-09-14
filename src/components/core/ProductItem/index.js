@@ -22,21 +22,21 @@ const ProductItem = ({
 
     return (
         <>
-            <div role="button" className={[theme.productItem, className].join(' ')}>
-                <div className={theme.productImage}>
+            <div role="button" className={[theme.product__item, className].join(' ')}>
+                <div className={theme.product__image}>
                     <LazyLoad>
                         <img src={src} alt={alt} />
                     </LazyLoad>
-                    <div className={theme.productDiscount}>
+                    <div className={theme.product__discount}>
                         <small>{'10%'}</small>
                     </div>
                 </div>
-                <div className={theme.productDescription}>
-                    <h5 className={theme.productName}>{trimedProductName}</h5>
-                    <small className={theme.productBrand}>{productBrand}</small>
-                    <span className={theme.productPrice}>
-                        <small className={theme.oldPrice}>{`$ ${productOldPrice}`}</small>
-                        <strong className={theme.finalPrice}>{`$ ${productFinalPrice}`}</strong>
+                <div className={theme.product__description}>
+                    <h5 className={theme.product__name}>{trimedProductName}</h5>
+                    <small className={theme.product__brand}>{productBrand}</small>
+                    <span className={theme.product__price}>
+                        <small className={theme.old__price}>{`$ ${productOldPrice}`}</small>
+                        <strong className={theme.final__price}>{`$ ${productFinalPrice}`}</strong>
                     </span>
                 </div>
             </div>

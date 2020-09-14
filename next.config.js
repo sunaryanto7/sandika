@@ -64,16 +64,15 @@ module.exports = withPlugins(
             {
                 poweredByHeader: false,
                 cssModules: true,
-                cssLoaderOptions: {
-                    localIdentName: 'sandika_[hash:base64:5]'
-                }
+                // cssLoaderOptions: {
+                //     localIdentName: 'sandika_[hash:base64:5]'
+                // }
             }
         ],
         [
             withCSS,
             {
-                cssModules: false,
-                url: false
+                cssModules: false
             }
         ]
     ],

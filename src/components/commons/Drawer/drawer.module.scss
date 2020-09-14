@@ -1,0 +1,26 @@
+.drawer{
+    position: absolute;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    height: 100%;
+    z-index: 1031;
+    top: 0;
+    bottom: 0;
+}
+
+
+.drawer__content{
+    background: white;
+    width: 100%;
+}
+
+.drawer__open{
+    left: 0;
+    transition: left .3s ease;
+}
+
+.drawer__close{
+    left: 100%;
+    transition: left .3s ease;
+}
