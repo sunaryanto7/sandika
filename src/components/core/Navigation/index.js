@@ -18,12 +18,6 @@ const Navigation = ({ active, search }) => {
         active ? theme.navigation__item_active : null,
     ].filter(Boolean).join(" ");
 
-    useEffect(() => {
-        openSearch ?
-            document.getElementById('maincontent').style.overflowY = 'hidden' :
-            document.getElementById('maincontent').style.overflowY = 'initial'
-    }, [openSearch])
-
     return (
         <>
             <div className={theme.navigation}>
