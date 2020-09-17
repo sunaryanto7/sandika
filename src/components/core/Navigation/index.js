@@ -20,8 +20,14 @@ const Navigation = ({ active, search }) => {
 
     useEffect(() => {
         openSearch ?
-            document.body.style.overflow = 'hidden' :
-            document.body.removeAttribute("style")
+            [
+                document.body.style.overflow = 'hidden',
+                document.getElementById('maincontent').style.overflow = "hidden"
+            ] :
+            [
+                document.body.removeAttribute("style"),
+                document.getElementById('maincontent').removeAttribute("style")
+            ]
     }, [openSearch])
 
     return (

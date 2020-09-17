@@ -10,8 +10,10 @@ const Drawer = ({ isOpen, children, handleClose }) => {
     return (
         <>
             <div className={classNames} onClick={handleClose}>
-                <div className={theme.drawer__content}>
-                    {children}
+                <div className={theme.drawer__overlay}>
+                    <div className={theme.drawer__content}>
+                        {children}
+                    </div>
                 </div>
             </div>
         </>

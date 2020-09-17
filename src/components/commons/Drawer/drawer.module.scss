@@ -1,20 +1,27 @@
 .drawer{
     position: absolute;
     width: 100%;
-    max-width: 480px;
     display: flex;
     height: 100%;
     z-index: 1031;
     top: 0;
     right: 0;
+    bottom: 0;
     margin: auto;
     bottom: 0;
 }
 
 
+.drawer__overlay{
+    background: rgba(0,0,0,.5);
+    width: 100%;
+}
+
 .drawer__content{
     background: white;
-    width: 100%;
+    height: 100%;
+    max-width: 480px;
+    margin: auto;
 }
 
 .drawer__open{
