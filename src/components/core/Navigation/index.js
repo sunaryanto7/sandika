@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Router } from '@environment/i18n';
 import Button from '@components/commons/Button';
 import SearchDrawer from '@components/core/SearchDrawer';
@@ -17,18 +17,6 @@ const Navigation = ({ active, search }) => {
         theme.navigation__item,
         active ? theme.navigation__item_active : null,
     ].filter(Boolean).join(" ");
-
-    useEffect(() => {
-        openSearch ?
-            [
-                document.body.style.overflow = 'hidden',
-                document.getElementById('maincontent').style.overflow = "hidden"
-            ] :
-            [
-                document.body.removeAttribute("style"),
-                document.getElementById('maincontent').removeAttribute("style")
-            ]
-    }, [openSearch])
 
     return (
         <>
