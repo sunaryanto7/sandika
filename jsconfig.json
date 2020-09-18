@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            // <-- Components -->
-            "@components/commons/*": "src/components/commons/*",
-            "@components/core/*": "src/components/core/*",
-            "@components/widget/*": "src/components/widget/*",
-            // <-- Environment -->
-            "@environment/styles/*": "src/styles/*",
-            "@environment/i18n/*": "environtment/i18n/*",
-            "@environment/apollo/*": "environtment/apollo/*",
-            "@environment/context/*": "environtment/context/*",
-            // <-- Media -->
-            "@public/media/*": "public/media/*",
-            // <-- Helper -->
-            "@library/helper/*": "src/helper/*"
-        }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // <-- Components -->
+      "@components/commons/*": "src/components/commons/*",
+      "@components/core/*": "src/components/core/*",
+      "@components/widget/*": "src/components/widget/*",
+      // <-- Environment -->
+      "@environment/styles/*": "src/styles/*",
+      "@environment/i18n/*": "environtment/i18n/*",
+      "@environment/apollo/*": "environtment/apollo/*",
+      "@environment/context/*": "environtment/context/*",
+      // <-- Media -->
+      "@public/media/*": "public/media/*",
+      // <-- Helper -->
+      "@library/helper/*": "src/helper/*"
     }
+  }
 }

@@ -24,54 +24,53 @@ library.add(faShoppingCart, faBars);
 // LOADER
 import Loader from '@components/core/Loader';
 
-
 const Sandika = ({ Component, pageProps }) => {
-    const [isLoading, setIsLoading] = useState(true);
-    const start = () => {
-        setIsLoading(
-            true // start load page state
-        );
-    };
-    const finish = () => {
-        setIsLoading(
-            false // finish load page state
-        );
-    };
-
-    useEffect(() => {
-        finish();
-        Router.events.on('routeChangeStart', start);
-        Router.events.on('routeChangeComplete', finish);
-        Router.events.on('routeChangeError', finish);
-
-        return () => {
-            start();
-            Router.events.off('routeChangeStart', start);
-            Router.events.off('routeChangeComplete', finish);
-            Router.events.off('routeChangeError', finish);
-        };
-    }, []);
-
-    return (
-        <AppContextProvider>
-            <ApolloProvider client={client}>
-                {isLoading ? <Loader /> : <Component {...pageProps} />}
-            </ApolloProvider>
-        </AppContextProvider>
+  const [isLoading, setIsLoading] = useState(true);
+  const start = () => {
+    setIsLoading(
+      true // start load page state
     );
+  };
+  const finish = () => {
+    setIsLoading(
+      false // finish load page state
+    );
+  };
+
+  useEffect(() => {
+    finish();
+    Router.events.on('routeChangeStart', start);
+    Router.events.on('routeChangeComplete', finish);
+    Router.events.on('routeChangeError', finish);
+
+    return () => {
+      start();
+      Router.events.off('routeChangeStart', start);
+      Router.events.off('routeChangeComplete', finish);
+      Router.events.off('routeChangeError', finish);
+    };
+  }, []);
+
+  return (
+    <AppContextProvider>
+      <ApolloProvider client={client}>
+        {isLoading ? <Loader /> : <Component {...pageProps} />}
+      </ApolloProvider>
+    </AppContextProvider>
+  );
 };
 
 Sandika.propTypes = {
-    Component: PropTypes.func,
-    pageProps: PropTypes.object
+  Component: PropTypes.func,
+  pageProps: PropTypes.object
 };
 
 Sandika.getInitialProps = async ({ Component, ctx }) => {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-        pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
+  let pageProps = {};
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+  return { pageProps };
 };
 
 export default appWithTranslation(Sandika);

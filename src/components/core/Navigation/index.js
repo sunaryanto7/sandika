@@ -10,68 +10,71 @@ import BasketIcon from '@public/media/icons/supermarket.svg';
 import theme from './navigation.module.scss';
 
 const Navigation = ({ active, search }) => {
+  const [openSearch, setOpenSearch] = useState(false);
 
-    const [openSearch, setOpenSearch] = useState(false);
+  var classNames = [theme.navigation__item, active ? theme.navigation__item_active : null]
+    .filter(Boolean)
+    .join(' ');
 
-    var classNames = [
-        theme.navigation__item,
-        active ? theme.navigation__item_active : null,
-    ].filter(Boolean).join(" ");
+  return (
+    <>
+      <div className={theme.navigation}>
+        <div className={classNames}>
+          <Button
+            btnWhite
+            fullWidth
+            onClick={() => {
+              Router.push('/');
+            }}>
+            <HomeIcon className={theme.home_icon} />
+          </Button>
+        </div>
+        {search.enable && (
+          <div className={classNames}>
+            <Button
+              btnWhite
+              fullWidth
+              onClick={() => {
+                search.type === 'drawer' ? setOpenSearch(!openSearch) : console.log(false);
+              }}>
+              <SearchIcon className={theme.search_icon} />
+            </Button>
+          </div>
+        )}
+        <div className={classNames}>
+          <Button
+            btnWhite
+            fullWidth
+            onClick={() => {
+              Router.push('/cart');
+            }}>
+            <BasketIcon className={theme.heart_icon} />
+          </Button>
+        </div>
+        <div className={classNames}>
+          <Button
+            btnWhite
+            fullWidth
+            onClick={() => {
+              Router.push('/customer');
+            }}>
+            <UserIcon className={theme.user_icon} />
+          </Button>
+        </div>
+      </div>
 
-    return (
-        <>
-            <div className={theme.navigation}>
-                <div className={classNames}>
-                    <Button
-                        btnWhite
-                        fullWidth
-                        onClick={() => {
-                            Router.push('/');
-                        }}>
-                        <HomeIcon className={theme.home_icon} />
-                    </Button>
-                </div>
-                {(search.enable && <div className={classNames}>
-                    <Button
-                        btnWhite
-                        fullWidth
-                        onClick={() => {
-                            search.type === 'drawer' ? setOpenSearch(!openSearch) : console.log(false)
-                        }}>
-                        <SearchIcon className={theme.search_icon} />
-                    </Button>
-                </div>)}
-                <div className={classNames}>
-                    <Button
-                        btnWhite
-                        fullWidth
-                        onClick={() => {
-                            Router.push('/cart');
-                        }}>
-                        <BasketIcon className={theme.heart_icon} />
-                    </Button>
-                </div>
-                <div className={classNames}>
-                    <Button
-                        btnWhite
-                        fullWidth
-                        onClick={() => {
-                            Router.push('/customer');
-                        }}>
-                        <UserIcon className={theme.user_icon} />
-                    </Button>
-                </div>
-            </div>
-
-            {(search.enable && search.type === 'drawer' && <SearchDrawer
-                isOpen={openSearch}
-                direction={'right'}
-                handleClose={() => { setOpenSearch(!openSearch) }}
-            >
-                hai
-            </SearchDrawer>)}
-        </>
-    );
+      {search.enable && search.type === 'drawer' && (
+        <SearchDrawer
+          isOpen={openSearch}
+          direction={'right'}
+          handleClose={() => {
+            setOpenSearch(!openSearch);
+          }}>
+          hai
+        </SearchDrawer>
+      )}
+    </>
+  );
 };
 
 export default Navigation;

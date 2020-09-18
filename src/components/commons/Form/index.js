@@ -4,4 +4,4 @@ import FormGroup from '@components/commons/Form/FormGroup';
 import Input from '@components/commons/Form/Input';
 import Radio from '@components/commons/Form/Radio';
 
-export { Form, FormRow, FormGroup, Input, Radio }
+export { Form, FormRow, FormGroup, Input, Radio };
