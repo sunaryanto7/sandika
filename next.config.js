@@ -53,7 +53,7 @@ module.exports = withPlugins(
         poweredByHeader: false,
         cssModules: true,
         cssLoaderOptions: {
-          localIdentName: '_sdk[hash:base64:3]'
+          localIdentName: '_sdk[hash:base64:5]'
         }
       }
     ],

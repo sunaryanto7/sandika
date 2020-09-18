@@ -1,12 +1,16 @@
 import Drawer from '@components/commons/Drawer';
 import theme from './searchdrawer.module.scss';
 
-const SearchDrawer = ({ isOpen, handleClose }) => {
-  console.log(isOpen);
+const SearchDrawer = ({ open, handleClose }) => {
+
   return (
     <>
-      <Drawer isOpen={isOpen} direction={'right'} handleClose={handleClose}>
-        hai
+      <Drawer
+        // blank
+        isOpen={open}
+        handleClose={handleClose}>
+        <div className={"header"}></div>
+        <div className={"body"}></div>
       </Drawer>
     </>
   );

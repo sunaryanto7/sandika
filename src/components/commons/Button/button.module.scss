@@ -5,6 +5,15 @@
     font-weight: 500;
     text-align: center;
     font-size:12px;
+
+    svg {
+        font-size: 1.4rem;
+        width: 20px;
+        height: auto;
+        fill: #0eac32;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 .button__full_width{
     width: 100%;

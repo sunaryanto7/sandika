@@ -65,7 +65,7 @@ const Navigation = ({ active, search }) => {
 
       {search.enable && search.type === 'drawer' && (
         <SearchDrawer
-          isOpen={openSearch}
+          open={openSearch}
           direction={'right'}
           handleClose={() => {
             setOpenSearch(!openSearch);
