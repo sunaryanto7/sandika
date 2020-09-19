@@ -44,12 +44,15 @@ const SearchDrawer = ({ open, handleClose }) => {
           </Block>
           <Block title={'Produk Populer'} additional={'Lihat Semua'}>
             {searchSugesstionsItems.map((item, i) => {
-              return (
-                <Media key={i}>
-                  <MediaImage><img src={item.image} /></MediaImage>
-                  <MediaBody>{item.title}</MediaBody>
-                </Media>
-              )
+              if (i < 5) {
+                return (
+                  <Media key={i}>
+                    <MediaImage><img src={item.image} /></MediaImage>
+                    <MediaBody>{item.title}</MediaBody>
+                  </Media>
+                )
+              }
+              return
             })}
           </Block>
         </div>

@@ -12,8 +12,6 @@ const Drawer = ({ blank, isOpen, handleClose, children }) => {
     isOpen ? (document.body.style.overflow = 'hidden') : document.body.removeAttribute('style');
   }, [isOpen]);
 
-  console.log(blank)
-
   return (
     <>
       <div className={classNames}>
