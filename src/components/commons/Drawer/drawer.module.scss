@@ -12,6 +12,7 @@
     background: white;
     height: 100%;
     margin: auto;
+    overflow: scroll;
 
     .drawer__header{
         background: #0eac32;
@@ -47,6 +48,7 @@
         max-width: 480px;
         margin: auto;
         display: block;
+        
     }
 }
 

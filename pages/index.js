@@ -23,7 +23,11 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
       </Head>
 
       {/* Body */}
-      <Layout header={header} navigation={navigation} filter={filter} footer={footer}>
+      <Layout
+        header={header}
+        navigation={navigation}
+        filter={filter}
+        footer={footer}>
         <Block>
           <Banner config={config.imageSlider} images={mainBannerImages} />
         </Block>

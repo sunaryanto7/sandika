@@ -73,7 +73,10 @@ const AppContextProvider = ({ t, i18n, children }) => {
     }
   };
 
-  return <AppContext.Provider value={{ ctx, t, i18n }}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ ctx, t, i18n }}>
+      {children}
+    </AppContext.Provider>);
 };
 
 export { AppContext };
