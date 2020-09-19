@@ -16,29 +16,27 @@ const Drawer = ({ blank, isOpen, handleClose, children }) => {
 
   return (
     <>
-      <div className={classNames} onClick={handleClose}>
+      <div className={classNames}>
         <div className={theme.drawer__content}>
           {(!blank && <div className={theme.drawer__header}>
             <div className={theme.drawer__header_panel}>
               <div className={theme.drawer__navigation}>
                 <Button
                   btnWhite
-                  onClick={() => {
-                    handleClose
-                  }}>
+                  onClick={handleClose}>
                   <ArrowBackIcon className={theme.menu__icon} />
                 </Button>
               </div>
 
               <div className={theme.drawer__app_name}>
-                <h3 onClick={() => { Router.push('/'); }}>
-                  Sandika
-                </h3>
+                <h3>Sandika</h3>
               </div>
             </div>
           </div>)}
 
-          {children}
+          <div className={theme.drawer__children_wrapper}>
+            {children}
+          </div>
         </div>
       </div>
     </>

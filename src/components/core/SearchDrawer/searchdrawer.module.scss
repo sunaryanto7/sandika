@@ -1,0 +1,25 @@
+.search_drawer__header{
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: #0eac32;
+
+    .search_drawer__navigation{
+        flex: 0 0 15%;
+        
+        button{
+            padding: 5px;
+        }
+    }
+
+    .drawer__search_form{
+        flex: 0 0 70%;
+        text-align: center;
+
+        input{
+            width: 100%;
+            border-radius: 25px;
+        }
+    }
+}

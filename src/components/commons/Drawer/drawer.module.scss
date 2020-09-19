@@ -22,13 +22,13 @@
             display: flex;
             align-items: center;
             justify-content: start;
-            padding: 5px 10px;
+            padding: 0 10px;
 
             .drawer__navigation{
                 flex: 0 0 15%;
 
                 button{
-                    padding: 10px;
+                    padding: 5px;
                 }
             }
 
@@ -41,6 +41,12 @@
                 }
             }
         }
+    }
+
+    .drawer__children_wrapper{
+        max-width: 480px;
+        margin: auto;
+        display: block;
     }
 }
 
