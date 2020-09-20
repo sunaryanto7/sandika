@@ -10,6 +10,7 @@ import theme from './searchdrawer.module.scss';
 const SearchDrawer = ({ open, handleClose }) => {
 
   const [searchSugesstionsItems, setSearchSugesstionsItems] = useState([]);
+
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(Response => { return Response.json() })

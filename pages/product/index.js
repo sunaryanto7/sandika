@@ -11,45 +11,35 @@ import ProductSlider from '@components/widget/ProductSlider';
 import CatalogProduct from '@components/widget/CatalogProduct';
 import Category from '@components/widget/Category';
 
-const Home = ({ isLoading, mainBannerImages, productData, promoBannerImages }) => {
-  const { config } = useContext(AppContext);
+const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
+  const { config } = useContext(AppContext).ctx.config.slider;
+  const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.product.layout;
+
   return (
     <>
+      {/* Head */}
       <Head>
         <title>Sandika</title>
       </Head>
-      <Layout isLoading={isLoading} enableHeader enableBottomNavigation>
-        <Block>
-          <Banner config={config.imageSlider} images={mainBannerImages} />
-        </Block>
-        <Block title={'Special Offer'} additional={'Lihat Semua'}>
-          <ProductSlider config={config.productSlider} productData={productData} />
-        </Block>
-        <Block title={'Pilih Category'} additional={null}>
-          <Category productCategories={productData} />
-        </Block>
-        <Block>
-          <Banner config={config.imageSlider} images={promoBannerImages} />
-        </Block>
-        <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
-          <CatalogProduct productData={productData} />
-        </Block>
+
+      {/* Body */}
+      <Layout
+        header={header}
+        navigation={navigation}
+        filter={filter}
+        footer={footer}>
       </Layout>
     </>
   );
 };
 
 Home.propTypes = {
-  isLoading: PropTypes.bool,
   mainBannerImages: PropTypes.array,
   productData: PropTypes.array,
   promoBannerImages: PropTypes.array
 };
 
 Home.getInitialProps = async () => {
-  // CAROUSEL COMPONENT
-  // const { configImageSlider, configProductSlider } = config;
-
   // GET PRODUCTS
   const productResponse = await fetch('https://fakestoreapi.com/products');
   const productJson = await productResponse.json();
