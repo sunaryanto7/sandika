@@ -21,18 +21,20 @@ const SearchDrawer = ({ open, handleClose }) => {
     <>
       <Drawer blank isOpen={open}>
         <div className={theme.search_drawer__header}>
-          {/* Back Button */}
-          <div className={theme.search_drawer__navigation}>
-            <Button btnWhite onClick={handleClose}>
-              <ArrowBackIcon className={theme.close__icon} />
-            </Button>
-          </div>
+          <div className={theme.search_drawer__header_content}>
+            {/* Back Button */}
+            <div className={theme.search_drawer__navigation}>
+              <Button btnWhite onClick={handleClose}>
+                <ArrowBackIcon className={theme.close__icon} />
+              </Button>
+            </div>
 
-          {/* Search Form */}
-          <div className={theme.drawer__search_form}>
-            <form>
-              <Input type={"text"} placeholder={"Cari Produk Yang Kamu Sukai"} id={"search"} name={"search"} />
-            </form>
+            {/* Search Form */}
+            <div className={theme.drawer__search_form}>
+              <form>
+                <Input type={"text"} placeholder={"Cari Produk Yang Kamu Sukai"} id={"search"} name={"search"} />
+              </form>
+            </div>
           </div>
         </div>
 
