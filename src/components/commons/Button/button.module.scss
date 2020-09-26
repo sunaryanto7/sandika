@@ -14,23 +14,31 @@
         display: inline-block;
         vertical-align: middle;
     }
-}
-.button__full_width{
-    width: 100%;
-    height: 100%;
+
+    &__full_width{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__danger{
+        background: #cd134b;
+        color: white;
+    }
+
+    &__white{
+        background: #fff;
+        color: #000;
+    }
+
+    &__transparent{
+        background:transparent;
+        color: #000;
+    }
+    
 }
 
-.button__danger{
-    background: #cd134b;
-    color: white;
-}
 
-.button__white{
-    background: #fff;
-    color: #000;
-}
 
-.button__transparent{
-    background:transparent;
-    color: #000;
-}
+
+
+

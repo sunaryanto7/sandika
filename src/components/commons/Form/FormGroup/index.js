@@ -3,7 +3,7 @@
  */
 
 import PropTypes from 'prop-types';
-import theme from './formgroup.module.scss';
+import './formgroup.module.scss';
 
 const FormGroup = ({ title, children }) => {
   return (

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import Button from '@components/commons/Button';
 import ArrowBackIcon from '@public/media/icons/back.svg';
-import theme from './drawer.module.scss';
+import './drawer.module.scss';
 
 const Drawer = ({ blank, isOpen, handleClose, children }) => {
-  var classNames = [theme.drawer, isOpen ? theme.drawer__open : theme.drawer__close]
+  var classNames = ['drawer', isOpen ? 'drawer__open' : 'drawer__close']
     .filter(Boolean)
     .join(' ');
 
@@ -15,24 +15,24 @@ const Drawer = ({ blank, isOpen, handleClose, children }) => {
   return (
     <>
       <div className={classNames}>
-        <div className={theme.drawer__content}>
-          {(!blank && <div className={theme.drawer__header}>
-            <div className={theme.drawer__header_panel}>
-              <div className={theme.drawer__navigation}>
+        <div className={'drawer__content'}>
+          {(!blank && <div className={'drawer__header'}>
+            <div className={'drawer__header_panel'}>
+              <div className={'drawer__navigation'}>
                 <Button
                   btnWhite
                   onClick={handleClose}>
-                  <ArrowBackIcon className={theme.menu__icon} />
+                  <ArrowBackIcon className={'menu__icon'} />
                 </Button>
               </div>
 
-              <div className={theme.drawer__app_name}>
+              <div className={'drawer__app_name'}>
                 <h3>Sandika</h3>
               </div>
             </div>
           </div>)}
 
-          <div className={theme.drawer__children_wrapper}>
+          <div className={'drawer__children_wrapper'}>
             {children}
           </div>
         </div>

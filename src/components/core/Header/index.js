@@ -15,36 +15,35 @@ const Header = (props) => {
 
   return (
     <>
-      <div className={theme.header}>
-        <div className={theme.header__panel}>
+      <div className={'header'}>
+        <div className={'header__panel'}>
           <GlobalNotification />
         </div>
-        <div className={theme.header__content}>
+        <div className={'header__content'}>
+
           {/* Sidebar Icon */}
           {!withNavigation && (
-            <div className={theme.nav}>
-              <MenuIcon className={theme.menu__icon} />
+            <div className={'sidebar__toggle'}>
+              <MenuIcon className={'menu__icon'} />
             </div>
           )}
 
           {/* Back Navigation */}
           {withNavigation && (
-            <div className={theme.nav}>
+            <div className={'history__back'}>
               <Button
                 btnTransparent
                 onClick={() => {
                   Router.back();
                 }}>
-                <ArrowBackIcon className={theme.menu__icon} />
+                <ArrowBackIcon className={'menu__icon'} />
               </Button>
             </div>
           )}
 
-          {/* Search */}
-
           {/* App Name */}
           {withAppName && (
-            <div className={theme.app__name}>
+            <div className={'app__name'}>
               <h1
                 onClick={() => {
                   Router.push('/');
@@ -56,8 +55,8 @@ const Header = (props) => {
 
           {/* Minicart */}
           {withMinicart && (
-            <div className={theme.minicart__block}>
-              <BasketIcon className={theme.shop__icon} />
+            <div className={'minicart__block'}>
+              <BasketIcon className={'shop__icon'} />
             </div>
           )}
         </div>

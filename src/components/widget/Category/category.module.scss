@@ -1,27 +1,27 @@
-.categoryRow{
+.widget__category{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 20px;
     justify-content: center;
     
-    .categoryBlock{
+    &__block{
         flex: 0 0 24%;
-        
-        .categoryCard{
-            text-align: center;
-            min-height: 70px;
-            display: flex;
-            margin:5px;
-            border-radius: 15px;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            padding: 5px;
+    }
 
-            span{
-                text-transform: capitalize;
-            }
+    &__card{
+        text-align: center;
+        min-height: 70px;
+        display: flex;
+        margin:5px;
+        border-radius: 15px;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        padding: 5px;
+
+        span{
+            text-transform: capitalize;
         }
     }
 }

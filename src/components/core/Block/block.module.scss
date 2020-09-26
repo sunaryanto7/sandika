@@ -1,24 +1,28 @@
 .widget{
     padding: 5px 0;
 
-    .widget__header{
+    $this:&;
+
+    &__header{
         display: flex;
         align-items: center;
 
-        .widget__title{
-            flex: 0 0 50%;
-        }
-        
-        .widget__link{
-            flex: 0 0 50%;
-            text-align: right;
-            font-weight: 400;
-            font-size: 0.8rem;
-            margin: 0;
+        #{$this}{
+            &__title{
+                flex: 0 0 50%;
+            }
+
+            &__link{
+                flex: 0 0 50%;
+                text-align: right;
+                font-weight: 400;
+                font-size: 0.8rem;
+                margin: 0;
+            }
         }
     }
 
-    .widget__content{
+    &__content{
         display: block;
     }
 }

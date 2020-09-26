@@ -5,7 +5,7 @@
  ** EDIT THE CODE IF YOU WANT TO ADD PROPS
  */
 
-import theme from './input.module.scss';
+import './input.module.scss';
 import PropTypes from 'prop-types';
 
 const Input = (props) => {
@@ -25,7 +25,7 @@ const Input = (props) => {
         onChange={onChange}
         value={value}
         placeholder={placeholder}
-        className={theme.form__input}
+        className={'form__input'}
       />
     </>
   );

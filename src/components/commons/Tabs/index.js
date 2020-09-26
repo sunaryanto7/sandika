@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import theme from './tabs.module.scss';
+import './tabs.module.scss';
 
 const Tabs = ({ children }) => {
   const [active, setActive] = useState(children[0].props.dataLabel);

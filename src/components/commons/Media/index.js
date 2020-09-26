@@ -1,9 +1,9 @@
-import theme from './media.module.scss';
+import './media.module.scss';
 
 const MediaBody = ({ children }) => {
   return (
     <>
-      <div className={theme.mediaBody}>{children}</div>
+      <div className={'mediaBody'}>{children}</div>
     </>
   );
 };
@@ -11,7 +11,7 @@ const MediaBody = ({ children }) => {
 const MediaImage = ({ children }) => {
   return (
     <>
-      <div className={theme.mediaImage}>{children}</div>
+      <div className={'mediaImage'}>{children}</div>
     </>
   );
 };
@@ -19,7 +19,7 @@ const MediaImage = ({ children }) => {
 const Media = ({ children, onClick }) => {
   return (
     <>
-      <div className={theme.media} role="button" onClick={onClick}>
+      <div className={'media'} role="button" onClick={onClick}>
         {children}
       </div>
     </>

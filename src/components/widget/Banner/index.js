@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import $ from 'jquery';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import theme from './banner.module.scss';
+import './banner.module.scss';
 
 const Slider = dynamic(() => import('react-owl-carousel'), {
   ssr: false
@@ -33,9 +33,9 @@ const Banner = ({ config, images }) => {
         <Slider {...config}>
           {images.map((data, i) => {
             return (
-              <div className={theme.owl_images} key={i}>
+              <div className={'owl_images'} key={i}>
                 <img src={data.src} alt={data.alt} />
-                <h2 className={theme.owl_descrition}>{data.alt}</h2>
+                <h2 className={'owl_description'}>{data.alt}</h2>
               </div>
             );
           })}

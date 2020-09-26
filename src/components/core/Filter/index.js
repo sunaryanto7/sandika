@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import Button from '@components/commons/Button';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '@components/commons/Modal';
 import { Form, FormRow, FormGroup, Radio } from '@components/commons/Form';
-import theme from './filter.module.scss';
+import './filter.module.scss';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);

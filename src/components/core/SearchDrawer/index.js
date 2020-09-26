@@ -5,7 +5,7 @@ import { Media, MediaBody, MediaImage } from '@components/commons/Media';
 import { Input } from '@components/commons/Form';
 import Block from '@components/core/Block';
 import ArrowBackIcon from '@public/media/icons/back.svg';
-import theme from './searchdrawer.module.scss';
+import './searchdrawer.module.scss';
 
 const SearchDrawer = ({ open, handleClose }) => {
 
@@ -20,17 +20,17 @@ const SearchDrawer = ({ open, handleClose }) => {
   return (
     <>
       <Drawer blank isOpen={open}>
-        <div className={theme.search_drawer__header}>
-          <div className={theme.search_drawer__header_content}>
+        <div className={'search_drawer__header'}>
+          <div className={'search_drawer__header_content'}>
             {/* Back Button */}
-            <div className={theme.search_drawer__navigation}>
+            <div className={'search_drawer__navigation'}>
               <Button btnWhite onClick={handleClose}>
-                <ArrowBackIcon className={theme.close__icon} />
+                <ArrowBackIcon className={'close__icon'} />
               </Button>
             </div>
 
             {/* Search Form */}
-            <div className={theme.drawer__search_form}>
+            <div className={'drawer__search_form'}>
               <form>
                 <Input type={"text"} placeholder={"Cari Produk Yang Kamu Sukai"} id={"search"} name={"search"} />
               </form>
@@ -39,7 +39,7 @@ const SearchDrawer = ({ open, handleClose }) => {
         </div>
 
         {/* Search Result */}
-        <div className={theme.search_drawer__body}>
+        <div className={'search_drawer__body'}>
           <Block title={'Pencarian'}>
             <Media><MediaBody>Payung</MediaBody></Media>
             <Media><MediaBody>Keripik Singkong</MediaBody></Media>

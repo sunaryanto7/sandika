@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import theme from './formrow.module.scss';
+import './formrow.module.scss';
 
 const FormRow = ({ children }) => {
   return (

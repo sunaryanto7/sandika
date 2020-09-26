@@ -5,23 +5,25 @@
     z-index: 1030;
     border-bottom: 2px solid #f3f3f3;
 
-    .header__panel{
+    // Panel
+    &__panel{
         display: block;
     }
 
-    .header__content{
+    // Content
+    &__content{
         background: white;
         display: flex;
         justify-content: start;
         padding: 0 15px;
         align-items: center;
         
-        svg {
-            font-size: 1.4rem;
-        }
-        .nav {
+
+        .sidebar__toggle, 
+        .history__back {
             flex: 0 0 10%;
             text-align: left;
+
             button{
                 padding: 0;
             }

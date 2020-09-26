@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import theme from './modal.module.scss';
+import './modal.module.scss';
 
 const ModalHeader = ({ children }) => {
   return (

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import theme from './productitem.module.scss';
+import './productitem.module.scss';
 
 const ProductItem = ({
   src,
@@ -8,7 +8,7 @@ const ProductItem = ({
   productBrand,
   productOldPrice,
   productFinalPrice,
-  className
+  style
 }) => {
   const productNameSplit = () => {
     if (productName.split(' ').length > 5) {
@@ -21,19 +21,19 @@ const ProductItem = ({
 
   return (
     <>
-      <div role="button" className={[theme.product__item, className].join(' ')}>
-        <div className={theme.product__image}>
+      <div role="button" className={['product__item', style].join(' ')}>
+        <div className={'product__image'}>
           <img src={src} alt={alt} />
-          <div className={theme.product__discount}>
+          <div className={'product__discount'}>
             <small>{'10%'}</small>
           </div>
         </div>
-        <div className={theme.product__description}>
-          <h5 className={theme.product__name}>{trimedProductName}</h5>
-          <small className={theme.product__brand}>{productBrand}</small>
-          <span className={theme.product__price}>
-            <small className={theme.old__price}>{`$ ${productOldPrice}`}</small>
-            <strong className={theme.final__price}>{`$ ${productFinalPrice}`}</strong>
+        <div className={'product__description'}>
+          <h5 className={'product__name'}>{trimedProductName}</h5>
+          <small className={'product__brand'}>{productBrand}</small>
+          <span className={'product__price'}>
+            <small className={'old__price'}>{`$ ${productOldPrice}`}</small>
+            <strong className={'final__price'}>{`$ ${productFinalPrice}`}</strong>
           </span>
         </div>
       </div>

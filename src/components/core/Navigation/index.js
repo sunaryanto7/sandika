@@ -7,72 +7,92 @@ import HomeIcon from '@public/media/icons/home.svg';
 import SearchIcon from '@public/media/icons/search.svg';
 import UserIcon from '@public/media/icons/user.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
-import theme from './navigation.module.scss';
+import './navigation.module.scss';
+
+const ButtonNavigation = ({ children, link, name, onClick }) => {
+  if (name === 'search' && link === null) {
+    return (
+      <Button
+        fullWidth
+        onClick={onClick}
+        style={'navigation__link'}
+      >
+        <SearchIcon className={'search_icon'} />
+      </Button>
+    )
+  }
+
+  return (
+    <Button
+      fullWidth
+      style={'navigation__link'}
+      onClick={() => {
+        Router.push(link);
+      }}>
+      {children}
+    </Button>
+  )
+};
+
 
 const Navigation = ({ active, search }) => {
   const [openSearch, setOpenSearch] = useState(false);
 
-  var classNames = [theme.navigation__item, active ? theme.navigation__item_active : null]
-    .filter(Boolean)
-    .join(' ');
+  const buttonList = [
+    {
+      name: 'home',
+      link: '/',
+      icon: <HomeIcon className={'home_icon'} />,
+      onClick: null
+    },
+    {
+      name: 'search',
+      link: search.enable ? null : '/search',
+      icon: <SearchIcon className={'search_icon'} />,
+      onClick: () => { setOpenSearch(!openSearch); }
+    },
+    {
+      name: 'cart',
+      link: '/cart',
+      icon: <BasketIcon className={'heart_icon'} />,
+      onClick: null
+    },
+    {
+      name: 'account',
+      link: '/account',
+      icon: <UserIcon className={'user_icon'} />,
+      onClick: null
+    },
+  ];
 
   return (
     <>
-      <div className={theme.navigation}>
-        <div className={classNames}>
-          <Button
-            btnWhite
-            fullWidth
-            onClick={() => {
-              Router.push('/');
-            }}>
-            <HomeIcon className={theme.home_icon} />
-          </Button>
-        </div>
-        {search.enable && (
-          <div className={classNames}>
-            <Button
-              btnWhite
-              fullWidth
-              onClick={() => {
-                search.type === 'drawer' ? setOpenSearch(!openSearch) : console.log(false);
-              }}>
-              <SearchIcon className={theme.search_icon} />
-            </Button>
-          </div>
-        )}
-        <div className={classNames}>
-          <Button
-            btnWhite
-            fullWidth
-            onClick={() => {
-              Router.push('/cart');
-            }}>
-            <BasketIcon className={theme.heart_icon} />
-          </Button>
-        </div>
-        <div className={classNames}>
-          <Button
-            btnWhite
-            fullWidth
-            onClick={() => {
-              Router.push('/customer');
-            }}>
-            <UserIcon className={theme.user_icon} />
-          </Button>
-        </div>
-      </div>
+      <div className={'navigation'}>
+        {buttonList.map((data, i) => {
+          return (
+            <div className={active === data.name ?
+              'navigation__item navigation__item-active' : 'navigation__item'}
+              key={i}
+            >
+              <ButtonNavigation
+                link={data.link}
+                name={data.name}
+                onClick={data.onClick}
+              >
+                {data.icon}
+              </ButtonNavigation>
+            </div>
+          )
+        })}
 
-      {search.enable && search.type === 'drawer' && (
-        <SearchDrawer
-          open={openSearch}
-          direction={'right'}
-          handleClose={() => {
-            setOpenSearch(!openSearch);
-          }}>
-          hai
-        </SearchDrawer>
-      )}
+        {search.enable && search.type === 'drawer' && (
+          <SearchDrawer
+            open={openSearch}
+            handleClose={() => {
+              setOpenSearch(!openSearch);
+            }} />
+        )}
+      </div>
     </>
   );
 };

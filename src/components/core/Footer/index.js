@@ -1,4 +1,4 @@
-import theme from './footer.module.scss';
+import './footer.module.scss';
 
 const Footer = () => {
   return (

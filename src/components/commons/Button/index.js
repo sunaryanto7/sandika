@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
-import theme from './button.module.scss';
+import './button.module.scss';
 
-const Button = ({ children, fullWidth, btnDanger, btnWhite, btnTransparent, onClick }) => {
+const Button = ({ children, fullWidth, btnDanger, btnWhite, btnTransparent, onClick, style }) => {
   var classNames = [
-    theme.button,
-    fullWidth ? theme.button__full_width : null,
-    btnDanger ? theme.button__danger : null,
-    btnWhite ? theme.button__white : null,
-    btnTransparent ? theme.button__transparent : null
+    'button',
+    fullWidth ? 'button__full_width' : null,
+    btnDanger ? 'button__danger' : null,
+    btnWhite ? 'button__white' : null,
+    btnTransparent ? 'button__transparent' : null,
+    style
   ]
     .filter(Boolean)
     .join(' ');

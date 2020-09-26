@@ -47,22 +47,8 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
-    [
-      withSass,
-      {
-        poweredByHeader: false,
-        cssModules: true,
-        cssLoaderOptions: {
-          localIdentName: '_sdk[hash:base64:5]'
-        }
-      }
-    ],
-    [
-      withCSS,
-      {
-        cssModules: false
-      }
-    ]
+    [withSass],
+    [withCSS, { cssModules: false }]
   ],
   nextConfig
 );

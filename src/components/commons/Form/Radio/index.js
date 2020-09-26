@@ -5,7 +5,7 @@
  ** EDIT THE CODE IF YOU WANT TO ADD PROPS
  */
 
-import theme from './radio.module.scss';
+import './radio.module.scss';
 import PropTypes from 'prop-types';
 
 const Radio = (props) => {

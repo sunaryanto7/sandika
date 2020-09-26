@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
 
-import Footer from '@components/core/Footer';
-import Filter from '@components/core/Filter';
+// import Footer from '@components/core/Footer';
+// import Filter from '@components/core/Filter';
 import Header from '@components/core/Header';
 import Navigation from '@components/core/Navigation';
-import theme from './layout.module.scss';
+import './layout.module.scss';
 
 const Layout = ({ header, navigation, footer, filter, children }) => {
   return (
     <>
-      <div className={theme.wrapper} id={'maincontent'}>
+      <div className={'wrapper'} id={'main'}>
         {header !== undefined && header.enable && <Header {...header.props} />}
-        <div className={theme.main__content}>{children}</div>
+        <div className={'main__content'}>{children}</div>
         {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
-        {filter !== undefined && filter.enable && <Filter />}
-        {footer !== undefined && footer.enable && <Footer />}
+        {/* {filter !== undefined && filter.enable && <Filter />}
+        {footer !== undefined && footer.enable && <Footer />} */}
       </div>
     </>
   );

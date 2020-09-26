@@ -1,4 +1,4 @@
-import theme from './loader.module.scss';
+import './loader.module.scss';
 
 const Loader = () => {
   return (
