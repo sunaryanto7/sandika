@@ -1,16 +1,16 @@
 // GLOBAL STYLE
-import '@environment/styles/core.scss';
+import '@sandika_environment/styles/core.scss';
 
 // PROPTYPES CHECKING
 import PropTypes from 'prop-types';
 
 // APOLLO
 import { ApolloProvider } from '@apollo/client';
-import client from '@environment/apollo';
-import AppContextProvider from '@environment/context/app_context';
+import client from '@sandika_environment/apollo';
+import AppContextProvider from '@sandika_environment/context/app_context';
 
 // Locales / Translation / Language , ROUTING
-import { appWithTranslation, Router } from '@environment/i18n';
+import { appWithTranslation, Router } from '@sandika_environment/i18n';
 
 // FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';

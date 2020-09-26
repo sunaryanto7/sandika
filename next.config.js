@@ -10,18 +10,16 @@ const nextConfig = {
   // Webpack Config
   webpack: (config) => {
     // COMPONENTS ALIAS
-    config.resolve.alias['@components/commons'] = path.join(__dirname, 'src/components/commons');
-    config.resolve.alias['@components/core'] = path.join(__dirname, 'src/components/core');
-    config.resolve.alias['@components/widget'] = path.join(__dirname, 'src/components/widget');
+    config.resolve.alias['@sandika_components'] = path.join(__dirname, 'sandika_components/');
 
     // ENVIRONMENT ALIAS
-    config.resolve.alias['@environment/context'] = path.join(__dirname, 'environment/context');
-    config.resolve.alias['@environment/i18n'] = path.join(__dirname, 'environment/i18n');
-    config.resolve.alias['@environment/styles'] = path.join(__dirname, 'environment/styles');
-    config.resolve.alias['@environment/apollo'] = path.join(__dirname, 'environment/apollo');
+    config.resolve.alias['@sandika_environment'] = path.join(__dirname, 'sandika_environment/');
 
-    // HELPER ALIAS
-    config.resolve.alias['@library/helper'] = path.join(__dirname, 'src/helper');
+    // MODULE AND HELPER ALIAS
+    config.resolve.alias['@sandika_modules'] = path.join(__dirname, 'sandika_modules/');
+
+    // SRC
+    config.resolve.alias['@sandika_src'] = path.join(__dirname, 'sandika_src/');
 
     // MEDIA ALIAS
     config.resolve.alias['@public/media'] = path.join(__dirname, 'public/media');
