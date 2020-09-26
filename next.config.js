@@ -47,8 +47,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
-    [withSass],
-    [withCSS, { cssModules: false }]
+    [withSass], [withCSS]
   ],
   nextConfig
 );
