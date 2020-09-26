@@ -19,7 +19,7 @@ const Radio = (props) => {
         type={type}
         onClick={onClick}
         value={value}
-        className={theme.form__radio}
+        className={'form__radio'}
       />
       {label && (
         <label htmlFor={id}>

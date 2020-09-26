@@ -9,7 +9,7 @@ const FormGroup = ({ title, children }) => {
   return (
     <>
       <h4>{title}</h4>
-      <div className={theme.form__group}>{children}</div>
+      <div className={'form__group'}>{children}</div>
     </>
   );
 };

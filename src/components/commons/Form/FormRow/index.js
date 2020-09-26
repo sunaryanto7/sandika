@@ -4,7 +4,7 @@ import './formrow.module.scss';
 const FormRow = ({ children }) => {
   return (
     <>
-      <div className={theme.form__row}>{children}</div>
+      <div className={'form__row'}>{children}</div>
     </>
   );
 };
