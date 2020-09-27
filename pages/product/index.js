@@ -2,7 +2,7 @@ import Product from '@sandika_src/product';
 
 Product.getInitialProps = async () => {
   // EXAMPLE GET CONFIGURABLE PRODUCTS
-  const configurableProductFetch = await fetch('http://localhost:3000/api/example/product_configurable');
+  const configurableProductFetch = await fetch('https://sandika.org/api/example/product_configurable');
   const configurableProductResponse = await configurableProductFetch.json();
 
   // GET PRODUCTS FROM FAKESTORE API THEN PASS AS RELATED PRODUCT
