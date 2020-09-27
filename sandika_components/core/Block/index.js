@@ -3,10 +3,17 @@ import Button from '@sandika_components/commons/Button';
 import is_empty from '@sandika_modules/is_empty';
 import './block.module.scss';
 
-const Block = ({ children, title, additional }) => {
+const Block = ({ children, title, additional, style }) => {
+  const classNames = [
+    'widget',
+    style
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <>
-      <div className={'widget'}>
+      <div className={classNames}>
         {!is_empty(title) ? (
           <div className={'widget__header'}>
             <h4 className={'widget__title'}>{title}</h4>

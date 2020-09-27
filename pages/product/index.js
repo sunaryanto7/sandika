@@ -7,14 +7,6 @@ export async function getServerSideProps() {
   );
   const configurableProductResponse = await configurableProductFetch.json();
 
-  // IMAGE SLIDER DATA - (MAIN BANNER)
-  const mainBannerImages = [
-    { src: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg', alt: 'Independence Day' },
-    {
-      src: 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
-      alt: 'Special Offer'
-    }
-  ];
 
   // IMAGE SLIDER DATA - (PROMO BANNER)
   const promoBannerImages = [
@@ -38,7 +30,6 @@ export async function getServerSideProps() {
   return {
     props: {
       namespacesRequired: ['core'],
-      mainBannerImages: mainBannerImages,
       promoBannerImages: promoBannerImages,
       productData: configurableProductResponse
     }
