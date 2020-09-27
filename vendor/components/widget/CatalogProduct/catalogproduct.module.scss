@@ -9,11 +9,11 @@
     }
     
     .product__item {
-        flex: 0 0 calc((100% / 2) - 7px);
-        margin-bottom: 15px;
+        flex: 0 0 calc((100% / 2) - 5px);
+        margin-bottom: 10px;
         
         &:nth-child(odd){
-            margin-right: 14px;
+            margin-right: 10px;
         }
         
         &:nth-child(even){

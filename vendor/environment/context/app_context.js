@@ -30,7 +30,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             nav: false,
             stagePadding: 0,
             loop: true,
-            margin: 15
+            margin: 10
           }
         }
       },
@@ -131,7 +131,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             }
           },
           navigation: {
-            enable: true,
+            enable: false,
             version: 1,
             props: {
               active: 'home',

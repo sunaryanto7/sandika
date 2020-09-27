@@ -20,6 +20,8 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
       {/* Head */}
       <Head>
         <title>Sandika</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Meta description test on sandika.org"></meta>
       </Head>
 
       {/* Body */}

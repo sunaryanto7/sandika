@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import $ from 'jquery';
 import Block from '@sandika_components/core/Block';
-import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
+import ProductMediaOptions from '@sandika_src/product/components/ProductMediaOptions';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './productmedia.module.scss';
@@ -11,36 +11,6 @@ import './productmedia.module.scss';
 const Slider = dynamic(() => import('react-owl-carousel'), {
   ssr: false
 });
-
-const ProductMediaOptions = ({ options }) => {
-  return (
-    <>
-      <Block style={'product__media__options'}>
-        <Form>
-          {options.map((swatchType, i) => {
-            return (
-              <FormRow key={i}>
-                <FormGroup title={swatchType.label}>
-                  {swatchType.values.map((swatchValues, j) => {
-                    return (
-                      <Radio
-                        type={'radio'}
-                        label={swatchValues.label}
-                        name={swatchType.label}
-                        id={swatchValues.label}
-                        value={swatchType.label}
-                        key={j} />
-                    )
-                  })}
-                </FormGroup>
-              </FormRow>
-            )
-          })}
-        </Form>
-      </Block>
-    </>
-  )
-}
 
 const ProductMedia = ({ config, ...props }) => {
   const { default_product, configurable_options, variants, __typename } = { ...props };

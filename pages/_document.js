@@ -24,8 +24,6 @@ class SandikaDocument extends Document {
       <Html lang={lang}>
         <Head>
           <meta name="theme-color" content={'#cd134b'} />
-          <meta name="description" content="Buy beautiful, high quality carpets for your home." />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="preload" />
         </Head>
         <body>
