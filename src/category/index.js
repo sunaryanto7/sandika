@@ -8,6 +8,7 @@ import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
 import Banner from '@sandika_components/widget/Banner';
 import CatalogProduct from '@sandika_components/widget/CatalogProduct';
+import Filter from '@sandika_src/category/components/Filter';
 
 const Category = ({ mainBannerImages, productData }) => {
   const { config } = useContext(AppContext).ctx.config.slider;
@@ -27,6 +28,7 @@ const Category = ({ mainBannerImages, productData }) => {
         <Block title={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>
           <CatalogProduct productData={productData} />
         </Block>
+        <Filter />
       </Layout>
     </>
   );
