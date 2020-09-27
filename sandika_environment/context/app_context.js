@@ -131,7 +131,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             }
           },
           navigation: {
-            enable: false,
+            enable: true,
             version: 1,
             props: {
               active: 'home',
