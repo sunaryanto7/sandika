@@ -9,19 +9,16 @@ const nextConfig = {
 
   // Webpack Config
   webpack: (config) => {
-    // COMPONENTS ALIAS
-    config.resolve.alias['@sandika_components'] = path.join(__dirname, 'sandika_components/');
-
-    // ENVIRONMENT ALIAS
-    config.resolve.alias['@sandika_environment'] = path.join(__dirname, 'sandika_environment/');
-
-    // MODULE AND HELPER ALIAS
-    config.resolve.alias['@sandika_modules'] = path.join(__dirname, 'sandika_modules/');
-
-    // SRC
-    config.resolve.alias['@sandika_src'] = path.join(__dirname, 'sandika_src/');
-
-    // MEDIA ALIAS
+    // DECLARE ALIAS
+    //  - COMPONENTS ALIAS
+    //  - ENVIRONMENT ALIAS
+    //  - MODULE AND HELPER ALIAS
+    //  - SRC
+    //  - MEDIA ALIAS
+    config.resolve.alias['@sandika_components'] = path.join(__dirname, 'vendor/components');
+    config.resolve.alias['@sandika_environment'] = path.join(__dirname, 'vendor/environment');
+    config.resolve.alias['@sandika_modules'] = path.join(__dirname, 'vendor/modules');
+    config.resolve.alias['@sandika_src'] = path.join(__dirname, 'src');
     config.resolve.alias['@public/media'] = path.join(__dirname, 'public/media');
 
     // SVG
