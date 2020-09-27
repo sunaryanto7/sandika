@@ -21,7 +21,7 @@ const ProductItem = ({
 
   return (
     <>
-      <div className={['product__item', style].join(' ')} role="button" >
+      <div className={['product__item', style].join(' ')} role="button">
         <div className={'product__image'}>
           <img src={src} alt={alt} />
           <div className={'product__discount'}>

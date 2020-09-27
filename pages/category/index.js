@@ -2,8 +2,16 @@ import Category from '@sandika_src/category';
 
 export async function getServerSideProps() {
   const mainBannerImages = [
-    { src: 'https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png', alt: 'Independence Day' },
-    { src: 'https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png', alt: 'Special Offer' }
+    {
+      src:
+        'https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png',
+      alt: 'Independence Day'
+    },
+    {
+      src:
+        'https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png',
+      alt: 'Special Offer'
+    }
   ];
 
   // GET PRODUCTS
@@ -17,7 +25,6 @@ export async function getServerSideProps() {
       productData: productJson
     }
   };
-};
-
+}
 
 export default Category;

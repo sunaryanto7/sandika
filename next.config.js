@@ -33,19 +33,11 @@ const nextConfig = {
     // PNG JPG GIV
     config.module.rules.push({
       test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
-      use: [
-        { loader: 'file-loader' },
-        { loader: 'url-loader' }
-      ]
+      use: [{ loader: 'file-loader' }, { loader: 'url-loader' }]
     });
 
     return config;
   }
 };
 
-module.exports = withPlugins(
-  [
-    [withSass], [withCSS]
-  ],
-  nextConfig
-);
+module.exports = withPlugins([[withSass], [withCSS]], nextConfig);

@@ -4,7 +4,6 @@ import array_unique from '@sandika_modules/array_unique';
 import is_empty from '@sandika_modules/is_empty';
 
 const Category = ({ productCategories }) => {
-
   const categories = !is_empty(productCategories)
     ? array_unique(productCategories, 'category')
     : [];

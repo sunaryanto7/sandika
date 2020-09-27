@@ -20,7 +20,6 @@ const Header = (props) => {
           <GlobalNotification />
         </div>
         <div className={'header__content'}>
-
           {/* Sidebar Icon */}
           {!withNavigation && (
             <div className={'sidebar__toggle'}>

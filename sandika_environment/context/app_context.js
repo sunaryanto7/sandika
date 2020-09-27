@@ -39,14 +39,12 @@ const AppContextProvider = ({ t, i18n, children }) => {
         version: 1,
         config: {
           imageSlider: {
-            autoPlay: true,
             items: 1,
             dots: false,
             nav: false,
-            stagePadding: 20,
             loop: true,
-            margin: 10
-          },
+            center: true
+          }
         }
       }
     },
@@ -156,10 +154,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
     }
   };
 
-  return (
-    <AppContext.Provider value={{ ctx, t, i18n }}>
-      {children}
-    </AppContext.Provider>);
+  return <AppContext.Provider value={{ ctx, t, i18n }}>{children}</AppContext.Provider>;
 };
 
 export { AppContext };

@@ -10,5 +10,9 @@
         padding-bottom: 50px;
         background: white;
         margin: 0 10px;
+
+        &--nomargin{
+            margin: 0;
+        }
     }
 }

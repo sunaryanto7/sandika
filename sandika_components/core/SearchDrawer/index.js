@@ -8,13 +8,16 @@ import ArrowBackIcon from '@public/media/icons/back.svg';
 import './searchdrawer.module.scss';
 
 const SearchDrawer = ({ open, handleClose }) => {
-
   const [searchSugesstionsItems, setSearchSugesstionsItems] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
-      .then(Response => { return Response.json() })
-      .then(Result => { return setSearchSugesstionsItems(Result) });
+      .then((Response) => {
+        return Response.json();
+      })
+      .then((Result) => {
+        return setSearchSugesstionsItems(Result);
+      });
   }, []);
 
   return (
@@ -32,7 +35,12 @@ const SearchDrawer = ({ open, handleClose }) => {
             {/* Search Form */}
             <div className={'drawer__search_form'}>
               <form>
-                <Input type={"text"} placeholder={"Cari Produk Yang Kamu Sukai"} id={"search"} name={"search"} />
+                <Input
+                  type={'text'}
+                  placeholder={'Cari Produk Yang Kamu Sukai'}
+                  id={'search'}
+                  name={'search'}
+                />
               </form>
             </div>
           </div>
@@ -41,21 +49,29 @@ const SearchDrawer = ({ open, handleClose }) => {
         {/* Search Result */}
         <div className={'search_drawer__body'}>
           <Block title={'Pencarian'}>
-            <Media><MediaBody>Payung</MediaBody></Media>
-            <Media><MediaBody>Keripik Singkong</MediaBody></Media>
-            <Media><MediaBody>Kertas Manila</MediaBody></Media>
+            <Media>
+              <MediaBody>Payung</MediaBody>
+            </Media>
+            <Media>
+              <MediaBody>Keripik Singkong</MediaBody>
+            </Media>
+            <Media>
+              <MediaBody>Kertas Manila</MediaBody>
+            </Media>
           </Block>
           <Block title={'Produk Populer'} additional={'Lihat Semua'}>
             {searchSugesstionsItems.map((item, i) => {
               if (i < 5) {
                 return (
                   <Media key={i}>
-                    <MediaImage><img src={item.image} /></MediaImage>
+                    <MediaImage>
+                      <img src={item.image} />
+                    </MediaImage>
                     <MediaBody>{item.title}</MediaBody>
                   </Media>
-                )
+                );
               }
-              return
+              return;
             })}
           </Block>
         </div>

@@ -22,7 +22,9 @@ const Filter = () => {
     <>
       <Modal
         active={showFilter}
-        close={() => { setShowFilter(!showFilter); }}
+        close={() => {
+          setShowFilter(!showFilter);
+        }}
         title={'Filter Pencarian'}
         caption={'Cari Barang Sesuai Kebutuhanmu'}>
         <ModalHeader>
@@ -36,23 +38,114 @@ const Filter = () => {
           <Form onSubmit={formik.handleSubmit}>
             <FormRow>
               <FormGroup title={'Kategori'}>
-                <Radio type={'radio'} name={'category'} id={'category_1'} onClick={formik.handleChange} value={'Roti'} label={'Roti'} />
-                <Radio type={'radio'} name={'category'} id={'category_2'} onClick={formik.handleChange} value={'Kue'} label={'Kue'} />
-                <Radio type={'radio'} name={'category'} id={'category_3'} onClick={formik.handleChange} value={'Kerpipik Singkong'} label={'Kerpipik Singkong'} />
-                <Radio type={'radio'} name={'category'} id={'category_4'} onClick={formik.handleChange} value={'Kerpipik Bakso'} label={'Kerpipik Bakso'} />
-                <Radio type={'radio'} name={'category'} id={'category_5'} onClick={formik.handleChange} value={'Hiasan Bunga'} label={'Hiasan Bunga'} />
+                <Radio
+                  type={'radio'}
+                  name={'category'}
+                  id={'category_1'}
+                  onClick={formik.handleChange}
+                  value={'Roti'}
+                  label={'Roti'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'category'}
+                  id={'category_2'}
+                  onClick={formik.handleChange}
+                  value={'Kue'}
+                  label={'Kue'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'category'}
+                  id={'category_3'}
+                  onClick={formik.handleChange}
+                  value={'Kerpipik Singkong'}
+                  label={'Kerpipik Singkong'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'category'}
+                  id={'category_4'}
+                  onClick={formik.handleChange}
+                  value={'Kerpipik Bakso'}
+                  label={'Kerpipik Bakso'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'category'}
+                  id={'category_5'}
+                  onClick={formik.handleChange}
+                  value={'Hiasan Bunga'}
+                  label={'Hiasan Bunga'}
+                />
               </FormGroup>
               <FormGroup title={'Merk'}>
-                <Radio type={'radio'} name={'merk'} id={'merk_1'} onClick={formik.handleChange} value={'Hushpuppies'} label={'Hushpuppies'} />
-                <Radio type={'radio'} name={'merk'} id={'merk_2'} onClick={formik.handleChange} value={'Ordinair'} label={'Ordinair'} />
-                <Radio type={'radio'} name={'merk'} id={'merk_3'} onClick={formik.handleChange} value={'Kay'} label={'Kay'} />
-                <Radio type={'radio'} name={'merk'} id={'merk_4'} onClick={formik.handleChange} value={'Sketchers'} label={'Sketchers'} />
+                <Radio
+                  type={'radio'}
+                  name={'merk'}
+                  id={'merk_1'}
+                  onClick={formik.handleChange}
+                  value={'Hushpuppies'}
+                  label={'Hushpuppies'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'merk'}
+                  id={'merk_2'}
+                  onClick={formik.handleChange}
+                  value={'Ordinair'}
+                  label={'Ordinair'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'merk'}
+                  id={'merk_3'}
+                  onClick={formik.handleChange}
+                  value={'Kay'}
+                  label={'Kay'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'merk'}
+                  id={'merk_4'}
+                  onClick={formik.handleChange}
+                  value={'Sketchers'}
+                  label={'Sketchers'}
+                />
               </FormGroup>
               <FormGroup title={'Sortir'}>
-                <Radio type={'radio'} name={'sort'} id={'sort_1'} onClick={formik.handleChange} value={'Ascending'} label={'Ascending'} />
-                <Radio type={'radio'} name={'sort'} id={'sort_2'} onClick={formik.handleChange} value={'Descending'} label={'Descending'} />
-                <Radio type={'radio'} name={'sort'} id={'sort_3'} onClick={formik.handleChange} value={'Harga Termurah'} label={'Harga Termurah'} />
-                <Radio type={'radio'} name={'sort'} id={'sort_4'} onClick={formik.handleChange} value={'Harga Termahal'} label={'Harga Termahal'} />
+                <Radio
+                  type={'radio'}
+                  name={'sort'}
+                  id={'sort_1'}
+                  onClick={formik.handleChange}
+                  value={'Ascending'}
+                  label={'Ascending'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'sort'}
+                  id={'sort_2'}
+                  onClick={formik.handleChange}
+                  value={'Descending'}
+                  label={'Descending'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'sort'}
+                  id={'sort_3'}
+                  onClick={formik.handleChange}
+                  value={'Harga Termurah'}
+                  label={'Harga Termurah'}
+                />
+                <Radio
+                  type={'radio'}
+                  name={'sort'}
+                  id={'sort_4'}
+                  onClick={formik.handleChange}
+                  value={'Harga Termahal'}
+                  label={'Harga Termahal'}
+                />
               </FormGroup>
             </FormRow>
             <FormRow>

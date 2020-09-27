@@ -19,7 +19,6 @@ import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 library.add(faShoppingCart, faBars);
 
 const Sandika = ({ Component, pageProps }) => {
-
   return (
     <AppContextProvider>
       <ApolloProvider client={client}>

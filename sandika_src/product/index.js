@@ -6,13 +6,10 @@ import { AppContext } from '@sandika_environment/context/app_context';
 
 import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
-import Banner from '@sandika_components/widget/Banner';
-import ProductSlider from '@sandika_components/widget/ProductSlider';
-import CatalogProduct from '@sandika_components/widget/CatalogProduct';
-import Category from '@sandika_components/widget/Category';
+import ProductMedia from '@sandika_components/core/ProductMedia';
 
 const Product = ({ mainBannerImages, productData, promoBannerImages }) => {
-  const { config } = useContext(AppContext).ctx.config.slider;
+  const { config } = useContext(AppContext).ctx.config.productMedia;
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.product.layout;
 
   return (
@@ -23,11 +20,10 @@ const Product = ({ mainBannerImages, productData, promoBannerImages }) => {
       </Head>
 
       {/* Body */}
-      <Layout
-        header={header}
-        navigation={navigation}
-        filter={filter}
-        footer={footer}>
+      <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
+        <Block nomargin>
+          <ProductMedia images={mainBannerImages} config={config.imageSlider} />
+        </Block>
       </Layout>
     </>
   );
@@ -35,7 +31,7 @@ const Product = ({ mainBannerImages, productData, promoBannerImages }) => {
 
 Product.propTypes = {
   mainBannerImages: PropTypes.array,
-  productData: PropTypes.array,
+  productData: PropTypes.object,
   promoBannerImages: PropTypes.array
 };
 

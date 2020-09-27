@@ -13,11 +13,7 @@ const Category = ({ mainBannerImages, productData }) => {
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.category.layout;
 
   return (
-    <Layout
-      header={header}
-      navigation={navigation}
-      filter={filter}
-      footer={footer}>
+    <Layout header={header} navigation={navigation} filter={filter} footer={footer}>
       <Block>
         <Banner config={config.imageSlider} images={mainBannerImages} />
       </Block>

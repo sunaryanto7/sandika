@@ -12,14 +12,10 @@ import './navigation.module.scss';
 const ButtonNavigation = ({ children, link, name, onClick }) => {
   if (name === 'search' && link === null) {
     return (
-      <Button
-        fullWidth
-        onClick={onClick}
-        style={'navigation__link'}
-      >
+      <Button fullWidth onClick={onClick} style={'navigation__link'}>
         <SearchIcon className={'search_icon'} />
       </Button>
-    )
+    );
   }
 
   return (
@@ -31,9 +27,8 @@ const ButtonNavigation = ({ children, link, name, onClick }) => {
       }}>
       {children}
     </Button>
-  )
+  );
 };
-
 
 const Navigation = ({ active, search }) => {
   const [openSearch, setOpenSearch] = useState(false);
@@ -49,7 +44,9 @@ const Navigation = ({ active, search }) => {
       name: 'search',
       link: search.enable ? null : '/search',
       icon: <SearchIcon className={'search_icon'} />,
-      onClick: () => { setOpenSearch(!openSearch); }
+      onClick: () => {
+        setOpenSearch(!openSearch);
+      }
     },
     {
       name: 'cart',
@@ -62,7 +59,7 @@ const Navigation = ({ active, search }) => {
       link: '/account',
       icon: <UserIcon className={'user_icon'} />,
       onClick: null
-    },
+    }
   ];
 
   return (
@@ -70,19 +67,18 @@ const Navigation = ({ active, search }) => {
       <div className={'navigation'}>
         {buttonList.map((data, i) => {
           return (
-            <div className={active === data.name ?
-              'navigation__item navigation__item-active' : 'navigation__item'}
-              key={i}
-            >
-              <ButtonNavigation
-                link={data.link}
-                name={data.name}
-                onClick={data.onClick}
-              >
+            <div
+              className={
+                active === data.name
+                  ? 'navigation__item navigation__item-active'
+                  : 'navigation__item'
+              }
+              key={i}>
+              <ButtonNavigation link={data.link} name={data.name} onClick={data.onClick}>
                 {data.icon}
               </ButtonNavigation>
             </div>
-          )
+          );
         })}
 
         {search.enable && search.type === 'drawer' && (
@@ -90,7 +86,8 @@ const Navigation = ({ active, search }) => {
             open={openSearch}
             handleClose={() => {
               setOpenSearch(!openSearch);
-            }} />
+            }}
+          />
         )}
       </div>
     </>
