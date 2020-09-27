@@ -1,6 +1,6 @@
 import Category from '@sandika_src/category';
 
-export async function getServerSideProps() {
+Category.getInitialProps = async () => {
   const mainBannerImages = [
     {
       src:
@@ -19,11 +19,9 @@ export async function getServerSideProps() {
   const productJson = await productResponse.json();
 
   return {
-    props: {
-      namespacesRequired: ['core'],
-      mainBannerImages: mainBannerImages,
-      productData: productJson
-    }
+    namespacesRequired: ['core'],
+    mainBannerImages: mainBannerImages,
+    productData: productJson
   };
 }
 

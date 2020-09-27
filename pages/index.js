@@ -1,6 +1,6 @@
 import Home from '@sandika_src/index.js';
 
-export async function getServerSideProps() {
+Home.getInitialProps = async () => {
   // GET PRODUCTS
   const productResponse = await fetch('https://fakestoreapi.com/products');
   const productJson = await productResponse.json();
@@ -39,12 +39,10 @@ export async function getServerSideProps() {
   ];
 
   return {
-    props: {
-      namespacesRequired: ['core'],
-      mainBannerImages: mainBannerImages,
-      promoBannerImages: promoBannerImages,
-      productData: productJson
-    }
+    namespacesRequired: ['core'],
+    mainBannerImages: mainBannerImages,
+    promoBannerImages: promoBannerImages,
+    productData: productJson
   };
 }
 

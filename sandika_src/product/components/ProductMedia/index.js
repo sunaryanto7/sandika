@@ -62,7 +62,7 @@ const ProductMedia = ({ config, ...props }) => {
       setIsMount(false);
     };
   }, []);
-  console.log(default_product)
+
   if (isMount) {
     return (
       <>

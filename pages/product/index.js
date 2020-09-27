@@ -1,6 +1,6 @@
 import Product from '@sandika_src/product';
 
-export async function getServerSideProps() {
+Product.getInitialProps = async () => {
   // EXAMPLE GET CONFIGURABLE PRODUCTS
   const configurableProductFetch = await fetch('http://localhost:3000/api/example/product_configurable');
   const configurableProductResponse = await configurableProductFetch.json();
@@ -30,12 +30,10 @@ export async function getServerSideProps() {
   ];
 
   return {
-    props: {
-      namespacesRequired: ['core'],
-      promoBannerImages: promoBannerImages,
-      productData: configurableProductResponse,
-      relatedProductData: productJson
-    }
+    namespacesRequired: ['core'],
+    promoBannerImages: promoBannerImages,
+    productData: configurableProductResponse,
+    relatedProductData: productJson
   };
 }
 
