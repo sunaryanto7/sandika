@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-// import Footer from '@sandika_components/core/Footer';
+import Footer from '@sandika_components/core/Footer';
 import Filter from '@sandika_components/core/Filter';
 import Header from '@sandika_components/core/Header';
 import Navigation from '@sandika_components/core/Navigation';
@@ -16,7 +16,7 @@ const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
         </div>
         {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
         {filter !== undefined && filter.enable && <Filter />}
-        {/* {footer !== undefined && footer.enable && <Footer />} */}
+        {footer !== undefined && footer.enable && <Footer />}
       </div>
     </>
   );

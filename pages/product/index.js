@@ -2,10 +2,12 @@ import Product from '@sandika_src/product';
 
 export async function getServerSideProps() {
   // EXAMPLE GET CONFIGURABLE PRODUCTS
-  const configurableProductFetch = await fetch(
-    'http://localhost:3000/api/example/product_configurable'
-  );
+  const configurableProductFetch = await fetch('http://localhost:3000/api/example/product_configurable');
   const configurableProductResponse = await configurableProductFetch.json();
+
+  // GET PRODUCTS FROM FAKESTORE API THEN PASS AS RELATED PRODUCT
+  const productResponse = await fetch('https://fakestoreapi.com/products');
+  const productJson = await productResponse.json();
 
 
   // IMAGE SLIDER DATA - (PROMO BANNER)
@@ -31,7 +33,8 @@ export async function getServerSideProps() {
     props: {
       namespacesRequired: ['core'],
       promoBannerImages: promoBannerImages,
-      productData: configurableProductResponse
+      productData: configurableProductResponse,
+      relatedProductData: productJson
     }
   };
 }

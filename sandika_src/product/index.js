@@ -6,11 +6,14 @@ import { AppContext } from '@sandika_environment/context/app_context';
 
 import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
+import Banner from '@sandika_components/widget/Banner';
+import ProductSlider from '@sandika_components/widget/ProductSlider';
 import ProductMedia from './components/ProductMedia';
 import ProductForm from './components/ProductForm';
 
-const Product = ({ productData, promoBannerImages }) => {
-  const { config } = useContext(AppContext).ctx.config.productMedia;
+const Product = ({ relatedProductData, productData, promoBannerImages }) => {
+  const productMediaConfig = useContext(AppContext).ctx.config.productMedia.config;
+  const relatedProductConfig = useContext(AppContext).ctx.config.slider.config;
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.product.layout;
   const { __typename } = productData.data.products.items[0];
 
@@ -44,11 +47,19 @@ const Product = ({ productData, promoBannerImages }) => {
 
       {/* Body */}
       <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
-        <ProductMedia config={config.imageSlider} {...productMediaProps} />
+        <ProductMedia config={productMediaConfig.imageSlider} {...productMediaProps} />
 
         {/* Product Form */}
         <Block>
           <ProductForm field={{}} />
+        </Block>
+
+        <Block title={'Related Product'} additional={'Lihat Semua'} style={'product__related__product'}>
+          <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
+        </Block>
+
+        <Block style={'product__promo__banner'}>
+          <Banner config={productMediaConfig.imageSlider} images={promoBannerImages} />
         </Block>
       </Layout>
     </>
@@ -57,6 +68,7 @@ const Product = ({ productData, promoBannerImages }) => {
 
 Product.propTypes = {
   productData: PropTypes.object,
+  relatedProductData: PropTypes.array,
   promoBannerImages: PropTypes.array
 };
 
