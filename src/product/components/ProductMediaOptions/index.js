@@ -3,12 +3,35 @@ import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/For
 import { useState } from 'react';
 
 const ProductMediaOptions = ({ options, activeOptions }) => {
-	const [activeAttribute, setActiveAttribue] = useState(activeOptions);
+	const [activeAttribute, setActiveAttribute] = useState(activeOptions);
+
+	const sortArrayOfObject = (array) => {
+		const _result = []
+		array.map((unordered) => {
+			let _temp = {}
+			Object.keys(unordered).sort().forEach((key) => {
+				_temp[key] = unordered[key]
+			})
+			_result.push(_temp)
+		})
+		return _result
+	}
+
 	const activeSwatch = (code) => {
 		let _temp = {};
 		activeAttribute.map((data) => { if (data.code === code) { _temp = data.label } })
 		return _temp;
-	}
+	};
+
+	const handleSetActiveAttribute = (swatch, attribute_code) => {
+		let _temp = { 'code': attribute_code, ...swatch }
+		let _result = []
+		activeAttribute.filter((data) => {
+			if (data.code === _temp.code) { _temp['__typename'] = "ConfigurableAttributeOption"; _result.push(_temp); }
+			if (data.code !== _temp.code) { _result.push(data) }
+		})
+		setActiveAttribute(sortArrayOfObject(_result))
+	};
 
 	return (
 		<>
@@ -16,7 +39,6 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 				<Form>
 					{options.map((swatchType, i) => {
 						let _temp = activeSwatch(swatchType.attribute_code);
-						console.log(swatchType)
 						return (
 							<FormRow key={i}>
 								<FormGroup title={swatchType.label}>
@@ -27,9 +49,10 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 												label={swatch.label}
 												value={JSON.stringify({ ...swatch })}
 
-												name={swatchType.attribute_code}
-												id={swatchType.attribute_code}
+												name={swatch.label.toLowerCase()}
+												id={swatch.label.toLowerCase()}
 												checked={_temp === swatch.label ? true : false}
+												onClick={() => { handleSetActiveAttribute({ ...swatch }, swatchType.attribute_code) }}
 												key={j} />
 										)
 									})}
