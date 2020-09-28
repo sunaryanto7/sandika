@@ -24,7 +24,6 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
     case 'ConfigurableProduct':
       // For Product Media
       // Default Product Will Be Data 0 Because There Is No Default Product Included
-      productMediaProps.default_product = productData.data.products.items[0].variants[0];
       productMediaProps.configurable_options = productData.data.products.items[0].configurable_options;
       productMediaProps.variants = productData.data.products.items[0].variants;
       productMediaProps.__typename = __typename;

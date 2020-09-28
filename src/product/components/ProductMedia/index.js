@@ -13,11 +13,12 @@ const Slider = dynamic(() => import('react-owl-carousel'), {
 });
 
 const ProductMedia = ({ config, ...props }) => {
-  const { default_product, configurable_options, variants, __typename } = { ...props };
-
+  const { configurable_options, variants, __typename } = { ...props };
   const [isMount, setIsMount] = useState(false);
-  const [imageGallery, setImageGallery] = useState(default_product.product.media_gallery)
-  const [product, setProduct] = useState(default_product.product);
+
+  const [activeOptions, setActiveOptions] = useState(variants[0].attributes);
+  const [activeProduct, setActiveProduct] = useState(variants[0].product);
+  const [imageGallery, setImageGallery] = useState(activeProduct.media_gallery)
 
   useEffect(() => {
     window.jQuery = $;
@@ -33,6 +34,10 @@ const ProductMedia = ({ config, ...props }) => {
     };
   }, []);
 
+  const handleOptionsChange = () => {
+    return null
+  };
+
   if (isMount) {
     return (
       <>
@@ -46,14 +51,14 @@ const ProductMedia = ({ config, ...props }) => {
 
         <Block style={'product__media__description'}>
           <div className={'product__sku'}>
-            <h4>{`#${product.sku}`}</h4>
+            <h4>{`#${activeProduct.sku}`}</h4>
           </div>
           <div className={'product__name'}>
-            <h1>{product.name}</h1>
+            <h1>{activeProduct.name}</h1>
           </div>
           <div className={'product__price'}>
-            <div className={'product__price__regular'}><h5>{`USD ${product.price_range.maximum_price.regular_price.value}`}</h5></div>
-            <div className={'product__price__final'}><h4>{`USD ${product.price_range.maximum_price.final_price.value}`}</h4></div>
+            <div className={'product__price__regular'}><h5>{`USD ${activeProduct.price_range.maximum_price.regular_price.value}`}</h5></div>
+            <div className={'product__price__final'}><h4>{`USD ${activeProduct.price_range.maximum_price.final_price.value}`}</h4></div>
           </div>
         </Block>
 
@@ -66,7 +71,7 @@ const ProductMedia = ({ config, ...props }) => {
           </p>
         </Block>
 
-        {__typename === 'ConfigurableProduct' ? <ProductMediaOptions options={configurable_options} /> : null}
+        {__typename === 'ConfigurableProduct' ? <ProductMediaOptions options={configurable_options} activeOptions={activeOptions} /> : null}
       </>
     );
   }

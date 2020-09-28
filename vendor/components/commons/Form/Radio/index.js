@@ -9,17 +9,16 @@ import './radio.module.scss';
 import PropTypes from 'prop-types';
 
 const Radio = (props) => {
-  const { id, name, type, value, label, onClick } = props;
+  const { id, name, label, other = { ...props } } = props;
 
   return (
     <>
       <input
         id={id}
         name={name}
-        type={type}
-        onClick={onClick}
-        value={value}
+        type='radio'
         className={'form__radio'}
+        {...other}
       />
       {label && (
         <label htmlFor={id}>

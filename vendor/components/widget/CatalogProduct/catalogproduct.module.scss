@@ -2,12 +2,6 @@
     display: inline-flex;
     flex-wrap: wrap;
     
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
     .product__item {
         flex: 0 0 calc((100% / 2) - 5px);
         margin-bottom: 10px;
