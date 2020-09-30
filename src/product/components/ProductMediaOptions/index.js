@@ -52,7 +52,7 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 												name={`swatch__opt-${swatch.label.toLowerCase()}`}
 												id={`swatch__opt-${swatch.label.toLowerCase()}`}
 												checked={_temp === swatch.label ? true : false}
-												onClick={() => { handleSetActiveAttribute({ ...swatch }, swatchType.attribute_code) }}
+												onChange={() => { handleSetActiveAttribute({ ...swatch }, swatchType.attribute_code) }}
 												key={j} />
 										)
 									})}
