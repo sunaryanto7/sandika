@@ -38,7 +38,6 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 			<Block style={'product__media__options'}>
 				<Form>
 					{options.map((swatchType, i) => {
-						let _temp = activeSwatch(swatchType.attribute_code);
 						return (
 							<FormRow key={i}>
 								<FormGroup title={swatchType.label}>
@@ -49,10 +48,8 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 												label={swatch.label}
 												value={JSON.stringify({ ...swatch })}
 
-												name={`swatch__opt-${swatch.label.toLowerCase()}`}
+												name={`swatch__opt-${swatchType.attribute_code.toLowerCase()}`}
 												id={`swatch__opt-${swatch.label.toLowerCase()}`}
-												checked={_temp === swatch.label ? true : false}
-												onChange={() => { handleSetActiveAttribute({ ...swatch }, swatchType.attribute_code) }}
 												key={j} />
 										)
 									})}
