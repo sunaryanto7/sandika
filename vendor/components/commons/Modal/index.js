@@ -30,7 +30,7 @@ const Modal = ({ active, close, title, caption, children, footer }) => {
     active ? (document.body.style.overflow = 'hidden') : document.body.removeAttribute('style');
   }, [active]);
 
-  var classNames = [active ? 'active' : 'deactive', 'modal__wrapper'].filter(Boolean).join(' ');
+  var classNames = [active ? 'active' : 'deactive', 'modal'].filter(Boolean).join(' ');
 
   return (
     <>

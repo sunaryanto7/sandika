@@ -1,8 +1,7 @@
 .filter__toggle{
     display: flex;
-    position: fixed;
+    position: sticky;
     bottom: 0;
-    left: 0;
     width: 100%;
     background: #fff;
     padding: 15px;
