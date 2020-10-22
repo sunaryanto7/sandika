@@ -1,0 +1,11 @@
+.product__form{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    max-width: 480px;
+    z-index: 1030;
+    border-top: 1px solid #efefef;
+}

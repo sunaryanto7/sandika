@@ -50,17 +50,17 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
       <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
         <ProductMedia config={productMediaConfig.imageSlider} {...productMediaProps} />
 
-        {/* Product Form */}
-        <Block>
-          <ProductForm field={{}} />
-        </Block>
-
         <Block title={'Related Product'} additional={'Lihat Semua'} style={'product__related__product'}>
           <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
         </Block>
 
         <Block style={'product__promo__banner'}>
           <Banner config={productMediaConfig.imageSlider} images={promoBannerImages} />
+        </Block>
+
+        {/* Product Form */}
+        <Block style={'product__form'}>
+          <ProductForm field={{}} />
         </Block>
       </Layout>
     </>

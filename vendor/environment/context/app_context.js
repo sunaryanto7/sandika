@@ -93,7 +93,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
               withNavigation: true,
               withAppName: true,
               withMinicart: false,
-              withSearch: false
+              withSearch: true
             }
           },
           navigation: {
@@ -127,7 +127,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
               withNavigation: true,
               withAppName: true,
               withMinicart: false,
-              withSearch: false
+              withSearch: true
             }
           },
           navigation: {

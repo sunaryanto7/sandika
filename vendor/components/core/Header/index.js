@@ -7,7 +7,7 @@ import GlobalNotification from '@sandika_components/core/GlobalNotification';
 import ArrowBackIcon from '@public/media/icons/back.svg';
 import MenuIcon from '@public/media/icons/menu.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
-import theme from './header.module.scss';
+import './header.module.scss';
 
 const Header = (props) => {
   const { withAppName, withMinicart, withNavigation, withSearch } = props;
@@ -53,7 +53,7 @@ const Header = (props) => {
           )}
 
           {/* Minicart */}
-          {withMinicart && (
+          {withSearch && (
             <div className={'minicart__block'}>
               <BasketIcon className={'shop__icon'} />
             </div>
