@@ -7,7 +7,7 @@ import HomeIcon from '@public/media/icons/home.svg';
 import SearchIcon from '@public/media/icons/search.svg';
 import UserIcon from '@public/media/icons/user.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
-import './navigation.module.scss';
+import theme from './navigation.module.scss';
 
 const ButtonNavigation = ({ children, link, name, onClick }) => {
   if (name === 'search' && link === null) {
@@ -32,6 +32,11 @@ const ButtonNavigation = ({ children, link, name, onClick }) => {
 
 const Navigation = ({ active, search }) => {
   const [openSearch, setOpenSearch] = useState(false);
+
+  const style = {
+    'navigation': theme['navigation'],
+
+  };
 
   const buttonList = [
     {
@@ -64,7 +69,7 @@ const Navigation = ({ active, search }) => {
 
   return (
     <>
-      <div className={'navigation'}>
+      <div className={theme.navigation}>
         {buttonList.map((data, i) => {
           return (
             <div

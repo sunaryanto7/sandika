@@ -18,7 +18,14 @@
         padding: 0 15px;
         align-items: center;
         
-
+        .icon {
+            width: 20px;
+            height: auto;
+            fill: #0eac32;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
         .sidebar__toggle, 
         .history__back {
             flex: 0 0 10%;
@@ -26,13 +33,6 @@
 
             button{
                 padding: 0;
-            }
-            .menu__icon {
-                width: 20px;
-                height: auto;
-                fill: #0eac32;
-                display: inline-block;
-                vertical-align: middle;
             }
         }
 
@@ -48,7 +48,7 @@
             }
         }
 
-        .minicart__block {
+        .minicart {
             flex: 0 0 10%;
             align-self: center;
             text-align: right;

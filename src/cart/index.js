@@ -6,11 +6,12 @@ import { AppContext } from '@sandika_environment/context/app_context';
 
 import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
+import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media';
 
-const Cart = ({ }) => {
+const Cart = ({ productData }) => {
   const { config } = useContext(AppContext).ctx.config.slider;
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.cart.layout;
-
+  console.log(productData);
   return (
     <>
       {/* Head */}
@@ -22,7 +23,26 @@ const Cart = ({ }) => {
 
       {/* Body */}
       <Layout header={header} navigation={navigation} filter={filter} footer={footer}>
-        <Block title={'Kerjanjang'}>
+        <Block title={'Kerjanjang'} style={'cart'}>
+          {productData.map((item, i) => {
+            return (
+              <Media key={i} style={'cart__item'}>
+                <MediaBody>
+                  <Media key={i}>
+                    <MediaImage>
+                      <img src={item.image} />
+                    </MediaImage>
+                    <MediaBody>{item.title}</MediaBody>
+                  </Media>
+                </MediaBody>
+              </Media>
+            );
+          })}
+        </Block>
+        <Block title={'History Penjelajahan Kamu'}>
+
+        </Block>
+        <Block title={'Produk Yang Mungkin Kamu Sukai'}>
 
         </Block>
       </Layout>

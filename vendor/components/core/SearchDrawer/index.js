@@ -5,10 +5,19 @@ import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media'
 import { Input } from '@sandika_components/commons/Form';
 import Block from '@sandika_components/core/Block';
 import ArrowBackIcon from '@public/media/icons/back.svg';
-import './searchdrawer.module.scss';
+import theme from './searchdrawer.module.scss';
 
 const SearchDrawer = ({ open, handleClose }) => {
   const [searchSugesstionsItems, setSearchSugesstionsItems] = useState([]);
+
+  const style = {
+    'search_drawer__header': theme['search_drawer__header'],
+    'search_drawer__header_content': theme['search_drawer__header_content'],
+    'search_drawer__navigation': theme['search_drawer__navigation'],
+    'search_drawer__body': theme['search_drawer__body'],
+    'drawer__search_form': theme['drawer__search_form'],
+
+  };
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -23,17 +32,17 @@ const SearchDrawer = ({ open, handleClose }) => {
   return (
     <>
       <Drawer blank isOpen={open}>
-        <div className={'search_drawer__header'}>
-          <div className={'search_drawer__header_content'}>
+        <div className={theme.search_drawer__header}>
+          <div className={theme.search_drawer__header_content}>
             {/* Back Button */}
-            <div className={'search_drawer__navigation'}>
+            <div className={theme.search_drawer__navigation}>
               <Button btnWhite onClick={handleClose}>
                 <ArrowBackIcon className={'close__icon'} />
               </Button>
             </div>
 
             {/* Search Form */}
-            <div className={'drawer__search_form'}>
+            <div className={theme.drawer__search_form}>
               <form>
                 <Input
                   type={'text'}
@@ -47,7 +56,7 @@ const SearchDrawer = ({ open, handleClose }) => {
         </div>
 
         {/* Search Result */}
-        <div className={'search_drawer__body'}>
+        <div className={theme.search_drawer__body}>
           <Block title={'Pencarian'}>
             <Media>
               <MediaBody>Payung</MediaBody>

@@ -3,14 +3,23 @@ import PropTypes from 'prop-types';
 import Footer from '@sandika_components/core/Footer';
 import Header from '@sandika_components/core/Header';
 import Navigation from '@sandika_components/core/Navigation';
-import './layout.module.scss';
+import theme from './layout.module.scss';
 
 const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
+
+  const style = {
+    'wrapper': theme['wrapper'],
+    'main': () => {
+      if (nomargin) { return [theme['main__content'], theme['main__content--nomargin']].filter(Boolean).join(' ') }
+      return theme['main__content']
+    }
+  };
+
   return (
     <>
-      <div className={'wrapper'} id={'main'}>
+      <div className={style.wrapper} id={'main'}>
         {header !== undefined && header.enable && <Header {...header.props} />}
-        <div className={nomargin ? 'main__content main__content--nomargin' : 'main__content'}>
+        <div className={style.main()}>
           {children}
         </div>
         {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
@@ -20,10 +29,18 @@ const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
   );
 };
 
+Layout.defaultProps = {
+  children: [],
+  header: [],
+  navigation: [],
+  nomargin: false
+};
+
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   header: PropTypes.object,
-  navigation: PropTypes.object
+  navigation: PropTypes.object,
+  nomargin: PropTypes.bool
 };
 
 export default Layout;

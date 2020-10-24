@@ -1,25 +1,37 @@
-import './media.module.scss';
+import theme from './media.module.scss';
 
 const MediaBody = ({ children }) => {
+  const style = {
+    'media__body': theme['media__body']
+  };
+
   return (
     <>
-      <div className={'mediaBody'}>{children}</div>
+      <div className={style.media__body}>{children}</div>
     </>
   );
 };
 
 const MediaImage = ({ children }) => {
+  const style = {
+    'media__image': theme['media__image']
+  };
+
   return (
     <>
-      <div className={'mediaImage'}>{children}</div>
+      <div className={style.media__image}>{children}</div>
     </>
   );
 };
 
 const Media = ({ children, onClick }) => {
+  const style = {
+    'media': theme['media']
+  };
+
   return (
     <>
-      <div className={'media'} role="button" onClick={onClick}>
+      <div className={style.media} role="button" onClick={onClick}>
         {children}
       </div>
     </>

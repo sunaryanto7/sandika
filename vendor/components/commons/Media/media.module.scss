@@ -6,27 +6,28 @@
     align-items: center;
     background: white;
     border-radius: 10px;
-}
 
-.mediaImage{
-    flex: 0 0 15%;
-    min-height: 40px;
-    overflow: hidden;
-    position: relative;
-    padding: 10px;
-    border-radius: 10px;
-
-    img{
-        max-width: 70px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    &__image{
+        flex: 0 0 15%;
+        min-height: 40px;
+        overflow: hidden;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+    
+        img{
+            max-width: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
+    &__body{
+        flex: 0 0 85%;
+        margin-left: 10px;
+        font-size: 12px;
     }
 }
 
-.mediaBody{
-    flex: 0 0 85%;
-    margin-left: 10px;
-    font-size: 12px;
-}

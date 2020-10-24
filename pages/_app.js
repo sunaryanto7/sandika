@@ -1,5 +1,5 @@
 // GLOBAL STYLE
-import '@sandika_environment/styles/core.scss';
+import '@sandika_styles/core.css';
 
 // PROPTYPES CHECKING
 import PropTypes from 'prop-types';

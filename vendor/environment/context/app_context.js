@@ -92,8 +92,8 @@ const AppContextProvider = ({ t, i18n, children }) => {
             props: {
               withNavigation: true,
               withAppName: true,
-              withMinicart: false,
-              withSearch: true
+              withMinicart: true,
+              withSearch: false
             }
           },
           navigation: {
@@ -160,8 +160,8 @@ const AppContextProvider = ({ t, i18n, children }) => {
             props: {
               withNavigation: true,
               withAppName: true,
-              withMinicart: false,
-              withSearch: true
+              withMinicart: true,
+              withSearch: false
             }
           },
           navigation: {

@@ -18,6 +18,7 @@ const nextConfig = {
     config.resolve.alias['@sandika_components'] = path.join(__dirname, 'vendor/components');
     config.resolve.alias['@sandika_environment'] = path.join(__dirname, 'vendor/environment');
     config.resolve.alias['@sandika_modules'] = path.join(__dirname, 'vendor/modules');
+    config.resolve.alias['@sandika_styles'] = path.join(__dirname, 'vendor/styles');
     config.resolve.alias['@sandika_src'] = path.join(__dirname, 'src');
     config.resolve.alias['@public/media'] = path.join(__dirname, 'public/media');
 
@@ -37,4 +38,14 @@ const nextConfig = {
   }
 };
 
-module.exports = withPlugins([[withSass], [withCSS]], nextConfig);
+module.exports = withPlugins([
+  [withCSS, {
+    cssModules: false
+  }],
+  [withSass, {
+    cssModules: true,
+    cssLoaderOptions: {
+      localIdentName: "sdk[hash:base64:7]"
+    }
+  }]
+], nextConfig);
