@@ -150,7 +150,41 @@ const AppContextProvider = ({ t, i18n, children }) => {
             version: 1
           }
         }
-      }
+      },
+      cart: {
+        enable: true,
+        layout: {
+          header: {
+            enable: true,
+            version: 1,
+            props: {
+              withNavigation: true,
+              withAppName: true,
+              withMinicart: false,
+              withSearch: true
+            }
+          },
+          navigation: {
+            enable: true,
+            version: 1,
+            props: {
+              active: 'cart',
+              search: {
+                enable: true,
+                type: 'drawer'
+              }
+            }
+          },
+          footer: {
+            enable: false,
+            version: 1
+          },
+          filter: {
+            enable: false,
+            version: 1
+          }
+        }
+      },
     }
   };
 
