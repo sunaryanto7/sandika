@@ -6,7 +6,7 @@ import Block from '@sandika_components/core/Block';
 import ProductMediaOptions from '@sandika_src/product/components/ProductMediaOptions';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import './productmedia.module.scss';
+import theme from './productmedia.module.scss';
 
 const Slider = dynamic(() => import('react-owl-carousel'), {
   ssr: false
@@ -19,6 +19,16 @@ const ProductMedia = ({ config, ...props }) => {
   const [activeOptions, setActiveOptions] = useState(variants[0].attributes);
   const [activeProduct, setActiveProduct] = useState(variants[0].product);
   const [imageGallery, setImageGallery] = useState(activeProduct.media_gallery)
+  const styles = {
+    'product__media__images': theme['product__media__images'],
+    'product__media__description': theme['product__media__description'],
+    'product__sku': theme['product__sku'],
+    'product__name': theme['product__name'],
+    'product__price': theme['product__price'],
+    'product__price__regular': theme['product__price__regular'],
+    'product__price__final': theme['product__price__final'],
+    'product__desription': theme['product__desription']
+  };
 
   useEffect(() => {
     window.jQuery = $;
@@ -41,7 +51,7 @@ const ProductMedia = ({ config, ...props }) => {
   if (isMount) {
     return (
       <>
-        <Block style={'product__media__images'}>
+        <Block style={styles.product__media__images}>
           <Slider {...config}>
             {imageGallery.map((data, i) => {
               return <img src={data.url} alt={data.alt} key={i} />;
@@ -49,20 +59,20 @@ const ProductMedia = ({ config, ...props }) => {
           </Slider>
         </Block>
 
-        <Block style={'product__media__description'}>
-          <div className={'product__sku'}>
+        <Block style={styles.product__media__description}>
+          <div className={''}>
             <h4>{`#${activeProduct.sku}`}</h4>
           </div>
-          <div className={'product__name'}>
+          <div className={styles.product__name}>
             <h1>{activeProduct.name}</h1>
           </div>
-          <div className={'product__price'}>
-            <div className={'product__price__regular'}><h5>{`USD ${activeProduct.price_range.maximum_price.regular_price.value}`}</h5></div>
-            <div className={'product__price__final'}><h4>{`USD ${activeProduct.price_range.maximum_price.final_price.value}`}</h4></div>
+          <div className={styles.product__price}>
+            <div className={styles.product__price__regular}><h5>{`USD ${activeProduct.price_range.maximum_price.regular_price.value}`}</h5></div>
+            <div className={styles.product__price__final}><h4>{`USD ${activeProduct.price_range.maximum_price.final_price.value}`}</h4></div>
           </div>
         </Block>
 
-        <Block style={'product__desription'}>
+        <Block style={styles.product__desription}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

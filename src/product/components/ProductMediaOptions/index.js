@@ -1,9 +1,16 @@
 import Block from '@sandika_components/core/Block';
 import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
+import theme from './productmediaoptions.module.scss'
 import { useState } from 'react';
 
 const ProductMediaOptions = ({ options, activeOptions }) => {
 	const [activeAttribute, setActiveAttribute] = useState(activeOptions);
+
+	const styles = {
+		'product__media__options': theme['product__media__options'],
+		'form__row': theme['form__row'],
+		'form__gruop': theme['form__group']
+	};
 
 	const sortArrayOfObject = (array) => {
 		const _result = [];
@@ -35,12 +42,12 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 
 	return (
 		<>
-			<Block style={'product__media__options'}>
+			<Block style={styles.product__media__options}>
 				<Form>
 					{options.map((swatchType, i) => {
 						return (
-							<FormRow key={i}>
-								<FormGroup title={swatchType.label}>
+							<FormRow key={i} style={styles.form__row}>
+								<FormGroup title={swatchType.label} style={styles.form__group}>
 									{swatchType.values.map((swatch, j) => {
 										return (
 											<Radio

@@ -1,10 +1,13 @@
 import Button from '@sandika_components/commons/Button';
-import './productform.module.scss';
+import theme from './productform.module.scss';
 
 const ProductForm = () => {
+    const styles = {
+        'product__form__action': theme['product__form--action']
+    };
     return (
         <>
-            <div className={"product__form--action"}>
+            <div className={styles.product__form__action}>
                 <Button
                     fullWidth
                     btnDanger>

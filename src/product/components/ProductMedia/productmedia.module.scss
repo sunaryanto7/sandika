@@ -48,37 +48,6 @@
            
         }
     }
-
-    &__options{
-        padding: 0 15px;
-
-        .form{
-            &__row{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin-bottom: 0;
-
-                h4{
-                    color: grey;
-                    font-weight: 500;
-                    font-size: 14px;
-                    flex: 0 0 25%;
-                    margin: 15px 0;
-                    text-transform: capitalize;
-                }
-
-                label{
-                    margin-bottom:0;
-                    padding:10px 15px;
-                }
-
-                &__group{
-                    flex: 0 0 75%;
-                }
-            }
-        }
-    }
 }
 
 .product__desription{
