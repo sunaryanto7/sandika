@@ -126,7 +126,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             props: {
               withNavigation: true,
               withAppName: true,
-              withMinicart: false,
+              withMinicart: true,
               withSearch: true
             }
           },
