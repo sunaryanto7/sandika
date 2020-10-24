@@ -36,7 +36,6 @@ const Navigation = ({ active, search }) => {
   const styles = {
     'navigation': theme['navigation'],
     'navigation__item': (name) => {
-      console.log(name)
       if (active === name) { return [theme['navigation__item'], theme['navigation__item-active']].filter(Boolean).join(' '); }
       return theme['navigation__item'];
     }

@@ -5,7 +5,6 @@ import theme from './block.module.scss';
 
 const Block = ({ children, title, additional, style, padding15 }) => {
 
-  console.log(padding15);
   const styles = {
     'widget': [
       theme['widget'],

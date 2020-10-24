@@ -11,7 +11,6 @@ import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media'
 const Cart = ({ productData }) => {
   const { config } = useContext(AppContext).ctx.config.slider;
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.cart.layout;
-  console.log(productData);
   return (
     <>
       {/* Head */}
