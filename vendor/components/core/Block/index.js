@@ -3,9 +3,15 @@ import Button from '@sandika_components/commons/Button';
 import is_empty from '@sandika_modules/is_empty';
 import theme from './block.module.scss';
 
-const Block = ({ children, title, additional, style }) => {
+const Block = ({ children, title, additional, style, padding15 }) => {
+
+  console.log(padding15);
   const styles = {
-    'widget': [theme['widget'], style].filter(Boolean).join(' '),
+    'widget': [
+      theme['widget'],
+      style,
+      padding15 ? theme['widget__padding__15'] : null
+    ].filter(Boolean).join(' '),
     'widget__header': theme['widget__header'],
     'widget__title': theme['widget__title'],
     'widget__link': theme['widget__link'],
@@ -33,10 +39,18 @@ const Block = ({ children, title, additional, style }) => {
   );
 };
 
+Block.defaultProps = {
+  children: [],
+  title: null,
+  additional: null,
+  padding15: false
+};
+
 Block.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   title: PropTypes.string,
-  additional: PropTypes.string
+  additional: PropTypes.string,
+  padding15: PropTypes.bool
 };
 
 export default Block;
