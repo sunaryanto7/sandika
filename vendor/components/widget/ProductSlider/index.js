@@ -10,7 +10,7 @@ const Slider = dynamic(() => import('react-owl-carousel'), {
   ssr: false
 });
 
-const ProductSlider = ({ config, productData = [] }) => {
+const ProductSlider = ({ config, productData }) => {
   const [isMount, setIsMount] = useState(false);
 
   useEffect(() => {
@@ -49,6 +49,11 @@ const ProductSlider = ({ config, productData = [] }) => {
     );
   }
   return null;
+};
+
+ProductSlider.defaultProps = {
+  config: {},
+  productData: []
 };
 
 ProductSlider.propTypes = {

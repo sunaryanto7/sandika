@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
-import './formrow.module.scss';
+import theme from './formrow.module.scss';
 
 const FormRow = ({ children }) => {
+  const styles = {
+    'form__row': theme['form__row']
+  };
   return (
     <>
-      <div className={'form__row'}>{children}</div>
+      <div className={styles.form__row}>{children}</div>
     </>
   );
 };

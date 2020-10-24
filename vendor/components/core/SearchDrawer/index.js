@@ -10,7 +10,7 @@ import theme from './searchdrawer.module.scss';
 const SearchDrawer = ({ open, handleClose }) => {
   const [searchSugesstionsItems, setSearchSugesstionsItems] = useState([]);
 
-  const style = {
+  const styles = {
     'search_drawer__header': theme['search_drawer__header'],
     'search_drawer__header_content': theme['search_drawer__header_content'],
     'search_drawer__navigation': theme['search_drawer__navigation'],
@@ -32,17 +32,17 @@ const SearchDrawer = ({ open, handleClose }) => {
   return (
     <>
       <Drawer blank isOpen={open}>
-        <div className={theme.search_drawer__header}>
-          <div className={theme.search_drawer__header_content}>
+        <div className={styles.search_drawer__header}>
+          <div className={styles.search_drawer__header_content}>
             {/* Back Button */}
-            <div className={theme.search_drawer__navigation}>
+            <div className={styles.search_drawer__navigation}>
               <Button btnWhite onClick={handleClose}>
                 <ArrowBackIcon className={'close__icon'} />
               </Button>
             </div>
 
             {/* Search Form */}
-            <div className={theme.drawer__search_form}>
+            <div className={styles.drawer__search_form}>
               <form>
                 <Input
                   type={'text'}
@@ -56,7 +56,7 @@ const SearchDrawer = ({ open, handleClose }) => {
         </div>
 
         {/* Search Result */}
-        <div className={theme.search_drawer__body}>
+        <div className={styles.search_drawer__body}>
           <Block title={'Pencarian'}>
             <Media>
               <MediaBody>Payung</MediaBody>

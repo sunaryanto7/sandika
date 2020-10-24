@@ -7,7 +7,7 @@ import theme from './layout.module.scss';
 
 const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
 
-  const style = {
+  const styles = {
     'wrapper': theme['wrapper'],
     'main': () => {
       if (nomargin) { return [theme['main__content'], theme['main__content--nomargin']].filter(Boolean).join(' ') }
@@ -17,9 +17,9 @@ const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
 
   return (
     <>
-      <div className={style.wrapper} id={'main'}>
+      <div className={styles.wrapper} id={'main'}>
         {header !== undefined && header.enable && <Header {...header.props} />}
-        <div className={style.main()}>
+        <div className={styles.main()}>
           {children}
         </div>
         {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}

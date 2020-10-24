@@ -33,13 +33,13 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
           <ProductSlider config={config.productSlider} productData={productData} />
         </Block>
         <Block title={'Pilih Category'} additional={null}>
-          {/* <Category productCategories={productData} /> */}
+          <Category productCategories={productData} />
         </Block>
         <Block>
           <Banner config={config.imageSlider} images={promoBannerImages} />
         </Block>
         <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
-          {/* <CatalogProduct productData={productData} /> */}
+          <CatalogProduct productData={productData} />
         </Block>
       </Layout>
     </>

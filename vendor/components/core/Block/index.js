@@ -1,30 +1,33 @@
 import PropTypes from 'prop-types';
 import Button from '@sandika_components/commons/Button';
 import is_empty from '@sandika_modules/is_empty';
-import './block.module.scss';
+import theme from './block.module.scss';
 
 const Block = ({ children, title, additional, style }) => {
-  const classNames = [
-    'widget',
-    style
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const styles = {
+    'widget': [theme['widget'], style].filter(Boolean).join(' '),
+    'widget__header': theme['widget__header'],
+    'widget__title': theme['widget__title'],
+    'widget__link': theme['widget__link'],
+    'widget__content': theme['widget__content']
+  };
 
   return (
     <>
-      <div className={classNames}>
+      <div className={styles.widget}>
         {!is_empty(title) ? (
-          <div className={'widget__header'}>
-            <h4 className={'widget__title'}>{title}</h4>
+          <div className={styles.widget__header}>
+            <h4 className={styles.widget__title}>{title}</h4>
             {!is_empty(additional) ? (
-              <h5 className={'widget__link'}>
+              <h5 className={styles.widget__link}>
                 <Button btnTransparent>{additional}</Button>
               </h5>
             ) : null}
           </div>
         ) : null}
-        <div className={'widget__content'}>{children}</div>
+        <div className={styles.widget__content}>
+          {children}
+        </div>
       </div>
     </>
   );

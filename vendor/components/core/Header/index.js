@@ -13,13 +13,13 @@ const Header = (props) => {
   const { withAppName, withMinicart, withNavigation, withSearch } = props;
   const { t } = useContext(AppContext);
 
-  const style = {
+  const styles = {
     // Header
     'header': theme['header'],
     'header__panel': theme['header__panel'],
-    'heaedr__content': theme['header__content'],
+    'header__content': theme['header__content'],
     // Toggle
-    'sidebar__toolge': theme['sidebar__toggle'],
+    'sidebar__toggle': theme['sidebar__toggle'],
     // Navigation
     'history__back': theme['history__back'],
     // App name
@@ -32,34 +32,34 @@ const Header = (props) => {
 
   return (
     <>
-      <div className={theme.header}>
-        <div className={theme.header__panel}>
+      <div className={styles.header}>
+        <div className={styles.header__panel}>
           <GlobalNotification />
         </div>
-        <div className={theme.header__content}>
+        <div className={styles.header__content}>
           {/* Sidebar Icon */}
           {!withNavigation && (
-            <div className={theme.sidebar__toggle}>
-              <MenuIcon className={theme.icon} />
+            <div className={styles.sidebar__toggle}>
+              <MenuIcon className={styles.icon} />
             </div>
           )}
 
           {/* Back Navigation */}
           {withNavigation && (
-            <div className={theme.history__back}>
+            <div className={styles.history__back}>
               <Button
                 btnTransparent
                 onClick={() => {
                   Router.back();
                 }}>
-                <ArrowBackIcon className={theme.icon} />
+                <ArrowBackIcon className={styles.icon} />
               </Button>
             </div>
           )}
 
           {/* App Name */}
           {withAppName && (
-            <div className={theme.app__name}>
+            <div className={styles.app__name}>
               <h1
                 onClick={() => {
                   Router.push('/');
@@ -71,8 +71,8 @@ const Header = (props) => {
 
           {/* Minicart */}
           {withMinicart && (
-            <div className={theme.minicart}>
-              <BasketIcon className={theme.shop__icon} />
+            <div className={styles.minicart}>
+              <BasketIcon className={styles.shop__icon} />
             </div>
           )}
         </div>

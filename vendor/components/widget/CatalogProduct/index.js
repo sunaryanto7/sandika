@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
-import './catalogproduct.module.scss';
+import theme from './catalogproduct.module.scss';
 import ProductItem from '@sandika_components/core/ProductItem';
 
 const CatalogProduct = ({ productData = [] }) => {
+
+  const styles = {
+    'widget__catalog': theme['widget__catalog'],
+    'product__item': theme['product__item']
+  };
+
   return (
     <>
-      <div className={'widget__catalog'}>
+      <div className={styles.widget__catalog}>
         {productData.map((data, i) => {
           return (
             <ProductItem
@@ -15,6 +21,7 @@ const CatalogProduct = ({ productData = [] }) => {
               productFinalPrice={Math.round(data.price)}
               productOldPrice={Math.round(data.price + 20)} //Example
               productBrand={data.category}
+              style={styles.product__item}
               key={i}
             />
           );

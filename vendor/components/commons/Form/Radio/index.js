@@ -5,11 +5,15 @@
  ** EDIT THE CODE IF YOU WANT TO ADD PROPS
  */
 
-import './radio.module.scss';
+import theme from './radio.module.scss';
 import PropTypes from 'prop-types';
 
 const Radio = (props) => {
+
   const { id, name, label, other = { ...props } } = props;
+  const styles = {
+    'form__radio': theme['form__radio']
+  };
 
   return (
     <>
@@ -17,7 +21,7 @@ const Radio = (props) => {
         id={id}
         name={name}
         type='radio'
-        className={'form__radio'}
+        className={theme.form__radio}
         {...other}
       />
       {label && (

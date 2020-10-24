@@ -1,12 +1,12 @@
 import theme from './globalnotification.module.scss';
 
 const GlobalNotification = () => {
-  const style = {
+  const styles = {
     'global__nofitication': theme['global__nofitication']
   };
   return (
     <>
-      <div className={style.global__nofitication}>
+      <div className={styles.global__nofitication}>
         {'This Is Development Site'}
       </div>
     </>

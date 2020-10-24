@@ -11,7 +11,7 @@ const Button = ({
   style
 }) => {
 
-  var styles = [
+  const styles = [
     theme['button'],
     fullWidth ? theme['button__full_width'] : null,
     btnDanger ? theme['button__danger'] : null,

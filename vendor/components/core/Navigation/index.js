@@ -10,21 +10,21 @@ import BasketIcon from '@public/media/icons/supermarket.svg';
 import theme from './navigation.module.scss';
 
 const ButtonNavigation = ({ children, link, name, onClick }) => {
+
+  const styles = {
+    'navigation__link': theme['navigation__link']
+  };
+
   if (name === 'search' && link === null) {
     return (
-      <Button fullWidth onClick={onClick} style={'navigation__link'}>
+      <Button fullWidth onClick={onClick} styles={styles['navigation__link']}>
         <SearchIcon className={'search_icon'} />
       </Button>
     );
   }
 
   return (
-    <Button
-      fullWidth
-      style={'navigation__link'}
-      onClick={() => {
-        Router.push(link);
-      }}>
+    <Button fullWidth styles={styles['navigation__link']} onClick={() => { Router.push(link); }}>
       {children}
     </Button>
   );
@@ -33,22 +33,26 @@ const ButtonNavigation = ({ children, link, name, onClick }) => {
 const Navigation = ({ active, search }) => {
   const [openSearch, setOpenSearch] = useState(false);
 
-  const style = {
+  const styles = {
     'navigation': theme['navigation'],
-
+    'navigation__item': (name) => {
+      console.log(name)
+      if (active === name) { return [theme['navigation__item'], theme['navigation__item-active']].filter(Boolean).join(' '); }
+      return theme['navigation__item'];
+    }
   };
 
   const buttonList = [
     {
       name: 'home',
       link: '/',
-      icon: <HomeIcon className={'home_icon'} />,
+      icon: <HomeIcon />,
       onClick: null
     },
     {
       name: 'search',
       link: search.enable ? null : '/search',
-      icon: <SearchIcon className={'search_icon'} />,
+      icon: <SearchIcon />,
       onClick: () => {
         setOpenSearch(!openSearch);
       }
@@ -56,29 +60,23 @@ const Navigation = ({ active, search }) => {
     {
       name: 'cart',
       link: '/cart',
-      icon: <BasketIcon className={'heart_icon'} />,
+      icon: <BasketIcon />,
       onClick: null
     },
     {
       name: 'account',
       link: '/account',
-      icon: <UserIcon className={'user_icon'} />,
+      icon: <UserIcon />,
       onClick: null
     }
   ];
 
   return (
     <>
-      <div className={theme.navigation}>
+      <div className={styles.navigation}>
         {buttonList.map((data, i) => {
           return (
-            <div
-              className={
-                active === data.name
-                  ? 'navigation__item navigation__item-active'
-                  : 'navigation__item'
-              }
-              key={i}>
+            <div className={styles.navigation__item(data.name)} key={i}>
               <ButtonNavigation link={data.link} name={data.name} onClick={data.onClick}>
                 {data.icon}
               </ButtonNavigation>

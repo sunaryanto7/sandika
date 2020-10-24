@@ -3,10 +3,16 @@ import { useFormik } from 'formik';
 import Button from '@sandika_components/commons/Button';
 import { Modal, ModalBody, ModalHeader } from '@sandika_components/commons/Modal';
 import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
-import './filter.module.scss';
+import theme from './filter.module.scss';
 
 const Filter = () => {
+
   const [showFilter, setShowFilter] = useState(false);
+
+  const styles = {
+    'filter__toggle': theme['filter__toggle']
+  };
+
   const formik = useFormik({
     initialValues: {
       category: '',
@@ -157,7 +163,7 @@ const Filter = () => {
         </ModalBody>
       </Modal>
 
-      <div className={'filter__toggle'}>
+      <div className={styles.filter__toggle}>
         <Button
           fullWidth
           btnDanger
