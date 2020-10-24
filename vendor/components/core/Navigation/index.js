@@ -10,33 +10,29 @@ import BasketIcon from '@public/media/icons/supermarket.svg';
 import theme from './navigation.module.scss';
 
 const ButtonNavigation = ({ children, link, name, onClick }) => {
-
-  const styles = {
-    'navigation__link': theme['navigation__link']
-  };
-
   if (name === 'search' && link === null) {
     return (
-      <Button fullWidth onClick={onClick} styles={styles['navigation__link']}>
+      <Button fullWidth onClick={onClick}>
         <SearchIcon className={'search_icon'} />
       </Button>
     );
   }
 
   return (
-    <Button fullWidth styles={styles['navigation__link']} onClick={() => { Router.push(link); }}>
+    <Button fullWidth onClick={() => { Router.push(link); }}>
       {children}
     </Button>
   );
 };
 
 const Navigation = ({ active, search }) => {
-  const [openSearch, setOpenSearch] = useState(false);
 
+  const [openSearch, setOpenSearch] = useState(false);
   const styles = {
     'navigation': theme['navigation'],
     'navigation__item': (name) => {
-      if (active === name) { return [theme['navigation__item'], theme['navigation__item-active']].filter(Boolean).join(' '); }
+      console.log([theme['navigation__item'], theme['navigation__item_active']].filter(Boolean).join(' '));
+      if (active === name) { return [theme['navigation__item'], theme['navigation__item_active']].filter(Boolean).join(' '); }
       return theme['navigation__item'];
     }
   };

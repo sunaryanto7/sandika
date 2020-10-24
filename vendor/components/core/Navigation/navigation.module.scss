@@ -12,7 +12,7 @@
     $this:&;
     
 
-    &__link{
+    button{
         text-align: center;
         background: white;
     }
@@ -20,15 +20,13 @@
     &__item{
         width: 100%;
         padding: 5px 15px;
+    }
 
-        &-active{
-            #{$this}{
-                &__link{
-                    background: #0eac32;
-                    svg{
-                        fill: white;
-                    }
-                }
+    &__item_active{
+        button{
+            background: #0eac32;
+            svg{
+                fill: white;
             }
         }
     }

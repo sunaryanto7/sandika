@@ -45,7 +45,7 @@ module.exports = withPlugins([
   [withSass, {
     cssModules: true,
     cssLoaderOptions: {
-      localIdentName: "sdk[hash:base64:7]"
+      localIdentName: "sdk_[hash:base64:7]"
     }
   }]
 ], nextConfig);
