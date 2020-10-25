@@ -21,15 +21,15 @@ const Category = ({ mainBannerImages, productData }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Meta description test on sandika.org"></meta>
       </Head>
-      <Layout header={header} navigation={navigation} filter={filter} footer={footer}>
-        <Block>
+      <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
+        <Block padding15>
           <Banner config={config.imageSlider} images={mainBannerImages} />
         </Block>
-        <Block title={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>
+        <Block padding15 itle={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>
           <CatalogProduct productData={productData} />
         </Block>
-        <Filter />
       </Layout>
+      <Filter />
     </>
   );
 };

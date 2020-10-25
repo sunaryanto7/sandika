@@ -24,14 +24,14 @@ const MediaImage = ({ children }) => {
   );
 };
 
-const Media = ({ children, onClick }) => {
-  const style = {
-    'media': theme['media']
+const Media = ({ children, onClick, style }) => {
+  const styles = {
+    'media': [theme['media'], style].filter(Boolean).join(' ')
   };
 
   return (
     <>
-      <div className={style.media} role="button" onClick={onClick}>
+      <div className={styles.media} role="button" onClick={onClick}>
         {children}
       </div>
     </>
