@@ -25,7 +25,8 @@ const CartItem = ({ item, index }) => {
 						checked={checked}
 						value={JSON.stringify(item)}
 						onChange={() => { setChecked(!checked) }}
-					/>				</div>
+					/>
+				</div>
 				<div className={styles.cart__item_info}>
 					<Media style={styles.cart__item_detail}>
 						<MediaImage style={styles.cart__item_detail_image}>

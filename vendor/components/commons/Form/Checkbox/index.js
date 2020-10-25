@@ -9,15 +9,14 @@ const Checkbox = ({ value, name, id, onChange, children, style }) => {
 	return (
 		<>
 			<label className={styles.form__checkbox}>
+				{children}
 				<input
 					type="checkbox"
 					name={name}
 					id={id}
 					value={value}
 					onChange={() => { onChange }} />
-				<span className={styles.form__checkbox_checkmark}>
-					{children}
-				</span>
+				<span className={styles.form__checkbox_checkmark} />
 			</label>
 		</>
 	);
