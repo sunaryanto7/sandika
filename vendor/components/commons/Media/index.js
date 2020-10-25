@@ -1,25 +1,25 @@
 import theme from './media.module.scss';
 
-const MediaBody = ({ children }) => {
-  const style = {
-    'media__body': theme['media__body']
+const MediaBody = ({ children, style }) => {
+  const styles = {
+    'media__body': [theme['media__body'], style].filter(Boolean).join(' ')
   };
 
   return (
     <>
-      <div className={style.media__body}>{children}</div>
+      <div className={styles.media__body}>{children}</div>
     </>
   );
 };
 
-const MediaImage = ({ children }) => {
-  const style = {
-    'media__image': theme['media__image']
+const MediaImage = ({ children, style }) => {
+  const styles = {
+    'media__image': [theme['media__image'], style].filter(Boolean).join(' ')
   };
 
   return (
     <>
-      <div className={style.media__image}>{children}</div>
+      <div className={styles.media__image}>{children}</div>
     </>
   );
 };

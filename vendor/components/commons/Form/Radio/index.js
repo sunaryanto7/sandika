@@ -21,7 +21,7 @@ const Radio = (props) => {
         id={id}
         name={name}
         type='radio'
-        className={theme.form__radio}
+        className={styles.form__radio}
         {...other}
       />
       {label && (

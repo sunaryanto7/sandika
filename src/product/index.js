@@ -50,6 +50,10 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
       <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
         <ProductMedia config={productMediaConfig.imageSlider} {...productMediaProps} />
 
+        <Block title={'Product Review'} additional={'Lihat Semua'} padding15>
+          <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
+        </Block>
+
         <Block title={'Related Product'} additional={'Lihat Semua'} padding15>
           <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
         </Block>

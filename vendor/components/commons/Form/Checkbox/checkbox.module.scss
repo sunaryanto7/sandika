@@ -1,0 +1,66 @@
+/* The form__checkbox */
+.form__checkbox {
+    display: block;
+    position: relative;
+    padding-left: 0;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.form__checkbox input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.form__checkbox_checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.form__checkbox:hover input ~ .form__checkbox_checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.form__checkbox input:checked ~ .form__checkbox_checkmark {
+    background-color: var(--color-primary);
+}
+
+/* Create the form__checkbox_checkmark/indicator (hidden when not checked) */
+.form__checkbox_checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the form__checkbox_checkmark when checked */
+.form__checkbox input:checked ~ .form__checkbox_checkmark:after {
+    display: block;
+}
+
+/* Style the form__checkbox_checkmark/indicator */
+.form__checkbox .form__checkbox_checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
