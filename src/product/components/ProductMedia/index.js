@@ -60,20 +60,29 @@ const ProductMedia = ({ config, ...props }) => {
         </Block>
 
         <Block style={styles.product__media__description}>
-          <div className={''}>
-            <h4>{`#${activeProduct.sku}`}</h4>
+          <div className={styles.product__sku}>
+            <h4>{`# 0986826348`}</h4>
+          </div>
+          <div className={styles.product__price}>
+            <div className={styles.product__price__final}>
+              <h1>{`Rp ${activeProduct.price_range.maximum_price.final_price.value}.000,-`}</h1>
+            </div>
+            <div className={styles.product__price__regular}>
+              <small>60%</small>
+              <h5>{`Rp ${activeProduct.price_range.maximum_price.regular_price.value}.000,-`}</h5>
+            </div>
           </div>
           <div className={styles.product__name}>
             <h1>{activeProduct.name}</h1>
-          </div>
-          <div className={styles.product__price}>
-            <div className={styles.product__price__regular}><h5>{`USD ${activeProduct.price_range.maximum_price.regular_price.value}`}</h5></div>
-            <div className={styles.product__price__final}><h4>{`USD ${activeProduct.price_range.maximum_price.final_price.value}`}</h4></div>
           </div>
         </Block>
 
         <Block style={styles.product__desription}>
           <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris

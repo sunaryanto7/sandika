@@ -9,6 +9,7 @@ import Block from '@sandika_components/core/Block';
 import Banner from '@sandika_components/widget/Banner';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
 import ProductMedia from './components/ProductMedia';
+import ProductReview from './components/ProductReview';
 import ProductForm from './components/ProductForm';
 
 const Product = ({ relatedProductData, productData, promoBannerImages }) => {
@@ -51,7 +52,7 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
         <ProductMedia config={productMediaConfig.imageSlider} {...productMediaProps} />
 
         <Block title={'Product Review'} additional={'Lihat Semua'} padding15>
-          <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
+          <ProductReview review={relatedProductData} />
         </Block>
 
         <Block title={'Related Product'} additional={'Lihat Semua'} padding15>
