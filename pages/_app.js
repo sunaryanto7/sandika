@@ -1,5 +1,7 @@
 // GLOBAL STYLE
 import '@sandika_styles/core.css';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 // PROPTYPES CHECKING
 import PropTypes from 'prop-types';

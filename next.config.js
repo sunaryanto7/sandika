@@ -39,13 +39,13 @@ const nextConfig = {
 };
 
 module.exports = withPlugins([
-  [withCSS, {
-    cssModules: false
-  }],
   [withSass, {
     cssModules: true,
     cssLoaderOptions: {
       localIdentName: "sdk_[hash:base64:7]"
     }
+  }],
+  [withCSS, {
+    cssModules: false
   }]
 ], nextConfig);

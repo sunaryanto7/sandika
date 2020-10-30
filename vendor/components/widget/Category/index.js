@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import theme from './category.module.scss';
 import array_unique from '@sandika_modules/array_unique';
 import is_empty from '@sandika_modules/is_empty';
+import theme from './category.module.scss';
 
 const Category = ({ productCategories }) => {
 
