@@ -3,11 +3,11 @@ import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/For
 import theme from './productmediaoptions.module.scss'
 import { useState } from 'react';
 
-const ProductMediaOptions = ({ options, activeOptions }) => {
+const ProductVariant = ({ options, activeOptions }) => {
 	const [activeAttribute, setActiveAttribute] = useState(activeOptions);
 
 	const styles = {
-		'product__media__options': theme['product__media__options'],
+		'product__variants': theme['product__variants'],
 		'form__row': theme['form__row'],
 		'form__gruop': theme['form__group']
 	};
@@ -42,7 +42,7 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 
 	return (
 		<>
-			<Block style={styles.product__media__options}>
+			<Block style={styles.product__variants}>
 				<Form>
 					{options.map((swatchType, i) => {
 						return (
@@ -70,5 +70,5 @@ const ProductMediaOptions = ({ options, activeOptions }) => {
 	)
 };
 
-export default ProductMediaOptions
+export default ProductVariant
 

@@ -1,21 +1,20 @@
 .product__review{
     background: white;
     &--media{
-        box-shadow: 0px 0px 10px -7px rgba(12, 153, 64, 1);
-        padding:5px 15px;
+        padding:5px 0;
         border-radius: 15px;
-        margin-bottom: 5px;
 
         &-image{
-            height: 55px;
-            width: 50px;
             background:#f0f0f0;
             flex: 1 1 15%;
             border-radius: 30px;
         }
 
         &-body{
-
+            p{
+                &:first-child{ margin-top: 0; }
+                &:last-child{ margin-bottom: 0; }
+            }
         }
     }
 

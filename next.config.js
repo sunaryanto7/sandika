@@ -1,4 +1,5 @@
 const withPlugins = require('next-compose-plugins');
+const withSourceMaps = require('@zeit/next-source-maps');
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 const path = require('path');
@@ -39,10 +40,12 @@ const nextConfig = {
 };
 
 module.exports = withPlugins([
+  [withSourceMaps],
   [withSass, {
     cssModules: true,
     cssLoaderOptions: {
-      localIdentName: "sdk_[hash:base64:7]"
+      localIdentName: "[local]",
+      // localIdentName: "sdk_[hash:base64:7]"
     }
   }],
   [withCSS, {

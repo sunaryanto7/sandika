@@ -1,5 +1,6 @@
 .product__form{
     display: flex;
+    justify-content: space-between;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -8,16 +9,38 @@
     max-width: 480px;
     z-index: 1030;
     border-top: 1px solid #efefef;
+    
+    &--qty{
+        flex: 0 0 40%;
+        display: flex;
+        
+        .qty__minus, .qty__plus{
+            flex: 0 0 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            background:var(--color-primary);
+            color:white;
+            border-radius: 5px;
+            line-height: 2;
+        }
+
+        .qty__minus{ margin-right: 3px;}
+        .qty__plus{ margin-left: 3px;}
+
+        input{
+            width: 100%;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: rgb(238, 224, 177);
+            appearance: none;
+            border-style: solid;
+            text-align: center;
+        }
+    }
 
     &--action{
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        padding: 15px;
-        max-width: 480px;
-        z-index: 1030;
-        border-top: 1px solid #efefef;
+        flex: 0 0 55%;
     }
 }

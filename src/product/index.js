@@ -8,9 +8,11 @@ import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
 import Banner from '@sandika_components/widget/Banner';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
-import ProductMedia from './components/ProductMedia';
+import ProductGallery from './components/ProductGallery';
 import ProductReview from './components/ProductReview';
 import ProductForm from './components/ProductForm';
+import ProductDetail from './components/ProductDetail';
+import ProductVariant from './components/ProductVariant';
 
 const Product = ({ relatedProductData, productData, promoBannerImages }) => {
   const productMediaConfig = useContext(AppContext).ctx.config.productMedia.config;
@@ -18,23 +20,23 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.product.layout;
   const { __typename } = productData.data.products.items[0];
 
-  let productMediaProps = {};
+  let productVariantProps = {};
   let productDetailFormProps = {};
 
   switch (__typename) {
     case 'ConfigurableProduct':
       // For Product Media
       // Default Product Will Be Data 0 Because There Is No Default Product Included
-      productMediaProps.configurable_options = productData.data.products.items[0].configurable_options;
-      productMediaProps.variants = productData.data.products.items[0].variants;
-      productMediaProps.__typename = __typename;
+      productVariantProps.configurable_options = productData.data.products.items[0].configurable_options;
+      productVariantProps.variants = productData.data.products.items[0].variants;
+      productVariantProps.__typename = __typename;
 
       // For Product Form
       productDetailFormProps.configurable_options = productData.data.products.items[0].configurable_options;
       productDetailFormProps.variants = productData.data.products.items[0].variants;
       break;
     default:
-      productMediaProps = {}
+      productVariantProps = {}
       break;
   }
 
@@ -49,19 +51,31 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
 
       {/* Body */}
       <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
-        <ProductMedia config={productMediaConfig.imageSlider} {...productMediaProps} />
-
-        <Block title={'Product Review'} additional={'Lihat Semua'} padding15>
-          <ProductReview review={relatedProductData} />
-        </Block>
-
-        <Block title={'Related Product'} additional={'Lihat Semua'} padding15>
-          <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
-        </Block>
+        <ProductGallery config={productMediaConfig.imageSlider} {...productVariantProps} />
 
         <Block padding15>
-          <Banner config={productMediaConfig.imageSlider} images={promoBannerImages} />
+          <ProductDetail {...productVariantProps} />
         </Block>
+
+        {productVariantProps.__typename === "ConfigurableProduct" &&
+          <Block padding15 title={'Cek variant yang dinginkan'}>
+            <ProductVariant
+              options={productVariantProps.configurable_options}
+              activeOptions={productVariantProps.variants[0].attributes} />
+          </Block>}
+
+
+        {/* <Block title={'Product Review'} additional={'Lihat Semua'} padding15>
+          <ProductReview review={relatedProductData} />
+        </Block> */}
+
+        {/* <Block title={'Produk Yang Di Jual 77 Komp'} additional={'Lihat Semua'} padding15>
+          <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
+        </Block> */}
+
+        {/* <Block padding15>
+          <Banner config={productMediaConfig.imageSlider} images={promoBannerImages} />
+        </Block> */}
 
         {/* Product Form */}
         <Block>

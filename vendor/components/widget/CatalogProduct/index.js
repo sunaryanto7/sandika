@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import theme from './catalogproduct.module.scss';
 import ProductItem from '@sandika_components/core/ProductItem';
+import theme from './catalogproduct.module.scss';
 
 const CatalogProduct = ({ productData = [] }) => {
 

@@ -4,11 +4,12 @@ class SandikaDocument extends Document {
   static async getInitialProps(ctx) {
     const originalRenderPage = ctx.renderPage;
 
-    ctx.renderPage = () =>
-      originalRenderPage({
+    ctx.renderPage = () => {
+      return originalRenderPage({
         enhanceApp: (App) => App,
         enhanceComponent: (Component) => Component
       });
+    }
 
     const initialProps = await Document.getInitialProps(ctx);
     const { query } = ctx;
@@ -24,7 +25,6 @@ class SandikaDocument extends Document {
       <Html lang={lang}>
         <Head>
           <meta name="theme-color" content={'#cd134b'} />
-          <link rel="preload" />
         </Head>
         <body>
           <Main />

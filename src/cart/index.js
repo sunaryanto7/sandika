@@ -34,12 +34,6 @@ const Cart = ({ productData }) => {
             );
           })}
         </Block>
-        <Block title={'History Penjelajahan Kamu'}>
-          <ProductSlider config={config.productSlider} productData={productData} />
-        </Block>
-        <Block title={'Produk Yang Mungkin Kamu Sukai'}>
-
-        </Block>
       </Layout>
     </>
   );

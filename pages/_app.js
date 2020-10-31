@@ -12,7 +12,7 @@ import client from '@sandika_environment/apollo';
 import AppContextProvider from '@sandika_environment/context/app_context';
 
 // Locales / Translation / Language , ROUTING
-import { appWithTranslation, Router } from '@sandika_environment/i18n';
+import { appWithTranslation } from '@sandika_environment/i18n';
 
 // FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';
