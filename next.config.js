@@ -39,16 +39,25 @@ const nextConfig = {
   }
 };
 
-module.exports = withPlugins([
-  [withSourceMaps],
-  [withSass, {
-    cssModules: true,
-    cssLoaderOptions: {
-      localIdentName: "[local]",
-      // localIdentName: "sdk_[hash:base64:7]"
-    }
-  }],
-  [withCSS, {
-    cssModules: false
-  }]
-], nextConfig);
+module.exports = withPlugins(
+  [
+    [withSourceMaps],
+    [
+      withSass,
+      {
+        cssModules: true,
+        cssLoaderOptions: {
+          localIdentName: '[local]'
+          // localIdentName: "sdk_[hash:base64:7]"
+        }
+      }
+    ],
+    [
+      withCSS,
+      {
+        cssModules: false
+      }
+    ]
+  ],
+  nextConfig
+);

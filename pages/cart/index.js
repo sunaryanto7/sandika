@@ -44,6 +44,6 @@ Cart.getInitialProps = async () => {
     promoBannerImages: promoBannerImages,
     productData: productJson
   };
-}
+};
 
 export default Cart;

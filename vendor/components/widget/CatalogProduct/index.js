@@ -3,10 +3,9 @@ import ProductItem from '@sandika_components/core/ProductItem';
 import theme from './catalogproduct.module.scss';
 
 const CatalogProduct = ({ productData = [] }) => {
-
   const styles = {
-    'widget__catalog': theme['widget__catalog'],
-    'product__item': theme['product__item']
+    widget__catalog: theme['widget__catalog'],
+    product__item: theme['product__item']
   };
 
   return (

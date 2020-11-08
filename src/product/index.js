@@ -27,16 +27,18 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
     case 'ConfigurableProduct':
       // For Product Media
       // Default Product Will Be Data 0 Because There Is No Default Product Included
-      productVariantProps.configurable_options = productData.data.products.items[0].configurable_options;
+      productVariantProps.configurable_options =
+        productData.data.products.items[0].configurable_options;
       productVariantProps.variants = productData.data.products.items[0].variants;
       productVariantProps.__typename = __typename;
 
       // For Product Form
-      productDetailFormProps.configurable_options = productData.data.products.items[0].configurable_options;
+      productDetailFormProps.configurable_options =
+        productData.data.products.items[0].configurable_options;
       productDetailFormProps.variants = productData.data.products.items[0].variants;
       break;
     default:
-      productVariantProps = {}
+      productVariantProps = {};
       break;
   }
 
@@ -53,21 +55,15 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
       <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
         <ProductGallery config={productMediaConfig.imageSlider} {...productVariantProps} />
 
-        <Block padding15>
-          <ProductDetail {...productVariantProps} />
-        </Block>
+        <ProductDetail {...productVariantProps} />
+        {productVariantProps.__typename === 'ConfigurableProduct' && (
+          <ProductVariant
+            options={productVariantProps.configurable_options}
+            activeOptions={productVariantProps.variants[0].attributes}
+          />
+        )}
 
-        {productVariantProps.__typename === "ConfigurableProduct" &&
-          <Block padding15 title={'Cek variant yang dinginkan'}>
-            <ProductVariant
-              options={productVariantProps.configurable_options}
-              activeOptions={productVariantProps.variants[0].attributes} />
-          </Block>}
-
-
-        {/* <Block title={'Product Review'} additional={'Lihat Semua'} padding15>
-          <ProductReview review={relatedProductData} />
-        </Block> */}
+        <ProductReview review={relatedProductData} />
 
         {/* <Block title={'Produk Yang Di Jual 77 Komp'} additional={'Lihat Semua'} padding15>
           <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />

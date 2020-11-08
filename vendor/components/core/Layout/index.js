@@ -6,12 +6,13 @@ import Navigation from '@sandika_components/core/Navigation';
 import theme from './layout.module.scss';
 
 const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
-
   const styles = {
-    'wrapper': theme['wrapper'],
-    'main': () => {
-      if (nomargin) { return [theme['main__content'], theme['main__content--nomargin']].filter(Boolean).join(' ') }
-      return theme['main__content']
+    wrapper: theme['wrapper'],
+    main: () => {
+      if (nomargin) {
+        return [theme['main__content'], theme['main__content--nomargin']].filter(Boolean).join(' ');
+      }
+      return theme['main__content'];
     }
   };
 
@@ -19,9 +20,7 @@ const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
     <>
       <div className={styles.wrapper} id={'main'}>
         {header !== undefined && header.enable && <Header {...header.props} />}
-        <div className={styles.main()}>
-          {children}
-        </div>
+        <div className={styles.main()}>{children}</div>
         {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
         {footer !== undefined && footer.enable && <Footer />}
       </div>

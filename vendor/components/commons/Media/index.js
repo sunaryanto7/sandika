@@ -2,7 +2,7 @@ import theme from './media.module.scss';
 
 const MediaBody = ({ children, style }) => {
   const styles = {
-    'media__body': [theme['media__body'], style].filter(Boolean).join(' ')
+    media__body: [theme['media__body'], style].filter(Boolean).join(' ')
   };
 
   return (
@@ -14,7 +14,7 @@ const MediaBody = ({ children, style }) => {
 
 const MediaImage = ({ children, style }) => {
   const styles = {
-    'media__image': [theme['media__image'], style].filter(Boolean).join(' ')
+    media__image: [theme['media__image'], style].filter(Boolean).join(' ')
   };
 
   return (
@@ -26,7 +26,7 @@ const MediaImage = ({ children, style }) => {
 
 const Media = ({ children, onClick, style }) => {
   const styles = {
-    'media': [theme['media'], style].filter(Boolean).join(' ')
+    media: [theme['media'], style].filter(Boolean).join(' ')
   };
 
   return (

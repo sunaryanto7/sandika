@@ -4,11 +4,10 @@ import is_empty from '@sandika_modules/is_empty';
 import theme from './category.module.scss';
 
 const Category = ({ productCategories }) => {
-
   const styles = {
-    'widget__category': theme['widget__category'],
-    'widget__category__block': theme['widget__category__block'],
-    'widget__category__card': theme['widget__category__card']
+    widget__category: theme['widget__category'],
+    widget__category__block: theme['widget__category__block'],
+    widget__category__card: theme['widget__category__card']
   };
 
   const categories = !is_empty(productCategories)
@@ -32,7 +31,6 @@ const Category = ({ productCategories }) => {
     </>
   );
 };
-
 
 Category.defaultProps = {
   productCategories: []

@@ -15,19 +15,19 @@ const Header = (props) => {
 
   const styles = {
     // Header
-    'header': theme['header'],
-    'header__panel': theme['header__panel'],
-    'header__content': theme['header__content'],
+    header: theme['header'],
+    header__panel: theme['header__panel'],
+    header__content: theme['header__content'],
     // Toggle
-    'sidebar__toggle': theme['sidebar__toggle'],
+    sidebar__toggle: theme['sidebar__toggle'],
     // Navigation
-    'history__back': theme['history__back'],
+    history__back: theme['history__back'],
     // App name
-    'app__name': theme['app__name'],
+    app__name: theme['app__name'],
     // Minicart
-    'minicart': theme['minicart'],
-    'icon': theme['icon'],
-    'shop__icon': theme['shop__icon']
+    minicart: theme['minicart'],
+    icon: theme['icon'],
+    shop__icon: theme['shop__icon']
   };
 
   return (
@@ -94,7 +94,7 @@ Header.propTypes = {
   withAppName: PropTypes.bool,
   withMinicart: PropTypes.bool,
   withNavigation: PropTypes.bool,
-  withSearch: PropTypes.bool,
+  withSearch: PropTypes.bool
 };
 
 export default Header;

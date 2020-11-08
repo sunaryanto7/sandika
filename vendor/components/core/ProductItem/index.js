@@ -10,21 +10,22 @@ const ProductItem = ({
   productFinalPrice,
   style
 }) => {
-
   const styles = {
-    'product__item': [theme['product__item'], style].filter(Boolean).join(' '),
-    'product__image': theme['product__image'],
-    'product__discount': theme['product__discount'],
-    'product__description': theme['product__description'],
-    'product__name': theme['product__name'],
-    'product__brand': theme['product__brand'],
-    'product__price': theme['product__price'],
-    'old__price': theme['old__price'],
-    'final__price': theme['final__price']
+    product__item: [theme['product__item'], style].filter(Boolean).join(' '),
+    product__image: theme['product__image'],
+    product__discount: theme['product__discount'],
+    product__description: theme['product__description'],
+    product__name: theme['product__name'],
+    product__brand: theme['product__brand'],
+    product__price: theme['product__price'],
+    old__price: theme['old__price'],
+    final__price: theme['final__price']
   };
 
   const productNameSplit = () => {
-    if (productName.split(' ').length > 5) { return productName.split(' ').splice(0, 5).join(' ') + '...'; }
+    if (productName.split(' ').length > 5) {
+      return productName.split(' ').splice(0, 5).join(' ') + '...';
+    }
     return productName;
   };
 

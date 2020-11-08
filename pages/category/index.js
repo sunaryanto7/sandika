@@ -23,6 +23,6 @@ Category.getInitialProps = async () => {
     mainBannerImages: mainBannerImages,
     productData: productJson
   };
-}
+};
 
 export default Category;

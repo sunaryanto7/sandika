@@ -7,7 +7,7 @@ import theme from './formgroup.module.scss';
 
 const FormGroup = ({ title, children }) => {
   const styles = {
-    'form__group': theme['form__group']
+    form__group: theme['form__group']
   };
   return (
     <>

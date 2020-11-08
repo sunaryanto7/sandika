@@ -4,17 +4,14 @@ import is_empty from '@sandika_modules/is_empty';
 import theme from './block.module.scss';
 
 const Block = ({ children, title, additional, style, padding15 }) => {
-
   const styles = {
-    'widget': [
-      theme['widget'],
-      style,
-      padding15 ? theme['widget__padding__15'] : null
-    ].filter(Boolean).join(' '),
-    'widget__header': theme['widget__header'],
-    'widget__title': theme['widget__title'],
-    'widget__link': theme['widget__link'],
-    'widget__content': theme['widget__content']
+    widget: [theme['widget'], style, padding15 ? theme['widget__padding__15'] : null]
+      .filter(Boolean)
+      .join(' '),
+    widget__header: theme['widget__header'],
+    widget__title: theme['widget__title'],
+    widget__link: theme['widget__link'],
+    widget__content: theme['widget__content']
   };
 
   return (
@@ -30,9 +27,7 @@ const Block = ({ children, title, additional, style, padding15 }) => {
             ) : null}
           </div>
         ) : null}
-        <div className={styles.widget__content}>
-          {children}
-        </div>
+        <div className={styles.widget__content}>{children}</div>
       </div>
     </>
   );

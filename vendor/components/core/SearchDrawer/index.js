@@ -11,12 +11,11 @@ const SearchDrawer = ({ open, handleClose }) => {
   const [searchSugesstionsItems, setSearchSugesstionsItems] = useState([]);
 
   const styles = {
-    'search_drawer__header': theme['search_drawer__header'],
-    'search_drawer__header_content': theme['search_drawer__header_content'],
-    'search_drawer__navigation': theme['search_drawer__navigation'],
-    'search_drawer__body': theme['search_drawer__body'],
-    'drawer__search_form': theme['drawer__search_form'],
-
+    search_drawer__header: theme['search_drawer__header'],
+    search_drawer__header_content: theme['search_drawer__header_content'],
+    search_drawer__navigation: theme['search_drawer__navigation'],
+    search_drawer__body: theme['search_drawer__body'],
+    drawer__search_form: theme['drawer__search_form']
   };
 
   useEffect(() => {

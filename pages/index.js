@@ -44,6 +44,6 @@ Home.getInitialProps = async () => {
     promoBannerImages: promoBannerImages,
     productData: productJson
   };
-}
+};
 
 export default Home;

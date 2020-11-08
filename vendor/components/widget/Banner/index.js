@@ -12,8 +12,8 @@ const Banner = ({ config, images = [] }) => {
   const [isMount, setIsMount] = useState(false);
 
   const styles = {
-    'owl_images': theme['owl_images'],
-    'owl_description': theme['owl_description']
+    owl_images: theme['owl_images'],
+    owl_description: theme['owl_description']
   };
 
   useEffect(() => {

@@ -1,10 +1,12 @@
 .product__detail{
     position: relative;
+    padding: 0 15px;
+    border-bottom: 10px solid #eee;
 
     .product{
         &__wishlist{
             position: absolute;
-            right: 0;
+            right: 15px;
             top: 5px;
             display: flex;
             padding: 10px;
@@ -70,12 +72,23 @@
         &__merchants{
             display: flex;
             align-items: center;
-            justify-content: space-between;
 
             &__seemore{
                 padding:5px 15px;
                 background:rgb(0, 2, 128);
                 color:white;
+            }
+            .product__rating{
+                margin-left: 15px;
+                p{
+                    display: flex;
+                    align-items: center;
+                }
+            } 
+            svg{
+                height: 20px;
+                width: 20px;
+                margin-left: 5px;
             }
         }
     }

@@ -3,7 +3,7 @@ import theme from './formrow.module.scss';
 
 const FormRow = ({ children, style }) => {
   const styles = {
-    'form__row': [theme['form__row'], style].filter(Boolean).join(' ')
+    form__row: [theme['form__row'], style].filter(Boolean).join(' ')
   };
   return (
     <>

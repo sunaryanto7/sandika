@@ -1,16 +1,7 @@
 import PropTypes from 'prop-types';
 import theme from './button.module.scss';
 
-const Button = ({
-  children,
-  fullWidth,
-  btnDanger,
-  btnWhite,
-  btnTransparent,
-  onClick,
-  style
-}) => {
-
+const Button = ({ children, fullWidth, btnDanger, btnWhite, btnTransparent, onClick, style }) => {
   const styles = [
     theme['button'],
     fullWidth ? theme['button__full_width'] : null,
@@ -18,7 +9,9 @@ const Button = ({
     btnWhite ? theme['button__white'] : null,
     btnTransparent ? theme['button__transparent'] : null,
     style
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <>

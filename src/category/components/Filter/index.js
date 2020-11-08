@@ -6,10 +6,9 @@ import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/For
 import theme from './filter.module.scss';
 
 const Filter = () => {
-
   const [showFilter, setShowFilter] = useState(false);
   const styles = {
-    'filter__toggle': theme['filter__toggle']
+    filter__toggle: theme['filter__toggle']
   };
 
   const formik = useFormik({

@@ -1,16 +1,31 @@
 .product__review{
     background: white;
+    padding: 0 15px;
+    border-bottom: 10px solid #eee;
+
     &--media{
-        padding:5px 0;
-        border-radius: 15px;
+        padding:10px 0;
+        border-bottom: 1px solid #e0e0e0;
 
         &-image{
-            background:#f0f0f0;
-            flex: 1 1 15%;
-            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            
+            > svg{
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                padding: 5px;
+                border: 1px solid green;
+                border-radius: 10px;
+            }
+            span{
+                margin: 0;
+            }
         }
 
         &-body{
+            padding-top: 10px;
             p{
                 &:first-child{ margin-top: 0; }
                 &:last-child{ margin-bottom: 0; }
@@ -19,8 +34,22 @@
     }
 
     &--from{
-        white-space: normal;
-        margin-bottom: 5px;
+        // display: flex;
+        p{
+            display: flex;
+            align-items: center;
+            margin: 0;
+
+            strong{
+                display: flex;
+                align-items: center;
+            }
+        }
+        svg{
+            width: 16px;
+            height: 16px;
+            margin: 0 5px;
+        }
     }
 
     &--date{

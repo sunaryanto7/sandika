@@ -9,7 +9,7 @@ class SandikaDocument extends Document {
         enhanceApp: (App) => App,
         enhanceComponent: (Component) => Component
       });
-    }
+    };
 
     const initialProps = await Document.getInitialProps(ctx);
     const { query } = ctx;

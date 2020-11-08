@@ -9,10 +9,9 @@ import theme from './input.module.scss';
 import PropTypes from 'prop-types';
 
 const Input = (props) => {
-
   const { id, name, type, value, label, placeholder, onChange } = props;
   const styles = {
-    'form__input': theme['form__input']
+    form__input: theme['form__input']
   };
 
   return (

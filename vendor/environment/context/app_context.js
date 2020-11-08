@@ -184,7 +184,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             version: 1
           }
         }
-      },
+      }
     }
   };
 

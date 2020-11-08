@@ -25,13 +25,7 @@ const Cart = ({ productData }) => {
       <Layout header={header} navigation={navigation} filter={filter} footer={footer}>
         <Block title={'Keranjang'} style={'cart'}>
           {productData.map((item, i) => {
-            return (
-              <CartItem
-                key={i}
-                index={i}
-                item={item}
-              />
-            );
+            return <CartItem key={i} index={i} item={item} />;
           })}
         </Block>
       </Layout>

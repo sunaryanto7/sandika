@@ -9,21 +9,14 @@ import theme from './radio.module.scss';
 import PropTypes from 'prop-types';
 
 const Radio = (props) => {
-
   const { id, name, label, other = { ...props } } = props;
   const styles = {
-    'form__radio': theme['form__radio']
+    form__radio: theme['form__radio']
   };
 
   return (
     <>
-      <input
-        id={id}
-        name={name}
-        type='radio'
-        className={styles.form__radio}
-        {...other}
-      />
+      <input id={id} name={name} type="radio" className={styles.form__radio} {...other} />
       {label && (
         <label htmlFor={id}>
           <span>{label}</span>

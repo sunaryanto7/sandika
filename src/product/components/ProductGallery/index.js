@@ -15,9 +15,9 @@ const ProductGallery = ({ config, ...props }) => {
 
   const [activeOptions, setActiveOptions] = useState(variants[0].attributes);
   const [activeProduct, setActiveProduct] = useState(variants[0].product);
-  const [imageGallery, setImageGallery] = useState(activeProduct.media_gallery)
+  const [imageGallery, setImageGallery] = useState(activeProduct.media_gallery);
   const styles = {
-    'product__media__gallery': theme['product__media__gallery']
+    product__media__gallery: theme['product__media__gallery']
   };
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const ProductGallery = ({ config, ...props }) => {
   }, []);
 
   const handleOptionsChange = () => {
-    return null
+    return null;
   };
 
   if (isMount) {
