@@ -18,9 +18,11 @@
                 padding: 5px;
                 border: 1px solid green;
                 border-radius: 10px;
+                flex: 0 0 10%;
             }
-            span{
+            > span{
                 margin: 0;
+                flex: 0 0 90%;
             }
         }
 
