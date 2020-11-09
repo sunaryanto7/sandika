@@ -11,7 +11,7 @@ const ProductForm = () => {
     qty__plus: theme['qty__plus']
   };
 
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const handlePlus = () => {
     setQty(qty + 1);
   };
