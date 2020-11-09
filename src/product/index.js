@@ -65,13 +65,13 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
 
         <ProductReview review={relatedProductData} />
 
-        {/* <Block title={'Produk Yang Di Jual 77 Komp'} additional={'Lihat Semua'} padding15>
+        <Block title={'Produk Yang Di Jual 77 Komp'} additional={'Lihat Semua'} padding15>
           <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
-        </Block> */}
+        </Block>
 
-        {/* <Block padding15>
+        <Block padding15>
           <Banner config={productMediaConfig.imageSlider} images={promoBannerImages} />
-        </Block> */}
+        </Block>
 
         {/* Product Form */}
         <Block>

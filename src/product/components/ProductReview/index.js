@@ -20,7 +20,7 @@ const ProductReview = ({ children, review, style }) => {
     <>
       <Block title={'Product Review'} style={styles.product__review}>
         {review.map((item, i) => {
-          if (i > 4) {
+          if (i > 3) {
             return;
           }
           return (
