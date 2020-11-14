@@ -5,12 +5,13 @@ import { useContext } from 'react';
 import { AppContext } from '@sandika_environment/context/app_context';
 
 import Layout from '@sandika_components/core/Layout';
+import Banner from '@sandika_components/widget/Banner';
 import Block from '@sandika_components/core/Block';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
 import Button from '@sandika_components/commons/Button';
 import CartItem from './components/CartItem';
 
-const Cart = ({ productData }) => {
+const Cart = ({ productData, promoBannerImages }) => {
   const { config } = useContext(AppContext).ctx.config.slider;
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.cart.layout;
   return (
@@ -29,7 +30,15 @@ const Cart = ({ productData }) => {
             return <CartItem key={i} index={i} item={item} />;
           })}
         </Block>
-        <Button fullWidth btnDanger>Go To Checkout</Button>
+        <Block>
+          <Button fullWidth btnDanger>Go To Checkout</Button>
+        </Block>
+        <Block>
+          <Banner config={config.imageSlider} images={promoBannerImages} />
+        </Block>
+        <Block title={'Special Offer'} additional={'Lihat Semua'}>
+          <ProductSlider config={config.productSlider} productData={productData} />
+        </Block>
       </Layout>
     </>
   );
