@@ -23,9 +23,7 @@ const CartItem = ({ item, index }) => {
     setQty(qty + 1);
   };
   const handleMinus = () => {
-    if (qty > 1) {
-      setQty(qty - 1);
-    }
+    if (qty > 1) { setQty(qty - 1); }
   };
 
   return (
@@ -50,35 +48,35 @@ const CartItem = ({ item, index }) => {
             <MediaBody style={styles.cart__item_detail_body}>
               <p>{item.title}</p>
               <strong>{item.price}</strong>
+              <div className={styles.cart__item_additional}>
+                <div className={styles.cart__item_qty}>
+                  <div
+                    className={styles.qty__minus}
+                    onClick={() => {
+                      handleMinus();
+                    }}>
+                    -
+                  </div>
+                  <input
+                    placeholder={qty}
+                    readOnly
+                    value={qty}
+                    onChange={(e) => {
+                      setQty(e.target.value);
+                    }}
+                  />
+                  <div
+                    className={styles.qty__plus}
+                    onClick={() => {
+                      handlePlus();
+                    }}>
+                    +
+                  </div>
+                </div>
+                {/* <div className={styles.cart__item_note}>Note</div> */}
+              </div>
             </MediaBody>
           </Media>
-          <div className={styles.cart__item_additional}>
-            <div className={styles.cart__item_qty}>
-              <div
-                className={styles.qty__minus}
-                onClick={() => {
-                  handleMinus();
-                }}>
-                -
-              </div>
-              <input
-                placeholder={qty}
-                readOnly
-                value={qty}
-                onChange={(e) => {
-                  setQty(e.target.value);
-                }}
-              />
-              <div
-                className={styles.qty__plus}
-                onClick={() => {
-                  handlePlus();
-                }}>
-                +
-              </div>
-            </div>
-            {/* <div className={styles.cart__item_note}>Note</div> */}
-          </div>
         </div>
       </div>
     </>
