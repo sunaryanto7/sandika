@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '@sandika_components/commons/Button';
-import theme from './productform.module.scss';
+import * as theme from './productform.module.scss';
 
 const ProductForm = () => {
   const styles = {

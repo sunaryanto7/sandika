@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { AppContext } from '@sandika_environment/context/app_context';
 import { Router } from '@sandika_environment/i18n';
+import Quickcart from '@sandika_components/core/Quickcart';
 import Button from '@sandika_components/commons/Button';
 import GlobalNotification from '@sandika_components/core/GlobalNotification';
 import ArrowBackIcon from '@public/media/icons/back.svg';
 import MenuIcon from '@public/media/icons/menu.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
-import theme from './header.module.scss';
+import * as theme from './header.module.scss';
 
 const Header = (props) => {
   const { withAppName, withMinicart, withNavigation, withSearch } = props;
@@ -70,11 +71,7 @@ const Header = (props) => {
           )}
 
           {/* Minicart */}
-          {withMinicart && (
-            <div className={styles.minicart}>
-              <BasketIcon className={styles.shop__icon} />
-            </div>
-          )}
+          {withMinicart && <Quickcart style={styles.minicart} />}
         </div>
       </div>
     </>

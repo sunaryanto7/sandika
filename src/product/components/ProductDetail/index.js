@@ -3,7 +3,7 @@ import Block from '@sandika_components/core/Block';
 import Button from '@sandika_components/commons/Button';
 import PassionIcon from '@public/media/icons/passion.svg';
 import StarIcon from '@public/media/icons/star.svg';
-import theme from './productdetail.module.scss';
+import * as theme from './productdetail.module.scss';
 
 const ProductDetail = ({ style, children, ...props }) => {
   const { configurable_options, variants, __typename } = { ...props };

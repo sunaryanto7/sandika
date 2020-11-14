@@ -7,6 +7,7 @@ import { AppContext } from '@sandika_environment/context/app_context';
 import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
+import Button from '@sandika_components/commons/Button';
 import CartItem from './components/CartItem';
 
 const Cart = ({ productData }) => {
@@ -28,6 +29,7 @@ const Cart = ({ productData }) => {
             return <CartItem key={i} index={i} item={item} />;
           })}
         </Block>
+        <Button fullWidth btnDanger>Go To Checkout</Button>
       </Layout>
     </>
   );

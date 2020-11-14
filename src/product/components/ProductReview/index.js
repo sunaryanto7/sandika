@@ -3,7 +3,7 @@ import Block from '@sandika_components/core/Block';
 import BoyIcon from '@public/media/icons/boy.svg';
 import GirlIcon from '@public/media/icons/girl.svg';
 import StarIcon from '@public/media/icons/star.svg';
-import theme from './productreview.module.scss';
+import * as theme from './productreview.module.scss';
 
 const ProductReview = ({ children, review, style }) => {
   const styles = {
@@ -20,7 +20,7 @@ const ProductReview = ({ children, review, style }) => {
     <>
       <Block title={'Product Review'} style={styles.product__review}>
         {review.map((item, i) => {
-          if (i > 3) {
+          if (i > 5) {
             return;
           }
           return (

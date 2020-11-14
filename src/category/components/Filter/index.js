@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import Button from '@sandika_components/commons/Button';
 import { Modal, ModalBody, ModalHeader } from '@sandika_components/commons/Modal';
 import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
-import theme from './filter.module.scss';
+import * as theme from './filter.module.scss';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);

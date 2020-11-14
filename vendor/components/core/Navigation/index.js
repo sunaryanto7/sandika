@@ -7,7 +7,7 @@ import HomeIcon from '@public/media/icons/home.svg';
 import SearchIcon from '@public/media/icons/search.svg';
 import UserIcon from '@public/media/icons/user.svg';
 import BasketIcon from '@public/media/icons/supermarket.svg';
-import theme from './navigation.module.scss';
+import * as theme from './navigation.module.scss';
 
 const ButtonNavigation = ({ children, link, name, onClick }) => {
   if (name === 'search' && link === null) {

@@ -1,6 +1,6 @@
 import Block from '@sandika_components/core/Block';
 import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
-import theme from './productvariant.module.scss';
+import * as theme from './productvariant.module.scss';
 import { useState } from 'react';
 
 const ProductVariant = ({ options, activeOptions }) => {

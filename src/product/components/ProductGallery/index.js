@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import $ from 'jquery';
 import Block from '@sandika_components/core/Block';
-import theme from './productgallery.module.scss';
+import * as theme from './productgallery.module.scss';
 
 const Slider = dynamic(() => import('react-owl-carousel'), {
   ssr: false
