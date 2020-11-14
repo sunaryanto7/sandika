@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Checkbox from '@sandika_components/commons/Form/Checkbox';
 import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media';
 import * as theme from './cartitem.module.scss';
@@ -14,17 +14,23 @@ const CartItem = ({ item, index }) => {
     cart__item_detail_body: theme['cart__item--detail-body'],
     cart__item_additional: theme['cart__item--additional'],
     cart__item_qty: theme['cart__item--qty'],
+    cart__item_subtotal: theme['cart__item--subtotal'],
     qty__minus: theme['qty__minus'],
     qty__plus: theme['qty__plus']
   };
 
   const [qty, setQty] = useState(1);
+  const [subTotal, setSubTotal] = useState(qty * item.price);
   const handlePlus = () => {
     setQty(qty + 1);
   };
   const handleMinus = () => {
     if (qty > 1) { setQty(qty - 1); }
   };
+
+  useEffect(() => {
+    setSubTotal(qty * item.price);
+  }, [qty]);
 
   return (
     <>
@@ -47,36 +53,38 @@ const CartItem = ({ item, index }) => {
             </MediaImage>
             <MediaBody style={styles.cart__item_detail_body}>
               <p>{item.title}</p>
-              <strong>{item.price}</strong>
-              <div className={styles.cart__item_additional}>
-                <div className={styles.cart__item_qty}>
-                  <div
-                    className={styles.qty__minus}
-                    onClick={() => {
-                      handleMinus();
-                    }}>
-                    -
-                  </div>
-                  <input
-                    placeholder={qty}
-                    readOnly
-                    value={qty}
-                    onChange={(e) => {
-                      setQty(e.target.value);
-                    }}
-                  />
-                  <div
-                    className={styles.qty__plus}
-                    onClick={() => {
-                      handlePlus();
-                    }}>
-                    +
-                  </div>
-                </div>
-                {/* <div className={styles.cart__item_note}>Note</div> */}
-              </div>
+              <strong>{`$ ${item.price}`}</strong>
             </MediaBody>
           </Media>
+          <div className={styles.cart__item_additional}>
+            <div className={styles.cart__item_qty}>
+              <div
+                className={styles.qty__minus}
+                onClick={() => {
+                  handleMinus();
+                }}>
+                -
+                  </div>
+              <input
+                placeholder={qty}
+                readOnly
+                value={qty}
+                onChange={(e) => {
+                  setQty(e.target.value);
+                }}
+              />
+              <div
+                className={styles.qty__plus}
+                onClick={() => {
+                  handlePlus();
+                }}>
+                +
+                  </div>
+            </div>
+            <div className={styles.cart__item_subtotal}>
+              <p><strong>Subtotal : <br />$ {subTotal}</strong></p>
+            </div>
+          </div>
         </div>
       </div>
     </>

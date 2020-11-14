@@ -27,17 +27,19 @@ const Cart = ({ productData, promoBannerImages }) => {
       <Layout header={header} navigation={navigation} filter={filter} footer={footer}>
         <Block title={'Keranjang'} style={'cart'}>
           {productData.map((item, i) => {
-            return <CartItem key={i} index={i} item={item} />;
+            if (i < 3) {
+              return <CartItem key={i} index={i} item={item} />;
+            }
           })}
         </Block>
         <Block>
           <Button fullWidth btnDanger>Go To Checkout</Button>
         </Block>
-        <Block>
-          <Banner config={config.imageSlider} images={promoBannerImages} />
-        </Block>
         <Block title={'Special Offer'} additional={'Lihat Semua'}>
           <ProductSlider config={config.productSlider} productData={productData} />
+        </Block>
+        <Block>
+          <Banner config={config.imageSlider} images={promoBannerImages} />
         </Block>
       </Layout>
     </>
