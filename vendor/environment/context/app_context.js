@@ -74,7 +74,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             }
           },
           footer: {
-            enable: true,
+            enable: false,
             version: 1
           },
           filter: {
@@ -108,7 +108,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             }
           },
           footer: {
-            enable: true,
+            enable: false,
             version: 1
           },
           filter: {
@@ -176,7 +176,7 @@ const AppContextProvider = ({ t, i18n, children }) => {
             }
           },
           footer: {
-            enable: true,
+            enable: false,
             version: 1
           },
           filter: {
