@@ -82,7 +82,7 @@ const CartItem = ({ item, index }) => {
                   </div>
             </div>
             <div className={styles.cart__item_subtotal}>
-              <p><strong>Subtotal : <br />$ {subTotal}</strong></p>
+              <p><strong>Subtotal: $ {subTotal}</strong></p>
             </div>
           </div>
         </div>

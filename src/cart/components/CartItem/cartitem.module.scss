@@ -53,15 +53,12 @@
                 align-items: center;
                 background: var(--color-primary);
                 color: white;
-                border-radius: 15px;
-                line-height: 1.5;
+                border-radius: 5px;
                 font-size: 12px;
             }
     
-            .qty__minus{ margin-right: 3px;}
-            .qty__plus{ margin-left: 3px;}
-    
             input{
+                flex: 0 0 50%;
                 width: 100%;
                 border: none;
                 border-bottom: 1px solid rgb(238, 224, 177);
@@ -74,6 +71,7 @@
 
         #{$this}--subtotal{
             padding-left: 15px;
+            flex: 0 0 75%;
         }
     }
 }
