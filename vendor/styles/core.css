@@ -87,3 +87,9 @@ button:focus {
   outline: 0;
   box-shadow: none !important;
 }
+input{
+  appearance: none;
+  background:white;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
