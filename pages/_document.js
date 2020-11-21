@@ -25,6 +25,7 @@ class SandikaDocument extends Document {
       <Html lang={lang}>
         <Head>
           <meta name="theme-color" content={'#cd134b'} />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />
