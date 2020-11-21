@@ -1,23 +1,43 @@
-// GLOBAL STYLE
+/*
+@@  
+@@  GLOBAL STYLES
+@@  
+*/
 import '@sandika_styles/core.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-// PROPTYPES CHECKING
+/*
+@@  
+@@  FOR PROPTYPE CHECKING
+@@  
+*/
 import PropTypes from 'prop-types';
 
-// APOLLO
+/*
+@@  
+@@  APOLLO FOR GRAPHQL
+@@  
+*/
 import { ApolloProvider } from '@apollo/client';
 import client from '@sandika_environment/apollo';
 import AppContextProvider from '@sandika_environment/context/app_context';
 
-// Locales / Translation / Language , ROUTING
+/*
+@@  
+@@  FOR TRANSLATION AND ROUTING
+@@  
+*/
 import { appWithTranslation } from '@sandika_environment/i18n';
 
-// FONT AWESOME
+/*
+@@  
+@@  FONT AWESOME LIBRARY PACKAGE
+@@  add some icon name on library if you want to call it using css-declared font
+@@
+*/
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
-// ADD THIS LINE TO CALL FONT AWESOME USING NAME OF ICON
 library.add(faShoppingCart, faBars);
 
 const Sandika = ({ Component, pageProps }) => {

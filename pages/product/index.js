@@ -1,3 +1,4 @@
+import '@sandika_styles/empty.css';
 import Product from '@sandika_src/product';
 
 Product.getInitialProps = async () => {

@@ -21,7 +21,7 @@ const CartItem = ({ item, index }) => {
     qty__plus: theme['qty__plus']
   };
 
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(item.qty);
   const [subTotal, setSubTotal] = useState(qty * item.price);
   const handlePlus = () => {
     setQty(qty + 1);

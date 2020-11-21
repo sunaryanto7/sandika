@@ -1,8 +1,9 @@
 import Cart from '@sandika_src/cart/index.js';
+import '@sandika_styles/empty.css';
 
 Cart.getInitialProps = async () => {
   // GET PRODUCTS
-  const productResponse = await fetch('https://fakestoreapi.com/products?limit=5');
+  const productResponse = await fetch('https://fakestoreapi.com/products?limit=3');
   const productJson = await productResponse.json();
 
   // IMAGE SLIDER DATA - (MAIN BANNER)

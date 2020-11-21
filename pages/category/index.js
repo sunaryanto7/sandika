@@ -1,3 +1,4 @@
+import '@sandika_styles/empty.css';
 import Category from '@sandika_src/category';
 
 Category.getInitialProps = async () => {
