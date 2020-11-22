@@ -98,4 +98,4 @@ const Navigation = ({ active, search }) => {
   );
 };
 
-export default Navigation;
+export default React.memo(Navigation);

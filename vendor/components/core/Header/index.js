@@ -94,4 +94,4 @@ Header.propTypes = {
   withSearch: PropTypes.bool
 };
 
-export default Header;
+export default React.memo(Header);

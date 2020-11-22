@@ -34,4 +34,4 @@ CatalogProduct.propTypes = {
   productData: PropTypes.array
 };
 
-export default CatalogProduct;
+export default React.memo(CatalogProduct);

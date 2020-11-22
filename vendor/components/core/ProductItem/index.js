@@ -63,4 +63,4 @@ ProductItem.propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
 };
 
-export default ProductItem;
+export default React.memo(ProductItem);

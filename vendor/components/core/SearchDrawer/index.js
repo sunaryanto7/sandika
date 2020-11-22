@@ -85,4 +85,4 @@ const SearchDrawer = ({ open, handleClose }) => {
   );
 };
 
-export default SearchDrawer;
+export default React.memo(SearchDrawer);

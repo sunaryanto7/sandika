@@ -55,4 +55,4 @@ Banner.propTypes = {
   images: PropTypes.array
 };
 
-export default Banner;
+export default React.memo(Banner);

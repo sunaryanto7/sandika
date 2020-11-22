@@ -47,4 +47,4 @@ Block.propTypes = {
   padding15: PropTypes.bool
 };
 
-export default Block;
+export default React.memo(Block);

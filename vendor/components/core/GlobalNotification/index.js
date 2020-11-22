@@ -11,4 +11,4 @@ const GlobalNotification = () => {
   );
 };
 
-export default GlobalNotification;
+export default React.memo(GlobalNotification);

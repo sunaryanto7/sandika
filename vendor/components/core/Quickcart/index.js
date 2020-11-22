@@ -16,4 +16,4 @@ const Quickcart = ({ style }) => {
 	);
 };
 
-export default Quickcart;
+export default React.memo(Quickcart);

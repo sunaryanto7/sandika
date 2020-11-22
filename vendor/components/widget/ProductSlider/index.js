@@ -59,4 +59,4 @@ ProductSlider.propTypes = {
   productData: PropTypes.array
 };
 
-export default ProductSlider;
+export default React.memo(ProductSlider);

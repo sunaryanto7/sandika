@@ -40,4 +40,4 @@ Category.propTypes = {
   productCategories: PropTypes.array
 };
 
-export default Category;
+export default React.memo(Category);
