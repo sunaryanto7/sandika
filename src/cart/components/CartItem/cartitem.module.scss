@@ -10,6 +10,10 @@
         #{$this}--checklist{
             flex: 0 0 10%;
             text-align: center;
+
+            label span{
+                top: -10px;
+            }
         }
     
         #{$this}--info{

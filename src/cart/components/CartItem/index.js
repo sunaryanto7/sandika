@@ -3,8 +3,10 @@ import Checkbox from '@sandika_components/commons/Form/Checkbox';
 import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media';
 import * as theme from './cartitem.module.scss';
 
-const CartItem = ({ item, index }) => {
-  const [checked, setChecked] = useState(false);
+const CartItem = ({ item, index, handleItemData }) => {
+  const [checked, setChecked] = useState(true);
+  const [qty, setQty] = useState(item.qty);
+
   const styles = {
     cart__item: theme['cart__item'],
     cart__detail: theme['cart__item--detail'],
@@ -21,18 +23,19 @@ const CartItem = ({ item, index }) => {
     qty__plus: theme['qty__plus']
   };
 
-  const [qty, setQty] = useState(item.qty);
-  const [subTotal, setSubTotal] = useState(qty * item.price);
   const handlePlus = () => {
     setQty(qty + 1);
   };
+
   const handleMinus = () => {
     if (qty > 1) { setQty(qty - 1); }
   };
 
   useEffect(() => {
-    setSubTotal(qty * item.price);
-  }, [qty]);
+    var temp = item;
+    temp.qty = qty;
+    handleItemData(index, temp);
+  }, [qty])
 
   return (
     <>
@@ -74,9 +77,6 @@ const CartItem = ({ item, index }) => {
               placeholder={qty}
               readOnly
               value={qty}
-              onChange={(e) => {
-                setQty(e.target.value);
-              }}
             />
             <div
               className={styles.qty__plus}
@@ -87,7 +87,7 @@ const CartItem = ({ item, index }) => {
             </div>
           </div>
           <div className={styles.cart__item_subtotal}>
-            <p><strong>Subtotal: $ {subTotal}</strong></p>
+            <p><strong>Subtotal: $ {qty * item.price}</strong></p>
           </div>
         </div>
       </div>
