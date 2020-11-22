@@ -19,7 +19,9 @@ const CartItem = ({ item, index, handleItemData }) => {
     cart__item_qty: theme['cart__item--qty'],
     cart__item_subtotal: theme['cart__item--subtotal'],
     qty__minus: theme['qty__minus'],
-    qty__minus_disabled: [theme['qty__minus'], theme['qty__minus--disabled']].filter(Boolean).join(' '),
+    qty__minus_disabled: [theme['qty__minus'], theme['qty__minus--disabled']]
+      .filter(Boolean)
+      .join(' '),
     qty__plus: theme['qty__plus']
   };
 
@@ -28,14 +30,16 @@ const CartItem = ({ item, index, handleItemData }) => {
   };
 
   const handleMinus = () => {
-    if (qty > 1) { setQty(qty - 1); }
+    if (qty > 1) {
+      setQty(qty - 1);
+    }
   };
 
   useEffect(() => {
     var temp = item;
     temp.qty = qty;
     handleItemData(index, temp);
-  }, [qty])
+  }, [qty]);
 
   return (
     <>
@@ -73,11 +77,7 @@ const CartItem = ({ item, index, handleItemData }) => {
               }}>
               -
             </div>
-            <input
-              placeholder={qty}
-              readOnly
-              value={qty}
-            />
+            <input placeholder={qty} readOnly value={qty} />
             <div
               className={styles.qty__plus}
               onClick={() => {
@@ -87,7 +87,9 @@ const CartItem = ({ item, index, handleItemData }) => {
             </div>
           </div>
           <div className={styles.cart__item_subtotal}>
-            <p><strong>Subtotal: $ {qty * item.price}</strong></p>
+            <p>
+              <strong>Subtotal: $ {qty * item.price}</strong>
+            </p>
           </div>
         </div>
       </div>

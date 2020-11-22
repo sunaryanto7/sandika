@@ -66,7 +66,10 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
         <ProductReview review={relatedProductData} />
 
         <Block title={'Produk Yang Di Jual 77 Komp'} additional={'Lihat Semua'} padding15>
-          <ProductSlider config={relatedProductConfig.productSlider} productData={relatedProductData} />
+          <ProductSlider
+            config={relatedProductConfig.productSlider}
+            productData={relatedProductData}
+          />
         </Block>
 
         <Block padding15>

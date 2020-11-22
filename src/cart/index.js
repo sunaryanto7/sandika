@@ -12,16 +12,20 @@ import CartSummary from './components/CartSummary';
 const Cart = ({ productData, promoBannerImages }) => {
   const { config } = useContext(AppContext).ctx.config.slider;
   const { header, navigation, filter, footer } = useContext(AppContext).ctx.page.cart.layout;
-  const [{ items } = data, updateData] = useState({ items: productData.map((data) => { return { active: true, qty: 1, ...data } }) });
+  const [{ items } = data, updateData] = useState({
+    items: productData.map((data) => {
+      return { active: true, qty: 1, ...data };
+    })
+  });
 
   // const { items } = data;
 
   const handleItemData = (i, value) => {
     const temp = items;
-    temp[i] = value
+    temp[i] = value;
     updateData({
       items: temp
-    })
+    });
   };
 
   return (

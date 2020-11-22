@@ -6,7 +6,7 @@ const Checkbox = ({ value, name, id, onChange, children, checked, style }) => {
     form__checkbox_checkmark: theme['form__checkbox_checkmark']
   };
 
-  console.log
+  console.log;
   return (
     <>
       <label className={styles.form__checkbox}>

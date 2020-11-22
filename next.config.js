@@ -1,4 +1,4 @@
-const FilterWarningsPlugin = require("webpack-filter-warnings-plugin");
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const withPlugins = require('next-compose-plugins');
 const withSourceMaps = require('@zeit/next-source-maps');
 const withSass = require('@zeit/next-sass');
@@ -60,11 +60,12 @@ const nextConfig = {
     @@  module.scss and empty style.css on development mode
     @@  
     */
-    (process.env.NODE_ENV !== "production" && config.plugins.push(
-      new FilterWarningsPlugin({
-        exclude: /mini-css-extract-plugin[^]*Conflicting order between:/
-      })
-    ));
+    process.env.NODE_ENV !== 'production' &&
+      config.plugins.push(
+        new FilterWarningsPlugin({
+          exclude: /mini-css-extract-plugin[^]*Conflicting order between:/
+        })
+      );
 
     return config;
   }
@@ -79,8 +80,7 @@ module.exports = withPlugins(
         cssModules: true,
         cssLoaderOptions: {
           importLoaders: 1,
-          localIdentName: process.env.NODE_ENV === "production" ?
-            "sdk_[hash:base64:7]" : "[local]"
+          localIdentName: process.env.NODE_ENV === 'production' ? 'sdk_[hash:base64:7]' : '[local]'
         }
       }
     ],

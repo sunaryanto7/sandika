@@ -19,7 +19,13 @@ const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
   return (
     <>
       <Head>
-        {process.env.NODE_ENV !== 'production' && (<link rel="stylesheet" type="text/css" href={'/_next/static/css/styles.chunk.css?v=' + Date.now()} />)}
+        {process.env.NODE_ENV !== 'production' && (
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href={'/_next/static/css/styles.chunk.css?v=' + Date.now()}
+          />
+        )}
       </Head>
       <div className={styles.wrapper} id={'main'}>
         {header !== undefined && header.enable && <Header {...header.props} />}
