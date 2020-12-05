@@ -5,7 +5,7 @@ import Header from '@sandika_components/core/Header';
 import Navigation from '@sandika_components/core/Navigation';
 import theme from './layout.module.scss';
 
-const Layout = ({ header, navigation, footer, filter, children, nomargin }) => {
+const Layout = ({ header, navigation, footer, children, nomargin }) => {
   const styles = {
     wrapper: theme['wrapper'],
     main: () => {

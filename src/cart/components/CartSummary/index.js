@@ -10,7 +10,9 @@ const CartSummary = ({ data, style }) => {
   const summary = () => {
     var result = 0;
     for (var i = 0; i < data.length; i++) {
-      result += data[i].qty * data[i].price;
+      if (data[i].selected) {
+        result += data[i].qty * data[i].price;
+      }
     }
     return result;
   };

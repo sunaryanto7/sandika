@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 */
 import { ApolloProvider } from '@apollo/client';
 import client from '@sandika_environment/apollo';
-import AppContextProvider from '@sandika_environment/context/app_context';
+import AppContextProvider from '@sandika_environment/context';
 
 /*
 @@  

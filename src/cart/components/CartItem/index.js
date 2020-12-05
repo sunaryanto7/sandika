@@ -3,8 +3,7 @@ import Checkbox from '@sandika_components/commons/Form/Checkbox';
 import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media';
 import * as theme from './cartitem.module.scss';
 
-const CartItem = ({ item, index, handleItemData }) => {
-  const [checked, setChecked] = useState(true);
+const CartItem = ({ item, index, handleQtyData, handleSelectData }) => {
   const [qty, setQty] = useState(item.qty);
 
   const styles = {
@@ -38,7 +37,7 @@ const CartItem = ({ item, index, handleItemData }) => {
   useEffect(() => {
     var temp = item;
     temp.qty = qty;
-    handleItemData(index, temp);
+    handleQtyData(index, temp);
   }, [qty]);
 
   return (
@@ -49,10 +48,10 @@ const CartItem = ({ item, index, handleItemData }) => {
             <Checkbox
               name={`${'item-' + index}`}
               id={`${'item-' + index}`}
-              checked={checked}
+              checked={item.selected}
               value={JSON.stringify(item)}
               onChange={() => {
-                setChecked(!checked);
+                handleSelectData(index)
               }}
             />
           </div>
