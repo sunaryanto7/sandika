@@ -45,7 +45,6 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
       <Layout
         header={header}
         navigation={navigation}
-        filter={filter}
         footer={footer}>
         <Block>
           <Banner
