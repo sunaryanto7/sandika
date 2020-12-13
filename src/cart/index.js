@@ -19,7 +19,7 @@ const Cart = ({ productData, promoBannerImages }) => {
         }
       },
       page: {
-        home: {
+        cart: {
           layout: {
             header,
             navigation,

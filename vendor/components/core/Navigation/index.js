@@ -33,14 +33,10 @@ const Navigation = ({ active, search }) => {
   const [openSearch, setOpenSearch] = useState(false);
   const styles = {
     navigation: theme['navigation'],
-    navigation__item: (name) => {
-      if (active === name) {
-        return [theme['navigation__item'], theme['navigation__item_active']]
-          .filter(Boolean)
-          .join(' ');
-      }
-      return theme['navigation__item'];
-    }
+    navigation__item: (name) => active === name ?
+      [theme['navigation__item'], theme['navigation__item_active']]
+        .filter(Boolean)
+        .join(' ') : theme['navigation__item']
   };
 
   const buttonList = [
