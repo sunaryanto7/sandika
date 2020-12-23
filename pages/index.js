@@ -1,4 +1,3 @@
-import '@sandika_styles/empty.css';
 import Home from '@sandika_src/index.js';
 
 Home.getInitialProps = async () => {

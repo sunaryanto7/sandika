@@ -1,5 +1,4 @@
 import Cart from '@sandika_src/cart/index.js';
-import '@sandika_styles/empty.css';
 
 Cart.getInitialProps = async () => {
   // GET PRODUCTS

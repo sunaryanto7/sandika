@@ -10,7 +10,8 @@
   "engineStrict": true,
   "scripts": {
     "dev": "NODE_ENV=development next dev",
-    "build": "rm -rf ./.next/ ./out && NODE_ENV=production next build && next export",
+    "build": "yarn clean && NODE_ENV=production next build && next export",
+    "clean": "yarn cache clean -f && rimraf .next && rimraf out",
     "start": "next start",
     "lint": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
@@ -36,7 +37,7 @@
     "formik": "^2.1.5",
     "graphql": "^15.3.0",
     "jquery": "^3.5.1",
-    "next": "^9.1.8-canary.11",
+    "next": "^10.0.4",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^7.0.1",
     "next-redux-wrapper": "^6.0.2",
@@ -49,6 +50,7 @@
     "react-lazyload": "^3.0.0",
     "react-redux": "^7.2.1",
     "recompose": "^0.30.0",
+    "rimraf": "^3.0.2",
     "swiper": "^6.4.5",
     "ua-parser-js": "^0.7.21",
     "url-loader": "^4.1.0",
