@@ -1,14 +1,23 @@
-import './footer.module.scss';
+import * as theme from './footer.module.scss';
 
-const Footer = () => {
+const Footer = ({ style }) => {
+
+  const styles = {
+    'footer': [theme['footer'], style].filter(Boolean).join(' '),
+    'footer__block': theme['footer__block'],
+    'footer__title': theme['footer__title'],
+    'footer__content': theme['footer__content'],
+    'footer__socialmedia': [theme['footer__block'], theme['footer__socialmedia']].filter(Boolean).join(' ')
+  };
+
   return (
     <>
-      <div className={'footer'}>
-        <div className={'footer__block'}>
-          <div className={'footer__block_title'}>
+      <div className={styles.footer}>
+        <div className={styles.footer__block}>
+          <div className={styles.footer__title}>
             <h3>Sandika</h3>
           </div>
-          <div className={'footer__block_content'}>
+          <div className={styles.footer__content}>
             <ul>
               <li>
                 <a href="#">Kebijakan</a>
@@ -19,11 +28,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={'footer__block'}>
-          <div className={'footer__block_title'}>
+        <div className={styles.footer__block}>
+          <div className={styles.footer__title}>
             <h3>Bantuan</h3>
           </div>
-          <div className={'footer__block_content'}>
+          <div className={styles.footer__content}>
             <ul>
               <li>
                 <a href="#">FAQ</a>
@@ -34,11 +43,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={['footer__block', 'footer__social_media'].filter(Boolean).join(' ')}>
-          <div className={'footer__block_title'}>
+        <div className={styles.footer__socialmedia}>
+          <div className={styles.footer__title}>
             <h3>Social Media</h3>
           </div>
-          <div className={'footer__block_content'}>
+          <div className={styles.footer__content}>
             <ul>
               <li>
                 <a href="#">FAQ</a>
@@ -49,8 +58,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={'footer__block'}>
-          <div className={['footer__block_content'].join(' ')}>
+        <div className={styles.footer__block}>
+          <div className={styles.footer__content}>
             <p>
               Yogya adalah salah satu perusahaan ritel terkemuka yang telah hadir memberikan
               kemudahan dan kenyamanan dalam berbelanja selama puluhan tahun untuk masyarakat
