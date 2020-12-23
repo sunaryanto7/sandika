@@ -1,58 +1,33 @@
-import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-import $ from 'jquery';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Block from '@sandika_components/core/Block';
 import * as theme from './productgallery.module.scss';
 
-const Slider = dynamic(() => import('react-owl-carousel'), {
-  ssr: false
-});
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 const ProductGallery = ({ config, ...props }) => {
-  const { configurable_options, variants, __typename } = { ...props };
-  const [isMount, setIsMount] = useState(false);
 
-  const [activeOptions, setActiveOptions] = useState(variants[0].attributes);
-  const [activeProduct, setActiveProduct] = useState(variants[0].product);
-  const [imageGallery, setImageGallery] = useState(activeProduct.media_gallery);
   const styles = {
     product__media__gallery: theme['product__media__gallery']
   };
 
-  useEffect(() => {
-    window.jQuery = $;
-    window.$ = $;
-    global.jQuery = $;
-    setIsMount(true);
-
-    return () => {
-      window.jQuery = undefined;
-      window.$ = undefined;
-      global.jQuery = undefined;
-      setIsMount(false);
-    };
-  }, []);
-
-  const handleOptionsChange = () => {
-    return null;
-  };
-
-  if (isMount) {
-    return (
-      <>
-        <Block style={styles.product__media__gallery}>
-          <Slider {...config}>
-            {imageGallery.map((data, i) => {
-              return <img src={data.url} alt={data.alt} key={i} />;
-            })}
-          </Slider>
-        </Block>
-      </>
-    );
-  }
-
-  return null;
+  const { variants } = { ...props };
+  console.log(config);
+  return (
+    <>
+      <Block style={styles.product__media__gallery}>
+        <Swiper {...config}>
+          {variants[0].product.media_gallery.map((data, i) => {
+            return (
+              <SwiperSlide className={styles.swipper__item} key={i}>
+                <img src={data.url} alt={data.alt} key={i} />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+      </Block>
+    </>
+  );
 };
 
 export default ProductGallery;

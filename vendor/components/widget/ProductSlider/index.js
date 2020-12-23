@@ -1,13 +1,13 @@
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import ProductItem from '@sandika_components/core/ProductItem';
 import theme from './productslider.module.scss';
 
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
-const ProductSlider = ({ productData }) => {
+const ProductSlider = ({ productData, config }) => {
 
   const styles = {
     swipper__item: theme['swiper__item'],
@@ -15,11 +15,7 @@ const ProductSlider = ({ productData }) => {
   };
 
   return (
-    <Swiper
-      spaceBetween={10}
-      slidesPerView={2}
-      loop
-    >
+    <Swiper {...config}>
       {productData.map((data, i) => {
         return (
           <SwiperSlide className={styles.swipper__item} key={i}>

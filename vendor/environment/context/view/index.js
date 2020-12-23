@@ -11,19 +11,18 @@ const store = {
         imageSlider: {
           spaceBetween: 0,
           slidesPerView: 1,
+          navigation: false,
           autoplay: true,
           delay: 5000,
           loop: true,
         },
         productSlider: {
-          autoPlay: true,
-          items: 2,
-          dots: false,
-          nav: false,
-          stagePadding: 0,
+          spaceBetween: 10,
+          slidesPerView: 2,
+          navigation: false,
+          autoplay: true,
+          delay: 5000,
           loop: true,
-          margin: 10,
-          autoHeight: true
         }
       }
     },
@@ -32,11 +31,12 @@ const store = {
       version: 1,
       config: {
         imageSlider: {
-          items: 1,
-          dots: false,
-          nav: false,
+          spaceBetween: 0,
+          slidesPerView: 1,
+          navigation: false,
+          autoplay: true,
+          delay: 5000,
           loop: true,
-          center: true
         }
       }
     }
