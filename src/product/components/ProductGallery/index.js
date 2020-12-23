@@ -12,7 +12,7 @@ const ProductGallery = ({ config, ...props }) => {
   };
 
   const { variants } = { ...props };
-  console.log(config);
+
   return (
     <>
       <Block style={styles.product__media__gallery}>
