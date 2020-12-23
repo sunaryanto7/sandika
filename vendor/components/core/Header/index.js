@@ -16,7 +16,7 @@ const Header = (props) => {
 
   const styles = {
     // Header
-    header: theme['header'],
+    header: [theme['header'], withNavigation && theme['header__with_navigation']].filter(Boolean).join(' '),
     header__panel: theme['header__panel'],
     header__content: theme['header__content'],
     // Toggle
@@ -34,16 +34,10 @@ const Header = (props) => {
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.header__panel}>
+        {/* <div className={styles.header__panel}>
           <GlobalNotification />
-        </div>
+        </div> */}
         <div className={styles.header__content}>
-          {/* Sidebar Icon */}
-          {!withNavigation && (
-            <div className={styles.sidebar__toggle}>
-              <MenuIcon className={styles.icon} />
-            </div>
-          )}
 
           {/* Back Navigation */}
           {withNavigation && (
@@ -61,12 +55,9 @@ const Header = (props) => {
           {/* App Name */}
           {withAppName && (
             <div className={styles.app__name}>
-              <h1
-                onClick={() => {
-                  Router.push('/');
-                }}>
-                {t('core:Sandika')}
-              </h1>
+              <img
+                src={'/media/store/logotext.svg'}
+                onClick={() => { Router.push('/'); }} />
             </div>
           )}
 

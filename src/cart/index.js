@@ -67,6 +67,7 @@ const Cart = ({ productData, promoBannerImages }) => {
         navigation={navigation}
         footer={footer}>
         <Block
+          nopadding
           title={'Keranjang'}
           style={'cart'}>
           {items.map((item, i) => {
@@ -82,6 +83,7 @@ const Cart = ({ productData, promoBannerImages }) => {
         <CartSummary data={items} />
 
         <Block
+          nopadding
           title={'Special Offer'}
           additional={'Lihat Semua'}>
           <ProductSlider

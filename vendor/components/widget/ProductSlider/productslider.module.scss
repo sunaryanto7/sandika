@@ -1,13 +1,9 @@
-.owl_images{
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+.swiper__item{
+    display: flex;
+    padding:10px 0;
 
-    .owl_descrition{
-        position: absolute;
+    .swipper__product_item{
         width: 100%;
-        text-align: center;
-        top: 35%;
-        bottom: 35%;
+        // padding:0;
     }
 }

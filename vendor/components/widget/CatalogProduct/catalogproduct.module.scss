@@ -1,18 +1,5 @@
 .widget__catalog{
-    display: inline-flex;
-    flex-wrap: wrap;
-    
-    .product__item {
-        flex: 0 0 calc((100% / 2) - 5px);
-        margin-bottom: 10px;
-        
-        &:nth-child(odd){
-            margin-right: 10px;
-        }
-        
-        &:nth-child(even){
-            float: right;
-        }
-    }
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
 }

@@ -15,18 +15,52 @@
         background: white;
         display: flex;
         justify-content: start;
-        padding: 0 15px;
+        padding: 10px 15px;
         align-items: center;
         
         .icon {
             width: 20px;
             height: auto;
-            fill: #0eac32;
+            fill: var(--color-primary);
             display: inline-block;
             vertical-align: middle;
         }
         
-        .sidebar__toggle, 
+        .app__name {
+            flex: 0 0 90%;
+            text-align: left;
+
+            h1{
+                font-size: 1.2rem;
+                color: var(--color-primary);
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            img{
+                height: 30px;
+                width: auto;
+            }
+
+        }
+
+        .minicart {
+            flex: 0 0 10%;
+            align-self: center;
+            text-align: right;
+
+            .shop__icon {
+                width: 24px;
+                height: auto;
+                fill: var(--color-primary);
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+    }
+
+    &__with_navigation{
         .history__back {
             flex: 0 0 10%;
             text-align: left;
@@ -38,29 +72,11 @@
 
         .app__name {
             flex: 0 0 80%;
-            text-align: left;
 
-            h1{
-                font-size: 1.2rem;
-                color: #0eac32;
-                font-weight: 500;
-                cursor: pointer;
-            }
         }
 
         .minicart {
             flex: 0 0 10%;
-            align-self: center;
-            text-align: right;
-
-            .shop__icon {
-                width: 24px;
-                height: auto;
-                fill: #0eac32;
-                display: inline-block;
-                vertical-align: middle;
-            }
         }
-
     }
 }

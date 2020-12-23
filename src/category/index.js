@@ -14,11 +14,6 @@ const Category = ({ mainBannerImages, productData }) => {
 
   const {
     store: {
-      config: {
-        slider: {
-          config
-        }
-      },
       page: {
         category: {
           layout: {
@@ -48,12 +43,6 @@ const Category = ({ mainBannerImages, productData }) => {
         navigation={navigation}
         filter={filter}
         footer={footer}>
-        <Block
-          padding15>
-          <Banner
-            config={config.imageSlider}
-            images={mainBannerImages} />
-        </Block>
         <Block
           padding15
           title={'Barang Yang Di Cari: Kemeja Pria'}

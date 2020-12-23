@@ -9,13 +9,11 @@ const store = {
       version: 1,
       config: {
         imageSlider: {
-          autoPlay: true,
-          items: 1,
-          dots: false,
-          nav: false,
-          stagePadding: 20,
+          spaceBetween: 0,
+          slidesPerView: 1,
+          autoplay: true,
+          delay: 5000,
           loop: true,
-          margin: 10
         },
         productSlider: {
           autoPlay: true,
@@ -24,7 +22,8 @@ const store = {
           nav: false,
           stagePadding: 0,
           loop: true,
-          margin: 10
+          margin: 10,
+          autoHeight: true
         }
       }
     },
@@ -52,12 +51,12 @@ const store = {
           props: {
             withNavigation: false,
             withAppName: true,
-            withMinicart: false,
-            withSearch: false
+            withMinicart: true,
+            withSearch: true
           }
         },
         navigation: {
-          enable: true,
+          enable: false,
           version: 1,
           props: {
             active: 'home',
@@ -147,7 +146,7 @@ const store = {
           }
         },
         navigation: {
-          enable: true,
+          enable: false,
           version: 1,
           props: {
             active: 'cart',

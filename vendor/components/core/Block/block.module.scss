@@ -1,10 +1,10 @@
 .widget{
-    padding: 5px 0;
+    padding: 15px;
 
     $this:&;
 
-    &__padding__15{
-        padding:15px;
+    &__nopadding{
+        padding:0;
     }
     
     &__header{

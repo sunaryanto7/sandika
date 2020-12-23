@@ -56,7 +56,7 @@ const SearchDrawer = ({ open, handleClose }) => {
 
         {/* Search Result */}
         <div className={styles.search_drawer__body}>
-          <Block title={'Pencarian'}>
+          <Block title={'Pencarian'} nopadding>
             <Media>
               <MediaBody>Payung</MediaBody>
             </Media>
@@ -67,7 +67,7 @@ const SearchDrawer = ({ open, handleClose }) => {
               <MediaBody>Kertas Manila</MediaBody>
             </Media>
           </Block>
-          <Block title={'Produk Populer'} additional={'Lihat Semua'}>
+          <Block title={'Produk Populer'} additional={'Lihat Semua'} nopadding>
             {searchSugesstionsItems.map((item, i) => {
               return (
                 <Media key={i}>

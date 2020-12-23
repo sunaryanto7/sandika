@@ -3,9 +3,9 @@ import Button from '@sandika_components/commons/Button';
 import is_empty from '@sandika_modules/is_empty';
 import theme from './block.module.scss';
 
-const Block = ({ children, title, additional, style, padding15 }) => {
+const Block = ({ children, title, additional, style, nopadding }) => {
   const styles = {
-    widget: [theme['widget'], style, padding15 ? theme['widget__padding__15'] : null]
+    widget: [theme['widget'], style, nopadding && theme['widget__nopadding']]
       .filter(Boolean)
       .join(' '),
     widget__header: theme['widget__header'],

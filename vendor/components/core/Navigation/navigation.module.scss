@@ -24,7 +24,7 @@
 
     &__item_active{
         button{
-            background: #0eac32;
+            background: var(--color-primary);;
             svg{
                 fill: white;
             }

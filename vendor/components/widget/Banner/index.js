@@ -1,58 +1,30 @@
-import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-import $ from 'jquery';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import theme from './banner.module.scss';
 
-const Slider = dynamic(() => import('react-owl-carousel'), {
-  ssr: false
-});
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
-const Banner = ({ config, images = [] }) => {
-  const [isMount, setIsMount] = useState(false);
-
+const Banner = ({ images = [], config }) => {
   const styles = {
-    owl_images: theme['owl_images'],
-    owl_description: theme['owl_description']
+    swipper_images: theme['swipper_images'],
+    swipper_description: theme['swipper_description']
   };
 
-  useEffect(() => {
-    window.jQuery = $;
-    window.$ = $;
-    global.jQuery = $;
-    setIsMount(true);
+  return (
+    <Swiper {...config}>
+      {images.map((data, i) => {
+        return (
+          <SwiperSlide className={styles.swipper__item} key={i}>
+            <div className={styles.swipper_images} key={i}>
+              <img src={data.src} alt={data.alt} />
+              {data.alt && <h2 className={styles.swipper_description}>{data.alt}</h2>}
+            </div>
+          </SwiperSlide>
+        );
+      })}
 
-    return () => {
-      window.jQuery = undefined;
-      window.$ = undefined;
-      global.jQuery = undefined;
-      setIsMount(false);
-    };
-  }, []);
-
-  if (isMount) {
-    return (
-      <>
-        <Slider {...config}>
-          {images.map((data, i) => {
-            return (
-              <div className={styles.owl_images} key={i}>
-                <img src={data.src} alt={data.alt} />
-                <h2 className={styles.owl_description}>{data.alt}</h2>
-              </div>
-            );
-          })}
-        </Slider>
-      </>
-    );
-  }
-
-  return null;
-};
-
-Banner.propTypes = {
-  config: PropTypes.object,
-  images: PropTypes.array
-};
+    </Swiper>
+  );
+}
 
 export default React.memo(Banner);

@@ -109,7 +109,7 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
         </Block>
 
         {/* Product Form */}
-        <Block>
+        <Block nopadding>
           <ProductForm field={{}} />
         </Block>
       </Layout>

@@ -43,10 +43,11 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
 
       {/* Body */}
       <Layout
+        nomargin
         header={header}
         navigation={navigation}
         footer={footer}>
-        <Block>
+        <Block nopadding>
           <Banner
             config={config.imageSlider}
             images={mainBannerImages} />
@@ -64,7 +65,7 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
           <Category
             productCategories={productData} />
         </Block>
-        <Block>
+        <Block nopadding>
           <Banner
             config={config.imageSlider}
             images={promoBannerImages} />

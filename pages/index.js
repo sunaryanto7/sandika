@@ -10,13 +10,13 @@ Home.getInitialProps = async () => {
   const mainBannerImages = [
     {
       src:
-        'https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png',
-      alt: 'Independence Day'
+        'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/s/u/surprise-deals-december-mobile.jpg',
+      alt: null
     },
     {
       src:
-        'https://shop.redq.now.sh/_next/static/images/grocery-f1565ac25de02b9295dccc2da13004ab.png',
-      alt: 'Special Offer'
+        'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/d/e/desember-finally-year-end-sale-mobile.jpg',
+      alt: null
     }
   ];
 
