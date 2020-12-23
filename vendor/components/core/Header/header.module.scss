@@ -1,82 +1,79 @@
 .header {
-    position: fixed;
-    max-width: inherit;
-    width: 100%;
-    z-index: 1030;
-    border-bottom: 2px solid #f3f3f3;
+  position: fixed;
+  max-width: inherit;
+  width: 100%;
+  z-index: 1030;
+  border-bottom: 2px solid #f3f3f3;
 
-    // Panel
-    &__panel{
-        display: block;
+  // Panel
+  &__panel {
+    display: block;
+  }
+
+  // Content
+  &__content {
+    background: white;
+    display: flex;
+    justify-content: start;
+    padding: 10px 15px;
+    align-items: center;
+
+    .icon {
+      width: 20px;
+      height: auto;
+      fill: black;
+      display: inline-block;
+      vertical-align: middle;
     }
 
-    // Content
-    &__content{
-        background: white;
-        display: flex;
-        justify-content: start;
-        padding: 10px 15px;
-        align-items: center;
-        
-        .icon {
-            width: 20px;
-            height: auto;
-            fill: black;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        
-        .app__name {
-            flex: 0 0 90%;
-            text-align: left;
+    .app__name {
+      flex: 0 0 90%;
+      text-align: left;
 
-            h1{
-                font-size: 1.2rem;
-                color: black;
-                font-weight: 500;
-                cursor: pointer;
-            }
+      h1 {
+        font-size: 1.2rem;
+        color: black;
+        font-weight: 500;
+        cursor: pointer;
+      }
 
-            img{
-                height: 30px;
-                width: auto;
-            }
-
-        }
-
-        .minicart {
-            flex: 0 0 10%;
-            align-self: center;
-            text-align: right;
-
-            .shop__icon {
-                width: 24px;
-                height: auto;
-                fill: black;
-                display: inline-block;
-                vertical-align: middle;
-            }
-        }
-
+      img {
+        height: 30px;
+        width: auto;
+      }
     }
 
-    &__with_navigation{
-        .history__back {
-            flex: 0 0 10%;
-            text-align: left;
+    .minicart {
+      flex: 0 0 10%;
+      align-self: center;
+      text-align: right;
 
-            button{
-                padding: 0;
-            }
-        }
-
-        .app__name {
-            flex: 0 0 80%;
-
-        }
-
-        .minicart {
-            flex: 0 0 10%;
-        }
+      .shop__icon {
+        width: 24px;
+        height: auto;
+        fill: black;
+        display: inline-block;
+        vertical-align: middle;
+      }
     }
+  }
+
+  &__with_navigation {
+    .history__back {
+      flex: 0 0 10%;
+      text-align: left;
+
+      button {
+        padding: 0;
+      }
+    }
+
+    .app__name {
+      flex: 0 0 80%;
+    }
+
+    .minicart {
+      flex: 0 0 10%;
+    }
+  }
 }

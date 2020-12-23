@@ -1,63 +1,62 @@
-.drawer{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1031;
-    top: 0;
-    right: 0;
-    bottom: 0;
+.drawer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1031;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.drawer__content{
-    background: white;
-    height: 100%;
-    margin: auto;
-    overflow: scroll;
+.drawer__content {
+  background: white;
+  height: 100%;
+  margin: auto;
+  overflow: scroll;
 
-    .drawer__header{
-        background: #0eac32;
+  .drawer__header {
+    background: #0eac32;
 
-        .drawer__header_panel{
-            max-width: 480px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            padding: 0 10px;
+    .drawer__header_panel {
+      max-width: 480px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 0 10px;
 
-            .drawer__navigation{
-                flex: 0 0 15%;
+      .drawer__navigation {
+        flex: 0 0 15%;
 
-                button{
-                    padding: 5px;
-                }
-            }
-
-            .drawer__app_name{
-                flex: 0 0 70%;
-                text-align: center;
-
-                h3{
-                    color: white;
-                }
-            }
+        button {
+          padding: 5px;
         }
-    }
+      }
 
-    .drawer__children_wrapper{
-        max-width: 480px;
-        margin: auto;
-        display: block;
-        
+      .drawer__app_name {
+        flex: 0 0 70%;
+        text-align: center;
+
+        h3 {
+          color: white;
+        }
+      }
     }
+  }
+
+  .drawer__children_wrapper {
+    max-width: 480px;
+    margin: auto;
+    display: block;
+  }
 }
 
-.drawer__open{
-    left: 0;
-    transition: left .3s ease;
+.drawer__open {
+  left: 0;
+  transition: left 0.3s ease;
 }
 
-.drawer__close{
-    left: 100%;
-    transition: left .3s ease;
+.drawer__close {
+  left: 100%;
+  transition: left 0.3s ease;
 }

@@ -5,12 +5,13 @@
  ** EDIT THE CODE IF YOU WANT TO ADD PROPS
  */
 
-import theme from './input.module.scss';
+import theme from './inputfield.module.scss';
 import PropTypes from 'prop-types';
 
-const Input = ({ id, name, type, value, label, readOnly, placeholder, onChange }) => {
+const InputField = ({ label, value, error, id, name, type, readOnly, placeholder, onChange }) => {
   const styles = {
-    form__input: theme['form__input']
+    app__input: theme['app__input'],
+    app__errormessage: theme['app__errormessage']
   };
 
   const handleChange = (event) => {
@@ -29,34 +30,39 @@ const Input = ({ id, name, type, value, label, readOnly, placeholder, onChange }
         id={id}
         name={name}
         type={type}
+        readOnly={readOnly}
         onChange={handleChange}
         value={value}
-        readOnly={readOnly}
         placeholder={placeholder}
-        className={styles.form__input}
+        className={styles.app__input}
       />
+      {error && <span className={styles.app__errormessage}>{error}</span>}
     </>
   );
 };
 
-Input.defaultProps = {
+InputField.defaultProps = {
   id: null,
   name: null,
   type: null,
   value: undefined,
   label: null,
+  readOnly: false,
   placeholder: null,
-  onChange: undefined
+  onChange: undefined,
+  error: null
 };
 
-Input.propTypes = {
+InputField.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['text', 'number', 'hidden', 'password', 'email']).isRequired,
   value: PropTypes.string,
   label: PropTypes.string,
+  readOnly: PropTypes.bool,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  error: PropTypes.string
 };
 
-export default Input;
+export default InputField;

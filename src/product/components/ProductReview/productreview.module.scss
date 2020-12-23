@@ -1,64 +1,68 @@
-.product__review{
-    background: white;
-    padding: 0 15px;
-    border-bottom: 10px solid #eee;
+.product__review {
+  background: white;
+  padding: 0 15px;
+  border-bottom: 10px solid #eee;
 
-    &--media{
-        padding:15px 0;
-        border-bottom: 1px solid #e0e0e0;
+  &--media {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
 
-        &-image{
-            display: flex;
-            align-items: center;
-            
-            > svg{
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                padding: 5px;
-                border: 1px solid green;
-                border-radius: 10px;
-                flex: 0 0 10%;
-            }
-            > span{
-                margin: 0;
-                flex: 0 0 90%;
-            }
-        }
+    &-image {
+      display: flex;
+      align-items: center;
 
-        &-body{
-            padding-top: 10px;
-            p{
-                &:first-child{ margin-top: 0; }
-                &:last-child{ margin-bottom: 0; }
-            }
-        }
+      > svg {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        padding: 5px;
+        border: 1px solid green;
+        border-radius: 10px;
+        flex: 0 0 10%;
+      }
+      > span {
+        margin: 0;
+        flex: 0 0 90%;
+      }
     }
 
-    &--from{
-        // display: flex;
-        p{
-            display: flex;
-            align-items: center;
-            margin: 0;
-
-            strong{
-                display: flex;
-                align-items: center;
-            }
+    &-body {
+      padding-top: 10px;
+      p {
+        &:first-child {
+          margin-top: 0;
         }
-        svg{
-            width: 16px;
-            height: 16px;
-            margin: 0 5px;
+        &:last-child {
+          margin-bottom: 0;
         }
+      }
     }
+  }
 
-    &--date{
-        margin-top: 0;
-    }
+  &--from {
+    // display: flex;
+    p {
+      display: flex;
+      align-items: center;
+      margin: 0;
 
-    &--review{
-        margin-top: 0;
+      strong {
+        display: flex;
+        align-items: center;
+      }
     }
+    svg {
+      width: 16px;
+      height: 16px;
+      margin: 0 5px;
+    }
+  }
+
+  &--date {
+    margin-top: 0;
+  }
+
+  &--review {
+    margin-top: 0;
+  }
 }

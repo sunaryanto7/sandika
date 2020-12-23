@@ -23,18 +23,13 @@ Home.getInitialProps = async () => {
   const promoBannerImages = [
     {
       src:
-        'https://shop.redq.now.sh/_next/static/images/offer-1-1f7a4c9ea0ba5a216bc7af1f60d044e0.png',
+        'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/n/e/new-arrival-november-away-series-mobile-revisi.jpg',
       alt: 'Free Delivery'
     },
     {
       src:
-        'https://shop.redq.now.sh/_next/static/images/offer-2-90d3534e1ad62a8b8a977f1290e61e9f.png',
+        'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/n/e/new-arrival-november-emilia-mobile.jpg',
       alt: 'Coupon Saving'
-    },
-    {
-      src:
-        'https://shop.redq.now.sh/_next/static/images/offer-3-2f8285b13bef950f843cb4147666af6e.png',
-      alt: 'Gift Voucher'
     }
   ];
 

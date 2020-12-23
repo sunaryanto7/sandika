@@ -1,17 +1,17 @@
 .wrapper {
-	max-width: 480px;
-    margin: auto;
-    // height: 100vh;
-    position: relative;
+  max-width: 480px;
+  margin: auto;
+  // height: 100vh;
+  position: relative;
+  background: white;
 
-    .main__content{
-        height: auto;
-        padding-top: 50px;
-        padding-bottom: 60px;
-        margin: 0 15px;
+  .main__content {
+    height: auto;
+    padding-top: 50px;
+    margin: 0 15px;
 
-        &--nomargin{
-            margin: 0;
-        }
+    &--nomargin {
+      margin: 0;
     }
+  }
 }

@@ -1,21 +1,21 @@
-.form__radio{
-    display: none;
+.form__radio {
+  display: none;
 }
-.form__radio:checked+label {
-    background-color: #0eac32;
-    
-    span{
-        color: white;
-    }
+.form__radio:checked + label {
+  background-color: #0eac32;
+
+  span {
+    color: white;
+  }
 }
-.form__radio+label {
-    margin-bottom: 10px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    background-color: #f3f3f3;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-right: 5px;
+.form__radio + label {
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 5px;
 }

@@ -16,7 +16,9 @@ const Header = (props) => {
 
   const styles = {
     // Header
-    header: [theme['header'], withNavigation && theme['header__with_navigation']].filter(Boolean).join(' '),
+    header: [theme['header'], withNavigation && theme['header__with_navigation']]
+      .filter(Boolean)
+      .join(' '),
     header__panel: theme['header__panel'],
     header__content: theme['header__content'],
     // Toggle
@@ -38,7 +40,6 @@ const Header = (props) => {
           <GlobalNotification />
         </div> */}
         <div className={styles.header__content}>
-
           {/* Back Navigation */}
           {withNavigation && (
             <div className={styles.history__back}>
@@ -57,7 +58,10 @@ const Header = (props) => {
             <div className={styles.app__name}>
               <img
                 src={'/media/store/logotext.svg'}
-                onClick={() => { Router.push('/'); }} />
+                onClick={() => {
+                  Router.push('/');
+                }}
+              />
             </div>
           )}
 

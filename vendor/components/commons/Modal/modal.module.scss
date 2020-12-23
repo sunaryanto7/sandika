@@ -1,74 +1,72 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1035;
+  max-width: inherit;
+  display: flex;
 
-.modal{
+  &.active {
+    display: block;
+    transition: 3s ease;
+    transform: scale(1);
+    animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  &.deactive {
+    display: none;
+  }
+
+  &__inner {
+    background: white;
+    height: 70%;
+    padding: 10px 10px 0 10px;
+    position: fixed;
+    top: 30%;
+    width: 100%;
+    max-width: inherit;
+    overflow: scroll;
+  }
+
+  &__header,
+  &__body {
+    max-width: 480px;
+    margin: auto;
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: white;
+  }
+
+  .close {
     position: fixed;
     top: 0;
-    left: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    z-index: 1035;
-    max-width: inherit;
-    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
-    &.active{
-        display: block;
-        transition: 3s ease;
-        transform:scale(1);
-        animation: blowUpModal .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    span {
+      padding: 8px 10px;
+      background: white;
+      color: black;
+      border-radius: 25px;
+
+      svg {
+        width: 10px;
+        height: 10px;
+        vertical-align: middle;
+      }
     }
-
-    &.deactive{
-        display: none;
-    }
-
-
-    &__inner{
-        background: white;
-        height: 70%;
-        padding: 10px 10px 0 10px;
-        position: fixed;
-        top: 30%;
-        width: 100%;
-        max-width: inherit;
-        overflow: scroll;
-    }
-
-    &__header, 
-    &__body{
-        max-width: 480px;
-        margin: auto;
-    }
-
-    &__footer{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 15px;
-        background: white;
-    }
-    
-    .close{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-
-        span{
-            padding: 8px 10px;
-            background: white;
-            color: black;
-            border-radius: 25px;
-
-            svg{
-                width: 10px;
-                height: 10px;
-                vertical-align: middle;
-            }
-        }
-    }
+  }
 }

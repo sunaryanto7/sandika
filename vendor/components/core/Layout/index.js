@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from '@sandika_components/core/Footer';
 import Header from '@sandika_components/core/Header';
 import Navigation from '@sandika_components/core/Navigation';
+import Copyright from '@sandika_components/core/Copyright';
 import theme from './layout.module.scss';
 
 const Layout = ({ header, navigation, footer, children, nomargin }) => {
@@ -30,8 +31,9 @@ const Layout = ({ header, navigation, footer, children, nomargin }) => {
       <div className={styles.wrapper} id={'main'}>
         {header !== undefined && header.enable && <Header {...header.props} />}
         <div className={styles.main()}>{children}</div>
-        {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
         {footer !== undefined && footer.enable && <Footer />}
+        {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
+        <Copyright />
       </div>
     </>
   );

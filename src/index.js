@@ -10,23 +10,17 @@ import Banner from '@sandika_components/widget/Banner';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
 import CatalogProduct from '@sandika_components/widget/CatalogProduct';
 import Category from '@sandika_components/widget/Category';
+import Newsletter from '@sandika_components/core/Newsletter';
 
 const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
-
   const {
     store: {
       config: {
-        slider: {
-          config
-        }
+        slider: { config }
       },
       page: {
         home: {
-          layout: {
-            header,
-            navigation,
-            footer
-          }
+          layout: { header, navigation, footer }
         }
       }
     }
@@ -42,39 +36,24 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
       </Head>
 
       {/* Body */}
-      <Layout
-        nomargin
-        header={header}
-        navigation={navigation}
-        footer={footer}>
+      <Layout nomargin header={header} navigation={navigation} footer={footer}>
         <Block nopadding>
-          <Banner
-            config={config.imageSlider}
-            images={mainBannerImages} />
+          <Banner config={config.imageSlider} images={mainBannerImages} />
         </Block>
-        <Block
-          title={'Special Offer'}
-          additional={'Lihat Semua'}>
-          <ProductSlider
-            config={config.productSlider}
-            productData={productData} />
+        <Block title={'Special Offer'} additional={'Lihat Semua'}>
+          <ProductSlider config={config.productSlider} productData={productData} />
         </Block>
-        <Block
-          title={'Pilih Category'}
-          additional={null}>
-          <Category
-            productCategories={productData} />
+        <Block title={'Pilih Category'} additional={null}>
+          <Category productCategories={productData} />
         </Block>
         <Block nopadding>
-          <Banner
-            config={config.imageSlider}
-            images={promoBannerImages} />
+          <Banner config={config.imageSlider} images={promoBannerImages} />
         </Block>
-        <Block
-          title={'Pilih Produk Yang Kamu Inginkan'}
-          additional={'Lihat Semua'}>
-          <CatalogProduct
-            productData={productData} />
+        <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
+          <CatalogProduct productData={productData} />
+        </Block>
+        <Block nopadding>
+          <Newsletter />
         </Block>
       </Layout>
     </>

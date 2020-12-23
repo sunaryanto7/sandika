@@ -51,7 +51,7 @@ const CartItem = ({ item, index, handleQtyData, handleSelectData }) => {
               checked={item.selected}
               value={JSON.stringify(item)}
               onChange={() => {
-                handleSelectData(index)
+                handleSelectData(index);
               }}
             />
           </div>

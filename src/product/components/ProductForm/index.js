@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from '@sandika_components/commons/Button';
+import { InputField } from '@sandika_components/commons/Utilities';
 import * as theme from './productform.module.scss';
 
 const ProductForm = () => {
@@ -20,6 +21,9 @@ const ProductForm = () => {
       setQty(qty - 1);
     }
   };
+  const handleChange = (value) => {
+    setQty(value);
+  };
 
   return (
     <>
@@ -32,13 +36,14 @@ const ProductForm = () => {
             }}>
             -
           </div>
-          <input
-            placeholder={qty}
+          <InputField
+            id={'qty'}
+            placeholder={'0'}
+            name={'qty'}
+            type={'text'}
             readOnly
-            value={qty}
-            onChange={(e) => {
-              setQty(e.target.value);
-            }}
+            value={qty.toString()}
+            onChange={handleChange}
           />
           <div
             className={styles.qty__plus}

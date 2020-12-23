@@ -7,6 +7,10 @@
   --color-danger: #d31616;
   --color-warning: #fba70a;
 }
+:focus,
+:hover {
+  outline: none;
+}
 
 html,
 body {
@@ -79,18 +83,22 @@ label {
   font-weight: 500;
 }
 
-label:focus {
+/* label:focus {
   outline: none;
 }
 
 button:focus {
   outline: 0;
   box-shadow: none !important;
-}
+} */
 input {
   appearance: none;
   background: white;
   -webkit-appearance: none;
   border-radius: 0;
   width: 100%;
+}
+
+#__next {
+  background: #eaeaea;
 }

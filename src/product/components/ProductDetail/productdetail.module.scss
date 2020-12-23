@@ -1,95 +1,93 @@
-.product__detail{
-    position: relative;
-    padding: 0 15px;
-    border-bottom: 10px solid #eee;
+.product__detail {
+  position: relative;
+  padding: 0 15px;
+  border-bottom: 10px solid #eee;
 
-    .product{
-        &__wishlist{
-            position: absolute;
-            right: 15px;
-            top: 5px;
-            display: flex;
-            padding: 10px;
-            border-radius: 15px;
-            background: #f3f3f3;
+  .product {
+    &__wishlist {
+      position: absolute;
+      right: 15px;
+      top: 5px;
+      display: flex;
+      padding: 10px;
+      border-radius: 15px;
+      background: #f3f3f3;
 
-            svg{
-                width: 24px;
-                height: 24px;
-                fill: var(--color-primary);
-            }
-        }
-
-        &__sku{
-            h4{
-                margin: 0;
-                font-size: 14px;
-                letter-spacing: 2px;
-            }
-        }
-        &__name{
-            h1{
-                font-size: 14px;
-                font-weight: 500;
-                margin-bottom: 0;
-                letter-spacing: .5px;
-                line-height: 20px;
-            }
-        }
-        &__price{
-            display: block;
-            align-items: center;
-
-            &__regular{
-                small{
-                    margin-right: 15px;
-                }
-                h5{
-                    text-decoration: line-through;
-                    margin: 5px 0;
-                    color:grey;
-                    display: inline;
-
-                    
-                }
-            }
-            &__final{
-                h2{
-                    margin: 5px 0;
-                    margin-right: 15px;
-                }
-            }
-
-            &__discount{
-                background: #faf2e9;
-                color: #ffb369;
-                padding: 3px 5px;
-                border-radius: 3px;
-                font-size: 10px;
-            }
-        }
-
-        &__merchants{
-            display: flex;
-            align-items: center;
-
-            &__seemore{
-                padding:5px 15px;
-                background:rgb(0, 2, 128);
-                color:white;
-            }
-            .product__rating{
-                margin-left: 15px;
-                p{
-                    display: flex;
-                    align-items: center;
-                }
-            } 
-            svg{
-                height: 20px;
-                width: 20px;
-                margin-left: 5px;
-            }
-        }
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--color-primary);
+      }
     }
+
+    &__sku {
+      h4 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+    }
+    &__name {
+      h1 {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 0;
+        letter-spacing: 0.5px;
+        line-height: 20px;
+      }
+    }
+    &__price {
+      display: block;
+      align-items: center;
+
+      &__regular {
+        small {
+          margin-right: 15px;
+        }
+        h5 {
+          text-decoration: line-through;
+          margin: 5px 0;
+          color: grey;
+          display: inline;
+        }
+      }
+      &__final {
+        h2 {
+          margin: 5px 0;
+          margin-right: 15px;
+        }
+      }
+
+      &__discount {
+        background: #faf2e9;
+        color: #ffb369;
+        padding: 3px 5px;
+        border-radius: 3px;
+        font-size: 10px;
+      }
+    }
+
+    &__merchants {
+      display: flex;
+      align-items: center;
+
+      &__seemore {
+        padding: 5px 15px;
+        background: rgb(0, 2, 128);
+        color: white;
+      }
+      .product__rating {
+        margin-left: 15px;
+        p {
+          display: flex;
+          align-items: center;
+        }
+      }
+      svg {
+        height: 20px;
+        width: 20px;
+        margin-left: 5px;
+      }
+    }
+  }
 }

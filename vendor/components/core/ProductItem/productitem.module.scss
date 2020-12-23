@@ -1,81 +1,81 @@
-.product__item{
-    display: block;
+.product__item {
+  display: block;
+  position: relative;
+  padding: 10px;
+  height: 220px;
+  max-height: 220px;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 5px;
+
+  .product__image {
+    // max-height: 70px;
+    height: 50%;
+    overflow: hidden;
     position: relative;
-    padding:10px;
-    height: 200px;
-    max-height: 200px;
-    border: 1px solid rgb(233, 233, 233);
-    border-radius: 5px;
+    padding: 10px;
 
-    .product__image{
-        // max-height: 70px;
-        height: 50%;
-        overflow: hidden;
-        position: relative;
-        padding: 10px;
+    img {
+      height: 70px;
+      width: auto;
+      display: block;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 
-        img{
-            height: 70px;
-            width: auto;
-            display: block;
-            margin: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+  .product__discount {
+    position: absolute;
+    right: 0;
+    top: 2px;
+
+    small {
+      background: #f50505;
+      color: white;
+      padding: 3px 5px;
+      border-radius: 15px;
+      font-size: 10px;
+    }
+  }
+
+  .product__description {
+    position: relative;
+    // max-height: 80px;
+    height: 50%;
+
+    .product__name {
+      line-height: 1.1rem;
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin-top: 10px;
+      margin-bottom: 0;
     }
 
-    .product__discount{
-        position: absolute;
-        right: 0;
-        top: 2px;
-        
-        small{
-            background: #f50505;
-            color: white;
-            padding: 3px 5px;
-            border-radius: 15px;
-            font-size: 10px;
-        }
+    .product__brand {
+      text-transform: capitalize;
+      font-size: 10px;
+      letter-spacing: 0;
     }
 
-    .product__description{
-        position: relative;
-        // max-height: 80px;
-        height: 50%;
+    .product__price {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
 
-        .product__name{
-            line-height: 1.1rem;
-            font-weight: 500;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            margin-bottom: 0;
-        }
-
-        .product__brand{
-            text-transform: capitalize;
-            font-size: 10px;
-            letter-spacing: 0;
-        }
-        
-        .product__price{
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-
-            .old__price{
-                text-decoration: line-through;
-                display: block;
-                color: silver;
-                font-style: italic;
-                font-size: 10px;
-            }
-            .final__price{
-                color: #f50505;
-                display: block;
-                font-size: 12px;
-            }
-        }
+      .old__price {
+        text-decoration: line-through;
+        display: block;
+        color: silver;
+        font-style: italic;
+        font-size: 10px;
+      }
+      .final__price {
+        color: #f50505;
+        display: block;
+        font-size: 12px;
+      }
     }
+  }
 }

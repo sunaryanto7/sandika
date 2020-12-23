@@ -22,9 +22,8 @@ const Banner = ({ images = [], config }) => {
           </SwiperSlide>
         );
       })}
-
     </Swiper>
   );
-}
+};
 
 export default React.memo(Banner);

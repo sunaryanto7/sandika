@@ -13,7 +13,7 @@
     "build": "yarn clean && NODE_ENV=production next build && next export",
     "start": "next start",
     "lint": "eslint --fix .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,scss,css}' --config ./.prettierrc",
     "clean": "yarn cache clean -f && rimraf .next && rimraf out"
   },
   "dependencies": {

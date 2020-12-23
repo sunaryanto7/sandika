@@ -1,0 +1,9 @@
+.app__input {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+
+  &:focus {
+    box-shadow: 0 0 1pt 1pt rgba(236, 236, 236, 0.5);
+  }
+}

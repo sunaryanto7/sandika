@@ -1,20 +1,20 @@
-.tabs{
-    display: block;
+.tabs {
+  display: block;
 
-    .tabList{
-        list-style-type: none;
-        padding: 0;
-        margin-top: 0;
-        display: flex;
+  .tabList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    display: flex;
 
-        .tabMenu{
-            flex: 0 0 26%;
-            text-align: center;
-            border: 2px solid #0eac32;
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-size: 14px;
-            margin-right: 5px;
-        }
+    .tabMenu {
+      flex: 0 0 26%;
+      text-align: center;
+      border: 2px solid #0eac32;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-right: 5px;
     }
+  }
 }

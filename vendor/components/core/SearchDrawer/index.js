@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Drawer from '@sandika_components/commons/Drawer';
 import Button from '@sandika_components/commons/Button';
 import { Media, MediaBody, MediaImage } from '@sandika_components/commons/Media';
-import { Input } from '@sandika_components/commons/Form';
+import { InputField } from '@sandika_components/commons/Utilities';
 import Block from '@sandika_components/core/Block';
 import ArrowBackIcon from '@public/media/icons/back.svg';
 import theme from './searchdrawer.module.scss';
@@ -28,6 +28,10 @@ const SearchDrawer = ({ open, handleClose }) => {
       });
   }, []);
 
+  const handleChange = (value) => {
+    console.log(value);
+  };
+
   return (
     <>
       <Drawer blank isOpen={open}>
@@ -43,11 +47,12 @@ const SearchDrawer = ({ open, handleClose }) => {
             {/* Search Form */}
             <div className={styles.drawer__search_form}>
               <form>
-                <Input
+                <InputField
                   type={'text'}
                   placeholder={'Cari Produk Yang Kamu Sukai'}
                   id={'search'}
                   name={'search'}
+                  onChange={handleChange}
                 />
               </form>
             </div>

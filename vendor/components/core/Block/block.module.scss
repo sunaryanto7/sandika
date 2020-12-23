@@ -1,33 +1,33 @@
-.widget{
-    padding: 15px;
+.widget {
+  padding: 15px;
 
-    $this:&;
+  $this: &;
 
-    &__nopadding{
-        padding:0;
+  &__nopadding {
+    padding: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    #{$this} {
+      &__title {
+        flex: 0 0 70%;
+      }
+
+      &__link {
+        flex: 0 0 30%;
+        text-align: right;
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin: 0;
+      }
     }
-    
-    &__header{
-        display: flex;
-        align-items: center;
+  }
 
-        #{$this}{
-            &__title{
-                flex: 0 0 70%;
-            }
-
-            &__link{
-                flex: 0 0 30%;
-                text-align: right;
-                font-weight: 400;
-                font-size: 0.8rem;
-                margin: 0;
-            }
-        }
-    }
-
-    &__content{
-        display: block;
-        width: 100%;
-    }
+  &__content {
+    display: block;
+    width: 100%;
+  }
 }

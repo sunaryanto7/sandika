@@ -4,11 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import ProductItem from '@sandika_components/core/ProductItem';
 import theme from './productslider.module.scss';
 
-
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 const ProductSlider = ({ productData, config }) => {
-
   const styles = {
     swipper__item: theme['swiper__item'],
     swipper__product_item: theme['swipper__product_item']
@@ -29,11 +27,10 @@ const ProductSlider = ({ productData, config }) => {
               style={styles.swipper__product_item}
             />
           </SwiperSlide>
-
         );
       })}
     </Swiper>
   );
-}
+};
 
 export default React.memo(ProductSlider);

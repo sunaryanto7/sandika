@@ -11,17 +11,11 @@ import CatalogProduct from '@sandika_components/widget/CatalogProduct';
 import Filter from '@sandika_src/category/components/Filter';
 
 const Category = ({ mainBannerImages, productData }) => {
-
   const {
     store: {
       page: {
         category: {
-          layout: {
-            header,
-            navigation,
-            filter,
-            footer
-          }
+          layout: { header, navigation, filter, footer }
         }
       }
     }
@@ -37,18 +31,9 @@ const Category = ({ mainBannerImages, productData }) => {
       </Head>
 
       {/* Layout */}
-      <Layout
-        nomargin
-        header={header}
-        navigation={navigation}
-        filter={filter}
-        footer={footer}>
-        <Block
-          padding15
-          title={'Barang Yang Di Cari: Kemeja Pria'}
-          additional={null}>
-          <CatalogProduct
-            productData={productData} />
+      <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
+        <Block padding15 title={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>
+          <CatalogProduct productData={productData} />
         </Block>
       </Layout>
       <Filter />

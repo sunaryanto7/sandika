@@ -10,21 +10,14 @@ import CartItem from './components/CartItem';
 import CartSummary from './components/CartSummary';
 
 const Cart = ({ productData, promoBannerImages }) => {
-
   const {
     store: {
       config: {
-        slider: {
-          config
-        }
+        slider: { config }
       },
       page: {
         cart: {
-          layout: {
-            header,
-            navigation,
-            footer
-          }
+          layout: { header, navigation, footer }
         }
       }
     }
@@ -50,7 +43,7 @@ const Cart = ({ productData, promoBannerImages }) => {
     updateData({
       items: temp
     });
-  }
+  };
 
   return (
     <>
@@ -62,39 +55,29 @@ const Cart = ({ productData, promoBannerImages }) => {
       </Head>
 
       {/* Layout */}
-      <Layout
-        header={header}
-        navigation={navigation}
-        footer={footer}>
-        <Block
-          nopadding
-          title={'Keranjang'}
-          style={'cart'}>
+      <Layout header={header} navigation={navigation} footer={footer}>
+        <Block nopadding title={'Keranjang'} style={'cart'}>
           {items.map((item, i) => {
-            return <CartItem
-              key={i}
-              index={i}
-              item={item}
-              handleQtyData={handleQtyData}
-              handleSelectData={handleSelectData} />;
+            return (
+              <CartItem
+                key={i}
+                index={i}
+                item={item}
+                handleQtyData={handleQtyData}
+                handleSelectData={handleSelectData}
+              />
+            );
           })}
         </Block>
 
         <CartSummary data={items} />
 
-        <Block
-          nopadding
-          title={'Special Offer'}
-          additional={'Lihat Semua'}>
-          <ProductSlider
-            config={config.productSlider}
-            productData={productData} />
+        <Block nopadding title={'Special Offer'} additional={'Lihat Semua'}>
+          <ProductSlider config={config.productSlider} productData={productData} />
         </Block>
 
         <Block>
-          <Banner
-            config={config.imageSlider}
-            images={promoBannerImages} />
+          <Banner config={config.imageSlider} images={promoBannerImages} />
         </Block>
       </Layout>
     </>

@@ -44,8 +44,16 @@ const ProductItem = ({
           <h5 className={styles.product__name}>{trimedProductName}</h5>
           <small className={styles.product__brand}>{productBrand}</small>
           <span className={styles.product__price}>
-            <small className={styles.old__price}>{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(productOldPrice * 14500)}</small>
-            <strong className={styles.final__price}>{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(productFinalPrice * 14500)}</strong>
+            <small className={styles.old__price}>
+              {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
+                productOldPrice * 14500
+              )}
+            </small>
+            <strong className={styles.final__price}>
+              {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
+                productFinalPrice * 14500
+              )}
+            </strong>
           </span>
         </div>
       </div>

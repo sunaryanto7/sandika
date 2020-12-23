@@ -6,7 +6,6 @@ import * as theme from './productgallery.module.scss';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 const ProductGallery = ({ config, ...props }) => {
-
   const styles = {
     product__media__gallery: theme['product__media__gallery']
   };
@@ -22,7 +21,7 @@ const ProductGallery = ({ config, ...props }) => {
               <SwiperSlide className={styles.swipper__item} key={i}>
                 <img src={data.url} alt={data.alt} key={i} />
               </SwiperSlide>
-            )
+            );
           })}
         </Swiper>
       </Block>

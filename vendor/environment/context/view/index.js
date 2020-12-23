@@ -14,7 +14,7 @@ const store = {
           navigation: false,
           autoplay: true,
           delay: 5000,
-          loop: true,
+          loop: true
         },
         productSlider: {
           spaceBetween: 10,
@@ -22,7 +22,7 @@ const store = {
           navigation: false,
           autoplay: true,
           delay: 5000,
-          loop: true,
+          loop: true
         }
       }
     },
@@ -36,7 +36,7 @@ const store = {
           navigation: false,
           autoplay: true,
           delay: 5000,
-          loop: true,
+          loop: true
         }
       }
     }
@@ -67,7 +67,7 @@ const store = {
           }
         },
         footer: {
-          enable: false,
+          enable: true,
           version: 1
         }
       }
