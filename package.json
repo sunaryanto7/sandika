@@ -11,10 +11,10 @@
   "scripts": {
     "dev": "NODE_ENV=development next dev",
     "build": "yarn clean && NODE_ENV=production next build && next export",
-    "clean": "yarn cache clean -f && rimraf .next && rimraf out",
     "start": "next start",
     "lint": "eslint --fix .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "clean": "yarn cache clean -f && rimraf .next && rimraf out"
   },
   "dependencies": {
     "@apollo/client": "^3.1.4",
