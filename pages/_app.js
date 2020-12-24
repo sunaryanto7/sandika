@@ -36,8 +36,8 @@ import { appWithTranslation } from '@sandika_environment/i18n';
 @@
 */
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
-library.add(faShoppingCart, faBars);
+import { faShoppingCart, faBars, faArrowLeft, faFilter } from '@fortawesome/free-solid-svg-icons';
+library.add(faShoppingCart, faBars, faArrowLeft, faFilter);
 
 const Sandika = ({ Component, pageProps }) => {
   return (

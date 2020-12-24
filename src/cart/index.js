@@ -17,7 +17,7 @@ const Cart = ({ productData, promoBannerImages }) => {
       },
       page: {
         cart: {
-          layout: { header, navigation, footer }
+          layout: { header, navigation, newsletter, footer }
         }
       }
     }
@@ -55,7 +55,7 @@ const Cart = ({ productData, promoBannerImages }) => {
       </Head>
 
       {/* Layout */}
-      <Layout header={header} navigation={navigation} footer={footer}>
+      <Layout header={header} navigation={navigation} footer={footer} newsletter={newsletter}>
         <Block nopadding title={'Keranjang'} style={'cart'}>
           {items.map((item, i) => {
             return (
@@ -70,13 +70,15 @@ const Cart = ({ productData, promoBannerImages }) => {
           })}
         </Block>
 
-        <CartSummary data={items} />
+        <Block nopadding>
+          <CartSummary data={items} />
+        </Block>
 
         <Block nopadding title={'Special Offer'} additional={'Lihat Semua'}>
           <ProductSlider config={config.productSlider} productData={productData} />
         </Block>
 
-        <Block>
+        <Block nopadding>
           <Banner config={config.imageSlider} images={promoBannerImages} />
         </Block>
       </Layout>

@@ -3,12 +3,13 @@ import Head from 'next/head';
 import Footer from '@sandika_components/core/Footer';
 import Header from '@sandika_components/core/Header';
 import Navigation from '@sandika_components/core/Navigation';
+import Newsletter from '@sandika_components/widget/Newsletter';
 import Copyright from '@sandika_components/core/Copyright';
 import theme from './layout.module.scss';
 
-const Layout = ({ header, navigation, footer, children, nomargin }) => {
+const Layout = ({ header, navigation, footer, children, nomargin, newsletter, style }) => {
   const styles = {
-    wrapper: theme['wrapper'],
+    wrapper: [theme['wrapper'], style].filter(Boolean).join(' '),
     main: () => {
       if (nomargin) {
         return [theme['main__content'], theme['main__content--nomargin']].filter(Boolean).join(' ');
@@ -28,9 +29,10 @@ const Layout = ({ header, navigation, footer, children, nomargin }) => {
           />
         )}
       </Head>
-      <div className={styles.wrapper} id={'main'}>
+      <div className={styles.wrapper}>
         {header !== undefined && header.enable && <Header {...header.props} />}
-        <div className={styles.main()}>{children}</div>
+        <div className={styles.main()} id={'main'}>{children}</div>
+        {newsletter !== undefined && newsletter.enable && <Newsletter />}
         {footer !== undefined && footer.enable && <Footer />}
         {navigation !== undefined && navigation.enable && <Navigation {...navigation.props} />}
         <Copyright />

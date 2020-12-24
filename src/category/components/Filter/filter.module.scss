@@ -1,7 +1,6 @@
 .filter__toggle {
   display: flex;
   position: fixed;
-  bottom: 0;
   width: 100%;
   background: #fff;
   padding: 15px;
@@ -11,4 +10,26 @@
   margin: auto;
   right: 0;
   left: 0;
+  top: 60px;
+  overflow-x: scroll;
+  
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  
+
+  button{
+    background: var(--color-two);
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    border-radius: 15px;
+    padding: 5px 20px;
+
+    svg{
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
 }

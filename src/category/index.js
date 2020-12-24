@@ -6,16 +6,20 @@ import { AppContext } from '@sandika_environment/context';
 
 import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
-import Banner from '@sandika_components/widget/Banner';
 import CatalogProduct from '@sandika_components/widget/CatalogProduct';
 import Filter from '@sandika_src/category/components/Filter';
+import * as theme from './style.module.scss';
 
-const Category = ({ mainBannerImages, productData }) => {
+const Category = ({ productData }) => {
+  const styles = {
+    'catalog__category__view': theme['catalog__category__view'],
+    'catalog__product__grid': theme['catalog__product__grid']
+  };
   const {
     store: {
       page: {
         category: {
-          layout: { header, navigation, filter, footer }
+          layout: { header, navigation, newsletter, footer }
         }
       }
     }
@@ -31,12 +35,23 @@ const Category = ({ mainBannerImages, productData }) => {
       </Head>
 
       {/* Layout */}
-      <Layout nomargin header={header} navigation={navigation} filter={filter} footer={footer}>
-        <Block padding15 title={'Barang Yang Di Cari: Kemeja Pria'} additional={null}>
+      <Layout
+        nomargin
+        header={header}
+        navigation={navigation}
+        footer={footer}
+        newsletter={newsletter}
+        style={styles.catalog__category__view}
+      >
+        <Filter />
+        <Block
+          title={'Barang Yang Di Cari: Kemeja Pria'}
+          additional={null}
+          style={styles.catalog__product__grid}>
           <CatalogProduct productData={productData} />
         </Block>
       </Layout>
-      <Filter />
+
     </>
   );
 };

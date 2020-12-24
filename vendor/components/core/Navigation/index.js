@@ -12,7 +12,9 @@ import * as theme from './navigation.module.scss';
 const ButtonNavigation = ({ children, link, name, onClick }) => {
   if (name === 'search' && link === null) {
     return (
-      <Button fullWidth onClick={onClick}>
+      <Button
+        fullWidth
+        onClick={onClick}>
         <SearchIcon className={'search_icon'} />
       </Button>
     );

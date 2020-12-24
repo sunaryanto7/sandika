@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 :root {
-  --color-primary: #000;
-  --color-secondary: #fedd7c;
-  --color-danger: #d31616;
-  --color-warning: #fba70a;
+  --color-one: #ffc93c;
+  --color-two: #07689f;
+  --color-three: #40a8c4;
+  --color-four: #a2d5f2;
+
+  --color-danger: #f50505;
 }
 :focus,
 :hover {
@@ -71,12 +73,15 @@ small {
   box-sizing: border-box;
   /* font-family: 'Roboto', sans-serif; */
   font-family: sans-serif;
-  color: #3d3d3d;
 }
 
 img {
   width: 100%;
   height: auto;
+}
+
+svg path{
+  stroke:none;
 }
 
 label {

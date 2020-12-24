@@ -1,4 +1,3 @@
-import Block from '@sandika_components/core/Block';
 import Button from '@sandika_components/commons/Button';
 import * as theme from './cartsummary.module.scss';
 
@@ -19,14 +18,12 @@ const CartSummary = ({ data, style }) => {
 
   return (
     <>
-      <Block>
-        <div className={styles.cart__summary}>
-          {`$ ${summary()}`}
-          <Button fullWidth btnDanger>
-            Go To Checkout
+      <div className={styles.cart__summary}>
+        {`$ ${summary()}`}
+        <Button fullWidth btnDanger>
+          Go To Checkout
           </Button>
-        </div>
-      </Block>
+      </div>
     </>
   );
 };

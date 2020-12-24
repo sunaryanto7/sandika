@@ -24,12 +24,12 @@ Home.getInitialProps = async () => {
     {
       src:
         'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/n/e/new-arrival-november-away-series-mobile-revisi.jpg',
-      alt: 'Free Delivery'
+      // alt: 'Free Delivery'
     },
     {
       src:
         'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/n/e/new-arrival-november-emilia-mobile.jpg',
-      alt: 'Coupon Saving'
+      // alt: 'Coupon Saving'
     }
   ];
 

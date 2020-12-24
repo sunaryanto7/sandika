@@ -23,7 +23,7 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
       },
       page: {
         product: {
-          layout: { header, navigation, footer }
+          layout: { header, navigation, newsletter, footer }
         }
       }
     }
@@ -63,7 +63,7 @@ const Product = ({ relatedProductData, productData, promoBannerImages }) => {
       </Head>
 
       {/* Body */}
-      <Layout nomargin header={header} navigation={navigation} footer={footer}>
+      <Layout nomargin header={header} navigation={navigation} footer={footer} newsletter={newsletter}>
         <ProductGallery config={productMediaConfig.imageSlider} {...productVariantProps} />
 
         <ProductDetail {...productVariantProps} />

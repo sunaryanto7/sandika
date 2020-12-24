@@ -10,7 +10,7 @@ import Banner from '@sandika_components/widget/Banner';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
 import CatalogProduct from '@sandika_components/widget/CatalogProduct';
 import Category from '@sandika_components/widget/Category';
-import Newsletter from '@sandika_components/core/Newsletter';
+import BannerGrid from '@sandika_components/widget/BannerGrid';
 
 const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
   const {
@@ -20,7 +20,7 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
       },
       page: {
         home: {
-          layout: { header, navigation, footer }
+          layout: { header, newsletter, navigation, footer }
         }
       }
     }
@@ -36,24 +36,24 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
       </Head>
 
       {/* Body */}
-      <Layout nomargin header={header} navigation={navigation} footer={footer}>
+      <Layout
+        nomargin
+        header={header}
+        navigation={navigation}
+        footer={footer}
+        newsletter={newsletter}
+        style={'cms__index__index'}>
         <Block nopadding>
           <Banner config={config.imageSlider} images={mainBannerImages} />
         </Block>
         <Block title={'Special Offer'} additional={'Lihat Semua'}>
           <ProductSlider config={config.productSlider} productData={productData} />
         </Block>
-        <Block title={'Pilih Category'} additional={null}>
-          <Category productCategories={productData} />
-        </Block>
         <Block nopadding>
-          <Banner config={config.imageSlider} images={promoBannerImages} />
+          <BannerGrid />
         </Block>
         <Block title={'Pilih Produk Yang Kamu Inginkan'} additional={'Lihat Semua'}>
           <CatalogProduct productData={productData} />
-        </Block>
-        <Block nopadding>
-          <Newsletter />
         </Block>
       </Layout>
     </>

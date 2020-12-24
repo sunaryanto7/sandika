@@ -2,12 +2,11 @@ import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { AppContext } from '@sandika_environment/context';
 import { Router } from '@sandika_environment/i18n';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Quickcart from '@sandika_components/core/Quickcart';
 import Button from '@sandika_components/commons/Button';
 import GlobalNotification from '@sandika_components/core/GlobalNotification';
-import ArrowBackIcon from '@public/media/icons/back.svg';
-import MenuIcon from '@public/media/icons/menu.svg';
-import BasketIcon from '@public/media/icons/supermarket.svg';
+import LogoIcon from '@public/media/store/logotext.svg';
 import * as theme from './header.module.scss';
 
 const Header = (props) => {
@@ -48,7 +47,7 @@ const Header = (props) => {
                 onClick={() => {
                   Router.back();
                 }}>
-                <ArrowBackIcon className={styles.icon} />
+                <FontAwesomeIcon icon="arrow-left" />
               </Button>
             </div>
           )}
@@ -56,8 +55,7 @@ const Header = (props) => {
           {/* App Name */}
           {withAppName && (
             <div className={styles.app__name}>
-              <img
-                src={'/media/store/logotext.svg'}
+              <LogoIcon
                 onClick={() => {
                   Router.push('/');
                 }}

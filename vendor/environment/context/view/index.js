@@ -55,6 +55,10 @@ const store = {
             withSearch: true
           }
         },
+        newsletter: {
+          enable: true,
+          version: 1,
+        },
         navigation: {
           enable: false,
           version: 1,
@@ -85,6 +89,10 @@ const store = {
             withSearch: false
           }
         },
+        newsletter: {
+          enable: true,
+          version: 1,
+        },
         navigation: {
           enable: false,
           version: 1,
@@ -97,7 +105,7 @@ const store = {
           }
         },
         footer: {
-          enable: false,
+          enable: true,
           version: 1
         }
       }
@@ -115,6 +123,10 @@ const store = {
             withSearch: true
           }
         },
+        newsletter: {
+          enable: true,
+          version: 1,
+        },
         navigation: {
           enable: false,
           version: 1,
@@ -127,7 +139,7 @@ const store = {
           }
         },
         footer: {
-          enable: false,
+          enable: true,
           version: 1
         }
       }
@@ -145,6 +157,10 @@ const store = {
             withSearch: false
           }
         },
+        newsletter: {
+          enable: true,
+          version: 1,
+        },
         navigation: {
           enable: false,
           version: 1,
@@ -157,7 +173,7 @@ const store = {
           }
         },
         footer: {
-          enable: false,
+          enable: true,
           version: 1
         }
       }

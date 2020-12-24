@@ -1,0 +1,9 @@
+.banner__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  img{
+    object-fit: cover;
+    height: 100%;
+  }
+}

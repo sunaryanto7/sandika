@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import Button from '@sandika_components/commons/Button';
 import { Modal, ModalBody, ModalHeader } from '@sandika_components/commons/Modal';
 import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as theme from './filter.module.scss';
 
 const Filter = () => {
@@ -163,13 +164,18 @@ const Filter = () => {
 
       <div className={styles.filter__toggle}>
         <Button
-          fullWidth
-          btnDanger
           onClick={() => {
             setShowFilter(!showFilter);
           }}>
+          <FontAwesomeIcon icon="filter" color="white" />
           Filter
         </Button>
+        <Button>Pria</Button>
+        <Button>Wanita</Button>
+        <Button>Kebutuhan Harian</Button>
+        <Button>Anti Covid</Button>
+        <Button>Backpack</Button>
+        <Button>Face Shield</Button>
       </div>
     </>
   );
