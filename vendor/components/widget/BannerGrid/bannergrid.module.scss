@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  .banner__gridcolumn{
+    display: flex;
+  }
   img{
     object-fit: cover;
     height: 100%;
