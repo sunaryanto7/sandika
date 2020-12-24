@@ -80,7 +80,7 @@ module.exports = withPlugins(
         cssModules: true,
         cssLoaderOptions: {
           importLoaders: 1,
-          localIdentName: process.env.NODE_ENV === 'production' ? 'sdk_[hash:base64:7]' : '[local]'
+          localIdentName: process.env.NODE_ENV === 'production' ? 'sdk_[hash:base64:10]' : '[local]'
         }
       }
     ],
