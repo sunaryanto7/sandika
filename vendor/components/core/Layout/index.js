@@ -8,6 +8,7 @@ import Copyright from '@sandika_components/core/Copyright';
 import theme from './layout.module.scss';
 
 const Layout = ({ header, navigation, footer, children, nomargin, newsletter, style }) => {
+  console.log(style)
   const styles = {
     wrapper: [theme['wrapper'], style].filter(Boolean).join(' '),
     main: () => {

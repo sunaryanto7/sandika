@@ -9,7 +9,7 @@
   },
   "engineStrict": true,
   "scripts": {
-    "dev": "NODE_ENV=development next dev",
+    "dev": "yarn clean && NODE_ENV=development next dev",
     "build": "yarn clean && NODE_ENV=production next build && next export",
     "start": "next start",
     "lint": "eslint --fix .",
