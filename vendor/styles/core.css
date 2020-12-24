@@ -51,6 +51,7 @@ a {
 p {
   color: #636363;
 }
+button,
 p,
 a,
 small {
@@ -62,7 +63,7 @@ p,
 a,
 label,
 span {
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 small {

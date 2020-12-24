@@ -5,13 +5,12 @@
 import PropTypes from 'prop-types';
 import theme from './formgroup.module.scss';
 
-const FormGroup = ({ title, children }) => {
+const FormGroup = ({ children }) => {
   const styles = {
     form__group: theme['form__group']
   };
   return (
     <>
-      <h4>{title}</h4>
       <div className={styles.form__group}>{children}</div>
     </>
   );

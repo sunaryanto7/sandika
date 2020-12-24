@@ -22,10 +22,10 @@
 
   &__inner {
     background: white;
-    height: 70%;
-    padding: 10px 10px 0 10px;
+    height: 60%;
+    padding: 10px;
     position: fixed;
-    top: 30%;
+    bottom: 0;
     width: 100%;
     max-width: inherit;
     overflow: scroll;
@@ -46,7 +46,7 @@
     background: white;
   }
 
-  .close {
+  .modal__overlay {
     position: fixed;
     top: 0;
     bottom: 0;

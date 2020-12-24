@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import theme from './formrow.module.scss';
 
-const FormRow = ({ children, style }) => {
+const FormRow = ({ title, children, style }) => {
   const styles = {
     form__row: [theme['form__row'], style].filter(Boolean).join(' ')
   };
   return (
     <>
-      <div className={styles.form__row}>{children}</div>
+      <div className={styles.form__row}>
+        {title && <h3>{title}</h3>}
+        {children}
+      </div>
     </>
   );
 };

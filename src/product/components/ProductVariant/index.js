@@ -1,5 +1,6 @@
 import Block from '@sandika_components/core/Block';
-import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
+import { FormRow, FormGroup } from '@sandika_components/commons/Form';
+import { RadioButton } from '@sandika_components/commons/Utilities';
 import * as theme from './productvariant.module.scss';
 import { useState } from 'react';
 
@@ -54,15 +55,14 @@ const ProductVariant = ({ options, activeOptions }) => {
   return (
     <>
       <Block title={'Check Availability'} style={styles.product__variants}>
-        <Form>
+        <form>
           {options.map((swatchType, i) => {
             return (
-              <FormRow key={i} style={styles.form__row}>
-                <FormGroup title={swatchType.label} style={styles.form__group}>
+              <FormRow title={swatchType.label} key={i} style={styles.form__row}>
+                <FormGroup style={styles.form__group}>
                   {swatchType.values.map((swatch, j) => {
                     return (
-                      <Radio
-                        type={'radio'}
+                      <RadioButton
                         label={swatch.label}
                         value={JSON.stringify({ ...swatch })}
                         name={`swatch__opt-${swatchType.attribute_code.toLowerCase()}`}
@@ -75,7 +75,7 @@ const ProductVariant = ({ options, activeOptions }) => {
               </FormRow>
             );
           })}
-        </Form>
+        </form>
       </Block>
     </>
   );

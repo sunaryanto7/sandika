@@ -37,7 +37,7 @@
         cursor: pointer;
       }
 
-      img {
+      svg {
         height: 30px;
         width: auto;
       }
@@ -65,6 +65,9 @@
 
       button {
         padding: 0;
+      }
+      svg{
+        font-size: 18px;
       }
     }
 

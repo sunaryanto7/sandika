@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import Button from '@sandika_components/commons/Button';
-import { Modal, ModalBody, ModalHeader } from '@sandika_components/commons/Modal';
-import { Form, FormRow, FormGroup, Radio } from '@sandika_components/commons/Form';
+import Modal from '@sandika_components/commons/Modal';
+import { FormRow, FormGroup } from '@sandika_components/commons/Form';
+import { RadioButton } from '@sandika_components/commons/Utilities';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as theme from './filter.module.scss';
 
 const Filter = () => {
   const [showFilter, setShowFilter] = useState(false);
   const styles = {
-    filter__toggle: theme['filter__toggle']
+    filter__toggle: theme['filter__toggle'],
+    filter__form: theme['filter__form'],
+    filter__formdelimiter: theme['filter__formdelimiter']
   };
 
   const formik = useFormik({
@@ -23,143 +26,68 @@ const Filter = () => {
     }
   });
 
+  const handleCloseModal = () => { setShowFilter(!showFilter); };
+
   return (
     <>
       <Modal
         active={showFilter}
-        close={() => {
-          setShowFilter(!showFilter);
-        }}
+        onClose={() => { handleCloseModal() }}
         title={'Filter Pencarian'}
         caption={'Cari Barang Sesuai Kebutuhanmu'}>
-        <ModalHeader>
-          <h3>
-            Filter Produk
-            <br />
-            <small>Cari Produk Sesuai Yang Kamu Inginkan</small>
-          </h3>
-        </ModalHeader>
-        <ModalBody>
-          <Form onSubmit={formik.handleSubmit}>
-            <FormRow>
-              <FormGroup title={'Kategori'}>
-                <Radio
-                  type={'radio'}
-                  name={'category'}
-                  id={'category_1'}
-                  onClick={formik.handleChange}
-                  value={'Roti'}
-                  label={'Roti'}
+
+        <form onSubmit={formik.handleSubmit} className={styles.filter__form}>
+          <div className={styles.filter__formdelimiter}>
+            <FormRow title={'Urutkan'}>
+              <FormGroup>
+                <RadioButton
+                  id="asc"
+                  label="Urutkan secara Ascending (A-Z)"
+                  value="asc"
+                  name="sort"
+                  onChange={formik.handleChange}
                 />
-                <Radio
-                  type={'radio'}
-                  name={'category'}
-                  id={'category_2'}
-                  onClick={formik.handleChange}
-                  value={'Kue'}
-                  label={'Kue'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'category'}
-                  id={'category_3'}
-                  onClick={formik.handleChange}
-                  value={'Kerpipik Singkong'}
-                  label={'Kerpipik Singkong'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'category'}
-                  id={'category_4'}
-                  onClick={formik.handleChange}
-                  value={'Kerpipik Bakso'}
-                  label={'Kerpipik Bakso'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'category'}
-                  id={'category_5'}
-                  onClick={formik.handleChange}
-                  value={'Hiasan Bunga'}
-                  label={'Hiasan Bunga'}
-                />
-              </FormGroup>
-              <FormGroup title={'Merk'}>
-                <Radio
-                  type={'radio'}
-                  name={'merk'}
-                  id={'merk_1'}
-                  onClick={formik.handleChange}
-                  value={'Hushpuppies'}
-                  label={'Hushpuppies'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'merk'}
-                  id={'merk_2'}
-                  onClick={formik.handleChange}
-                  value={'Ordinair'}
-                  label={'Ordinair'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'merk'}
-                  id={'merk_3'}
-                  onClick={formik.handleChange}
-                  value={'Kay'}
-                  label={'Kay'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'merk'}
-                  id={'merk_4'}
-                  onClick={formik.handleChange}
-                  value={'Sketchers'}
-                  label={'Sketchers'}
-                />
-              </FormGroup>
-              <FormGroup title={'Sortir'}>
-                <Radio
-                  type={'radio'}
-                  name={'sort'}
-                  id={'sort_1'}
-                  onClick={formik.handleChange}
-                  value={'Ascending'}
-                  label={'Ascending'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'sort'}
-                  id={'sort_2'}
-                  onClick={formik.handleChange}
-                  value={'Descending'}
-                  label={'Descending'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'sort'}
-                  id={'sort_3'}
-                  onClick={formik.handleChange}
-                  value={'Harga Termurah'}
-                  label={'Harga Termurah'}
-                />
-                <Radio
-                  type={'radio'}
-                  name={'sort'}
-                  id={'sort_4'}
-                  onClick={formik.handleChange}
-                  value={'Harga Termahal'}
-                  label={'Harga Termahal'}
+                <RadioButton
+                  id="desc"
+                  label="Urutkan secara Descending (Z-A)"
+                  value="desc"
+                  name="sort"
+                  onChange={formik.handleChange}
                 />
               </FormGroup>
             </FormRow>
-            <FormRow>
-              <Button btnDanger fullWidth type={'submit'}>
-                Submit
-              </Button>
+            <FormRow title={'Lokasi'}>
+              <FormGroup>
+                <RadioButton
+                  id="01"
+                  label="Jakarta"
+                  value="Jakarta"
+                  name="location"
+                  onChange={formik.handleChange}
+                />
+                <RadioButton
+                  id="02"
+                  label="Yogyakarta"
+                  value="Yogyakarta"
+                  name="location"
+                  onChange={formik.handleChange}
+                />
+                <RadioButton
+                  id="03"
+                  label="Bali"
+                  value="Bali"
+                  name="location"
+                  onChange={formik.handleChange}
+                />
+              </FormGroup>
             </FormRow>
-          </Form>
-        </ModalBody>
+          </div>
+          <div className={styles.filter__formdelimiter}>
+            <Button fullWidth type={'submit'}>
+              Filter
+            </Button>
+          </div>
+        </form>
       </Modal>
 
       <div className={styles.filter__toggle}>
@@ -181,4 +109,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default React.memo(Filter);

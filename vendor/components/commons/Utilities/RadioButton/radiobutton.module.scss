@@ -1,14 +1,11 @@
-.form__radio {
+.app__radio input {
   display: none;
 }
-.form__radio:checked + label {
-  background-color: #0eac32;
-
-  span {
-    color: white;
-  }
+.app__radio input:checked + label {
+  background: var(--color-two);
+  color: white;
 }
-.form__radio + label {
+.app__radio input + label {
   margin-bottom: 10px;
   text-align: center;
   display: flex;
