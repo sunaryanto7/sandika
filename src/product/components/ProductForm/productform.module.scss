@@ -20,7 +20,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: var(--color-primary);
+      background: var(--color-one);
       color: white;
       border-radius: 5px;
       line-height: 2;
@@ -49,5 +49,8 @@
 
   &--action {
     flex: 0 0 55%;
+    button{
+      font-weight: 600;
+    }
   }
 }

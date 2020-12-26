@@ -7,6 +7,7 @@
     "npm": ">=6.0.0",
     "yarn": ">=1.22.4"
   },
+  "proxy": "http://localhost:4000",
   "engineStrict": true,
   "scripts": {
     "dev": "yarn clean && NODE_ENV=development next dev",
