@@ -1,0 +1,57 @@
+.app__checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  position: relative;
+  padding-left: 0;
+  cursor: pointer;
+  font-size: 18px;
+  padding-left: 28px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input{
+    display: none;
+  }
+
+  label{
+    width: 100%;
+  }
+
+  input:checked ~ .app__checkboxcheckmark{
+    background: var(--color-two);
+  }
+  
+  input:checked ~ .app__checkboxcheckmark:after {
+    display: block;
+  }
+
+  .app__checkboxcheckmark{
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: #eee;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+
