@@ -3,7 +3,8 @@ import * as theme from './cartsummary.module.scss';
 
 const CartSummary = ({ data, style }) => {
   const styles = {
-    cart__summary: [theme['cart__summary'], style].filter(Boolean).join(' ')
+    cart__summary: [theme['cart__summary'], style].filter(Boolean).join(' '),
+    cart__price: theme['cart__price']
   };
 
   const summary = () => {
@@ -19,7 +20,9 @@ const CartSummary = ({ data, style }) => {
   return (
     <>
       <div className={styles.cart__summary}>
-        {`$ ${summary()}`}
+        <div className={styles.cart__price}>
+          <p>Total Price : <br /><strong>$ {summary()}</strong></p>
+        </div>
         <Button fullWidth btnDanger>
           Go To Checkout
           </Button>

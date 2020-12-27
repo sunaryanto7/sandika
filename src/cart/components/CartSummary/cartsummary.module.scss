@@ -1,0 +1,22 @@
+.cart__summary{
+  padding: 0 15px;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  z-index: 300;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: auto;
+  border-top: 1px solid #dadada;
+  align-items: center;
+
+  .cart__price{
+    flex: 0 0 35%;
+
+    p strong{
+      font-size: 14px;
+    }
+  }
+}
