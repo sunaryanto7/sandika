@@ -21,7 +21,7 @@ const CheckBox = ({ label, value, name, id, onChange, checked, style }) => {
           value={value}
           onChange={handleChange}
         />
-        <span className={styles.app__checkboxcheckmark} />
+        <span className={styles.app__checkboxcheckmark} onClick={handleChange} />
         <label htmlFor={id}>
           {label}
         </label>
