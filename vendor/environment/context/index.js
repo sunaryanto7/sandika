@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import { withTranslation } from '@sandika_environment/i18n';
 import store from '@sandika_environment/context/view';
 
 /* 
@@ -14,12 +13,12 @@ const AppContext = createContext();
 @@  INITIATE CONTEXT PROVIDE VALUE
 @@  
 */
-const AppContextProvider = ({ t, i18n, children }) => {
+const AppContextProvider = ({ children }) => {
   const [state, setState] = useState({});
 
   return (
     <>
-      <AppContext.Provider value={{ store, t, i18n, state, setState }}>
+      <AppContext.Provider value={{ store, state, setState }}>
         {children}
       </AppContext.Provider>
     </>
@@ -27,4 +26,4 @@ const AppContextProvider = ({ t, i18n, children }) => {
 };
 
 export { AppContext };
-export default withTranslation()(AppContextProvider);
+export default AppContextProvider;

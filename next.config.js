@@ -3,11 +3,28 @@ const withPlugins = require('next-compose-plugins');
 const withSourceMaps = require('@zeit/next-source-maps');
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
+const nextTranslate = require('next-translate');
 const path = require('path');
 
 const nextConfig = {
-  // Trailing Slash Routes
+  api: {
+    bodyParser: false,
+  },
+  /* 
+  @@
+  @@  Remove trailing slash from url
+  @@  
+  */
   trailingSlash: false,
+
+  /* 
+  @@
+  @@  Translation
+  @@  
+  */
+  // i18n: {
+  //   localeDetection: false,
+  // },
 
   /* 
   @@
@@ -27,6 +44,8 @@ const nextConfig = {
     */
     config.resolve.alias['@sandika_components'] = path.join(__dirname, 'vendor/components');
     config.resolve.alias['@sandika_environment'] = path.join(__dirname, 'vendor/environment');
+    config.resolve.alias['@sandika_helper'] = path.join(__dirname, 'vendor/helper');
+    config.resolve.alias['@sandika_models'] = path.join(__dirname, 'vendor/models');
     config.resolve.alias['@sandika_modules'] = path.join(__dirname, 'vendor/modules');
     config.resolve.alias['@sandika_styles'] = path.join(__dirname, 'vendor/styles');
     config.resolve.alias['@sandika_src'] = path.join(__dirname, 'src');
@@ -73,6 +92,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
+    [nextTranslate],
     [withSourceMaps],
     [
       withSass,

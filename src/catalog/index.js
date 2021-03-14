@@ -7,7 +7,7 @@ import { AppContext } from '@sandika_environment/context';
 import Layout from '@sandika_components/core/Layout';
 import Block from '@sandika_components/core/Block';
 import CatalogProduct from '@sandika_components/widget/CatalogProduct';
-import Filter from '@sandika_src/category/components/Filter';
+import Filter from '@sandika_src/catalog/components/Filter';
 import * as theme from './style.module.scss';
 
 const Category = ({ productData }) => {

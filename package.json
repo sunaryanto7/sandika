@@ -37,11 +37,10 @@
     "file-loader": "^6.0.0",
     "formik": "^2.1.5",
     "graphql": "^15.3.0",
-    "jquery": "^3.5.1",
+    "graphql-request": "^3.4.0",
     "next": "^10.0.4",
     "next-compose-plugins": "^2.2.0",
-    "next-i18next": "^7.0.1",
-    "next-redux-wrapper": "^6.0.2",
+    "next-translate": "^1.0.1",
     "node-sass": "^4.14.1",
     "nprogress": "^0.2.0",
     "prettier": "^2.1.1",
@@ -49,13 +48,11 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-lazyload": "^3.0.0",
-    "react-redux": "^7.2.1",
-    "recompose": "^0.30.0",
     "rimraf": "^3.0.2",
     "swiper": "^6.4.5",
-    "ua-parser-js": "^0.7.21",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
-    "webpack-filter-warnings-plugin": "^1.2.1"
+    "webpack-filter-warnings-plugin": "^1.2.1",
+    "write": "^2.0.0"
   }
 }

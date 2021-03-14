@@ -39,7 +39,6 @@ Cart.getInitialProps = async () => {
   ];
 
   return {
-    namespacesRequired: ['core'],
     mainBannerImages: mainBannerImages,
     promoBannerImages: promoBannerImages,
     productData: productJson

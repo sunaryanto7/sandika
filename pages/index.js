@@ -1,11 +1,8 @@
 import Home from '@sandika_src/index.js';
+import { getPopularProducts } from '@sandika_models/homepage';
 
-Home.getInitialProps = async () => {
-  // GET PRODUCTS
-  const productResponse = await fetch('https://fakestoreapi.com/products');
-  const productJson = await productResponse.json();
+export async function getStaticProps() {
 
-  // IMAGE SLIDER DATA - (MAIN BANNER)
   const mainBannerImages = [
     {
       src:
@@ -24,21 +21,26 @@ Home.getInitialProps = async () => {
     {
       src:
         'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/n/e/new-arrival-november-away-series-mobile-revisi.jpg',
-      // alt: 'Free Delivery'
+      alt: 'Free Delivery'
     },
     {
       src:
         'https://exsport.co.id/media/weltpixel/owlcarouselslider/images/n/e/new-arrival-november-emilia-mobile.jpg',
-      // alt: 'Coupon Saving'
+      alt: 'Coupon Saving'
     }
   ];
 
+  const productResponse = await fetch('http://localhost:3000/api/graphql', { method: 'POST', body: JSON.stringify({ 'query': getPopularProducts, 'variables': '{}' }), headers: { 'Content-Type': 'application/json' } })
+  const productJson = await productResponse.json()
+
   return {
-    namespacesRequired: ['core'],
-    mainBannerImages: mainBannerImages,
-    promoBannerImages: promoBannerImages,
-    productData: productJson
+    props: {
+      mainBannerImages: mainBannerImages,
+      promoBannerImages: promoBannerImages,
+      productData: productJson.data.getBestSeller.items
+    }
   };
 };
+
 
 export default Home;

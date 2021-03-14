@@ -13,7 +13,7 @@ class SandikaDocument extends Document {
 
     const initialProps = await Document.getInitialProps(ctx);
     const { query } = ctx;
-    const lang = query.lang === 'en' ? 'en' : 'id';
+    const lang = query.lang || null;
 
     return { ...initialProps, lang };
   }

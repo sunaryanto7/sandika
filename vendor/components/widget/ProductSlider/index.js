@@ -18,12 +18,12 @@ const ProductSlider = ({ productData, config }) => {
         return (
           <SwiperSlide className={styles.swipper__item} key={i}>
             <ProductItem
-              src={data.image}
-              alt={data.title}
-              productName={data.title}
-              productBrand={data.category}
+              src={data.image.url}
+              alt={data.image.label}
+              productName={data.name}
               productFinalPrice={Math.round(data.price)}
               productOldPrice={Math.round(data.price + 20)}
+              productBrand={data.categories}
               style={styles.swipper__product_item}
             />
           </SwiperSlide>

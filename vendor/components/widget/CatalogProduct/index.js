@@ -14,12 +14,12 @@ const CatalogProduct = ({ productData = [] }) => {
         {productData.map((data, i) => {
           return (
             <ProductItem
-              src={data.image}
-              alt={data.title}
-              productName={data.title}
-              productFinalPrice={Math.round(data.price)}
+              src={data.image.url}
+              alt={data.image.label}
+              productName={data.name}
+              productFinalPrice={Math.round(data.price_range.maximum_price.final_price)}
               productOldPrice={Math.round(data.price + 20)} //Example
-              productBrand={data.category}
+              productBrand={data.categories}
               style={styles.product__item}
               key={i}
             />

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import useTranslation from 'next-translate/useTranslation';
 
 import { useContext } from 'react';
 import { AppContext } from '@sandika_environment/context';
@@ -9,10 +10,10 @@ import Block from '@sandika_components/core/Block';
 import Banner from '@sandika_components/widget/Banner';
 import ProductSlider from '@sandika_components/widget/ProductSlider';
 import CatalogProduct from '@sandika_components/widget/CatalogProduct';
-import Category from '@sandika_components/widget/Category';
 import BannerGrid from '@sandika_components/widget/BannerGrid';
 
-const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
+const Home = ({ mainBannerImages, productData }) => {
+  const { t } = useTranslation();
   const {
     store: {
       config: {
@@ -30,7 +31,7 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
     <>
       {/* Head */}
       <Head>
-        <title>Sandika</title>
+        <title>{t('common:app_name')}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Meta description test on sandika.org"></meta>
       </Head>
@@ -46,7 +47,7 @@ const Home = ({ mainBannerImages, productData, promoBannerImages }) => {
         <Block nopadding>
           <Banner config={config.imageSlider} images={mainBannerImages} />
         </Block>
-        <Block title={'Special Offer'} additional={'Lihat Semua'}>
+        <Block title={t('common:app_name')} additional={'Lihat Semua'}>
           <ProductSlider config={config.productSlider} productData={productData} />
         </Block>
         <Block nopadding>

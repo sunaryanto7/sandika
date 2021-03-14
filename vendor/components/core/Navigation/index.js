@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Router } from '@sandika_environment/i18n';
+import { useRouter } from 'next/router';
 import Button from '@sandika_components/commons/Button';
 import SearchDrawer from '@sandika_components/core/SearchDrawer';
 
@@ -10,6 +10,8 @@ import BasketIcon from '@public/media/icons/supermarket.svg';
 import * as theme from './navigation.module.scss';
 
 const ButtonNavigation = ({ children, link, name, onClick }) => {
+  const Router = useRouter();
+
   if (name === 'search' && link === null) {
     return (
       <Button

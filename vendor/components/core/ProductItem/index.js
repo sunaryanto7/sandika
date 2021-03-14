@@ -23,7 +23,7 @@ const ProductItem = ({
   };
 
   const productNameSplit = () => {
-    if (productName.split(' ').length > 4) {
+    if (productName && productName.split(' ').length > 4) {
       return productName.split(' ').splice(0, 4).join(' ') + '...';
     }
     return productName;
@@ -42,7 +42,13 @@ const ProductItem = ({
         </div>
         <div className={styles.product__description}>
           <h5 className={styles.product__name}>{trimedProductName}</h5>
-          <small className={styles.product__brand}>{productBrand}</small>
+          <div className={styles.product__brand}>
+            {productBrand && productBrand.map((_, i) => {
+              if (i < 3) {
+                return <small key={i}>{_.name}</small>
+              }
+            })}
+          </div>
           <span className={styles.product__price}>
             <small className={styles.old__price}>
               {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
@@ -50,9 +56,9 @@ const ProductItem = ({
               )}
             </small>
             <strong className={styles.final__price}>
-              {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
+              {/* {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
                 productFinalPrice * 14500
-              )}
+              )} */}
             </strong>
           </span>
         </div>
@@ -65,7 +71,7 @@ ProductItem.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   productName: PropTypes.string,
-  productBrand: PropTypes.string,
+  productBrand: PropTypes.array,
   productOldPrice: PropTypes.number,
   productFinalPrice: PropTypes.number,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array])

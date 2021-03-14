@@ -465,7 +465,6 @@ Product.getInitialProps = async () => {
   ];
 
   return {
-    namespacesRequired: ['core'],
     promoBannerImages: promoBannerImages,
     productData: configurableProductResponse,
     relatedProductData: productJson

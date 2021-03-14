@@ -60,7 +60,7 @@ const store = {
           version: 1,
         },
         navigation: {
-          enable: false,
+          enable: true,
           version: 1,
           props: {
             active: 'home',

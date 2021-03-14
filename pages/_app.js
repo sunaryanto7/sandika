@@ -15,11 +15,9 @@ import PropTypes from 'prop-types';
 
 /*
 @@  
-@@  APOLLO FOR GRAPHQL
+@@  SANDIKA CONTEXT PROVIDER CLIENT SIDE
 @@  
 */
-import { ApolloProvider } from '@apollo/client';
-import client from '@sandika_environment/apollo';
 import AppContextProvider from '@sandika_environment/context';
 
 /*
@@ -27,7 +25,7 @@ import AppContextProvider from '@sandika_environment/context';
 @@  FOR TRANSLATION AND ROUTING
 @@  
 */
-import { appWithTranslation } from '@sandika_environment/i18n';
+// import { appWithTranslation } from '@sandika_environment/i18n';
 
 /*
 @@  
@@ -42,9 +40,7 @@ library.add(faShoppingCart, faBars, faArrowLeft, faFilter);
 const Sandika = ({ Component, pageProps }) => {
   return (
     <AppContextProvider>
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-      </ApolloProvider>
+      <Component {...pageProps} />
     </AppContextProvider>
   );
 };
@@ -62,4 +58,4 @@ Sandika.getInitialProps = async ({ Component, ctx }) => {
   return { pageProps };
 };
 
-export default appWithTranslation(Sandika);
+export default Sandika;
