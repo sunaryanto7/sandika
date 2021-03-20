@@ -32,7 +32,6 @@ const ProductItem = ({
   var trimedProductName = productNameSplit();
 
   const price = prices(productPrice);
-  console.log(productName, price)
 
   return (
     <>
