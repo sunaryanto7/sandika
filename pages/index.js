@@ -1,7 +1,8 @@
 import Home from '@sandika_src/index.js';
 import { getPopularProducts } from '@sandika_models/homepage';
+import { getPopularSearch } from '@sandika_models/global';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const mainBannerImages = [
     {
@@ -30,14 +31,33 @@ export async function getStaticProps() {
     }
   ];
 
-  const productResponse = await fetch('http://localhost:3000/api/graphql', { method: 'POST', body: JSON.stringify({ 'query': getPopularProducts, 'variables': '{}' }), headers: { 'Content-Type': 'application/json' } })
-  const productJson = await productResponse.json()
+  const productResponse = await fetch('http://localhost:3000/api/graphql', {
+    method: 'POST',
+    body: JSON.stringify({
+      'query': getPopularProducts,
+      'variables': '{}'
+    }),
+    headers: { 'Content-Type': 'application/json' }
+  })
+  const productJson = await productResponse.json();
+
+  const popularSearchResponse = await fetch('http://localhost:3000/api/graphql', {
+    method: 'POST',
+    body: JSON.stringify({
+      'query': getPopularSearch,
+      'variables': '{}'
+    }),
+    headers: { 'Content-Type': 'application/json' }
+  })
+  const popularSearchJson = await popularSearchResponse.json();
+
 
   return {
     props: {
       mainBannerImages: mainBannerImages,
       promoBannerImages: promoBannerImages,
-      productData: productJson.data.getBestSeller.items
+      productData: productJson.data.getBestSeller.items,
+      popularSearch: popularSearchJson.data.popularSearch
     }
   };
 };

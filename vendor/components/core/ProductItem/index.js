@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import theme from './productitem.module.scss';
+import { prices } from '@sandika_modules/prices'
 
 const ProductItem = ({
   src,
   alt,
   productName,
   productBrand,
-  productOldPrice,
-  productFinalPrice,
+  productPrice,
   style
 }) => {
   const styles = {
@@ -31,11 +31,14 @@ const ProductItem = ({
 
   var trimedProductName = productNameSplit();
 
+  const price = prices(productPrice);
+  console.log(productName, price)
+
   return (
     <>
       <div className={styles.product__item} role="button">
         <div className={styles.product__image}>
-          <img src={src} alt={alt} />
+          <img src={"https://eigerstore-swift.testingnow.me/media/catalog/product/cache/cfb5a39ab026c5e13d59b595a9adab8e/9/1/910001562.nav1_1.jpg"} alt={alt} />
           <div className={styles.product__discount}>
             <small>{'10%'}</small>
           </div>
@@ -49,17 +52,16 @@ const ProductItem = ({
               }
             })}
           </div>
+
           <span className={styles.product__price}>
-            <small className={styles.old__price}>
-              {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
-                productOldPrice * 14500
-              )}
-            </small>
-            <strong className={styles.final__price}>
-              {/* {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(
-                productFinalPrice * 14500
-              )} */}
-            </strong>
+            {price.value.map((_, i) => {
+              switch (_.type) {
+                case 'final_price':
+                  return <small className={styles.final__price} key={i}>{_.currency + ' ' + _.price}</small>;
+                case 'regular_price':
+                  return <small className={styles.old__price} key={i}>{_.currency + ' ' + _.price}</small>;
+              }
+            })}
           </span>
         </div>
       </div>

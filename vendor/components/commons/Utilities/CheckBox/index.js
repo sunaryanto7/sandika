@@ -6,8 +6,8 @@ const CheckBox = ({ label, value, name, id, onChange, checked, style }) => {
     'app__checkboxcheckmark': theme['app__checkboxcheckmark']
   };
 
-  const handleChange = () => {
-    onChange();
+  const handleChange = (e) => {
+    onChange(e);
   };
 
   return (
@@ -21,7 +21,7 @@ const CheckBox = ({ label, value, name, id, onChange, checked, style }) => {
           value={value}
           onChange={handleChange}
         />
-        <span className={styles.app__checkboxcheckmark} onClick={handleChange} />
+        <span className={styles.app__checkboxcheckmark} onClick={(e) => handleChange(e)} />
         <label htmlFor={id}>
           {label}
         </label>

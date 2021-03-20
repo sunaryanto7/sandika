@@ -6,6 +6,7 @@ const getPopularProducts = `
           sku
           name
           url_key
+          __typename
           categories {
               name
           }

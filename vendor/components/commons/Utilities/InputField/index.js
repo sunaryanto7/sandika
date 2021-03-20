@@ -31,7 +31,7 @@ const InputField = ({ label, value, error, id, name, type, readOnly, placeholder
         name={name}
         type={type}
         readOnly={readOnly}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e)}
         value={value}
         placeholder={placeholder}
         className={styles.app__input}
@@ -65,4 +65,4 @@ InputField.propTypes = {
   error: PropTypes.string
 };
 
-export default InputField;
+export default React.memo(InputField);

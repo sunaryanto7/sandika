@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { AppContext } from '@sandika_environment/context';
+import { AppContext } from '@sandika_environment/context/app';
 import Router from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Quickcart from '@sandika_components/core/Quickcart';

@@ -17,10 +17,13 @@ const CatalogProduct = ({ productData = [] }) => {
               src={data.image.url}
               alt={data.image.label}
               productName={data.name}
-              productFinalPrice={Math.round(data.price_range.maximum_price.final_price)}
-              productOldPrice={Math.round(data.price + 20)} //Example
+              productPrice={{
+                price_range: data.price_range,
+                price_tiers: data.price_tiers,
+                __typename: data.__typename
+              }}
               productBrand={data.categories}
-              style={styles.product__item}
+              // style={styles.product__item}
               key={i}
             />
           );

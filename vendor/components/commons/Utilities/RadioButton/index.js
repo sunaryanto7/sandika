@@ -13,14 +13,14 @@ const RadioButton = (props) => {
   const styles = {
     'app__radio': theme['app__radio']
   };
-  const handleChange = () => {
-    onChange();
+  const handleChange = (e) => {
+    onChange(e);
   };
 
   return (
     <>
       <div className={styles.app__radio}>
-        <input type="radio" name={name} value={value} id={id} onChange={() => { handleChange }} />
+        <input type="radio" name={name} value={value} id={id} onChange={(e) => handleChange(e)} />
         <label htmlFor={id}>{label}</label>
       </div>
     </>
@@ -46,4 +46,4 @@ RadioButton.propTypes = {
 };
 
 
-export default RadioButton;
+export default React.memo(RadioButton);

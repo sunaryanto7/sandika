@@ -1,5 +1,4 @@
-import { createContext, useState } from 'react';
-import store from '@sandika_environment/context/view';
+import { createContext } from 'react';
 
 /* 
 @@
@@ -13,12 +12,10 @@ const AppContext = createContext();
 @@  INITIATE CONTEXT PROVIDE VALUE
 @@  
 */
-const AppContextProvider = ({ children }) => {
-  const [state, setState] = useState({});
-
+const AppContextProvider = ({ value, children }) => {
   return (
     <>
-      <AppContext.Provider value={{ store, state, setState }}>
+      <AppContext.Provider value={value}>
         {children}
       </AppContext.Provider>
     </>

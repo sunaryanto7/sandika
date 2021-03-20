@@ -2,8 +2,8 @@
   display: block;
   position: relative;
   padding: 10px;
-  height: 220px;
-  max-height: 220px;
+  height: 285px;
+  max-height: 285px;
   border: 1px solid rgb(233, 233, 233);
   border-radius: 5px;
 
@@ -15,7 +15,7 @@
     padding: 10px;
 
     img {
-      height: 70px;
+      height: 170px;
       width: auto;
       display: block;
       margin: auto;
@@ -50,13 +50,23 @@
       font-weight: 500;
       font-size: 0.8rem;
       margin-top: 10px;
-      margin-bottom: 0;
+      margin-bottom: 5px;
     }
 
     .product__brand {
-      text-transform: capitalize;
-      font-size: 10px;
-      letter-spacing: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      small{
+        font-size: 8px;
+        text-transform: capitalize;
+        letter-spacing: 0;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background: var(--color-one);
+        padding: 3px 5px;
+        border-radius: 5px;
+      }
     }
 
     .product__price {
@@ -67,14 +77,15 @@
       .old__price {
         text-decoration: line-through;
         display: block;
-        color: silver;
+        color: rgb(48, 48, 48);
         font-style: italic;
         font-size: 10px;
       }
       .final__price {
         color: #f50505;
         display: block;
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: 600;
       }
     }
   }

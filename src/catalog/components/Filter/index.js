@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useFormik } from 'formik';
+import { PageContext } from '@sandika_environment/context/page';
+
 import Button from '@sandika_components/commons/Button';
 import Modal from '@sandika_components/commons/Modal';
 import { FormRow, FormGroup } from '@sandika_components/commons/Form';
@@ -8,21 +10,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as theme from './filter.module.scss';
 
 const Filter = () => {
-  const [showFilter, setShowFilter] = useState(false);
   const styles = {
     filter__toggle: theme['filter__toggle'],
     filter__form: theme['filter__form'],
     filter__formdelimiter: theme['filter__formdelimiter']
   };
 
+  const [showFilter, setShowFilter] = useState(false);
+  const { filterData } = useContext(PageContext);
+
+  const initialValuesSearch = {}
+  filterData.forEach(_ => {
+    initialValuesSearch[_.attribute_code] = '';
+  })
+
   const formik = useFormik({
-    initialValues: {
-      category: '',
-      merk: '',
-      sort: ''
-    },
+    initialValues: initialValuesSearch,
     onSubmit: (values) => {
-      alert(JSON.stringify(values));
+      alert(JSON.stringify(values, null, 2));
     }
   });
 
@@ -38,49 +43,58 @@ const Filter = () => {
 
         <form onSubmit={formik.handleSubmit} className={styles.filter__form}>
           <div className={styles.filter__formdelimiter}>
-            <FormRow title={'Urutkan'}>
-              <FormGroup>
-                <RadioButton
-                  id="asc"
-                  label="Urutkan secara Ascending (A-Z)"
-                  value="asc"
-                  name="sort"
-                  onChange={formik.handleChange}
-                />
-                <RadioButton
-                  id="desc"
-                  label="Urutkan secara Descending (Z-A)"
-                  value="desc"
-                  name="sort"
-                  onChange={formik.handleChange}
-                />
-              </FormGroup>
-            </FormRow>
-            <FormRow title={'Lokasi'}>
-              <FormGroup>
-                <RadioButton
-                  id="01"
-                  label="Jakarta"
-                  value="Jakarta"
-                  name="location"
-                  onChange={formik.handleChange}
-                />
-                <RadioButton
-                  id="02"
-                  label="Yogyakarta"
-                  value="Yogyakarta"
-                  name="location"
-                  onChange={formik.handleChange}
-                />
-                <RadioButton
-                  id="03"
-                  label="Bali"
-                  value="Bali"
-                  name="location"
-                  onChange={formik.handleChange}
-                />
-              </FormGroup>
-            </FormRow>
+            {filterData.map((_, i) => {
+              return (
+                <FormRow title={_.label}>
+                  <div className="filter__key">
+                    {(_.attribute_code !== "color" && _.attribute_code !== "price") && <>
+                      {_.options.map((option, j) => {
+                        return (
+                          <RadioButton
+                            label={option.label}
+                            value={option.value}
+                            name={_.attribute_code}
+                            onChange={formik.handleChange}
+                            id={`${_.attribute_code}_${j}`}
+                            key={j}
+                          />
+                        )
+                      })}
+                    </>}
+
+                    {(_.attribute_code === "color") && <>
+                      {_.options.map((option, j) => {
+                        return (
+                          <RadioButton
+                            label={option.label}
+                            value={option.value}
+                            name={_.attribute_code}
+                            onChange={formik.handleChange}
+                            id={`${_.attribute_code}${j}`}
+                            key={j}
+                          />
+                        )
+                      })}
+                    </>}
+
+                    {(_.attribute_code === "price") && <>
+                      {_.options.map((option, j) => {
+                        return (
+                          <RadioButton
+                            label={option.label}
+                            value={option.value}
+                            name={_.attribute_code}
+                            onChange={formik.handleChange}
+                            id={`${_.attribute_code}${j}`}
+                            key={j}
+                          />
+                        )
+                      })}
+                    </>}
+                  </div>
+                </FormRow>
+              )
+            })}
           </div>
           <div className={styles.filter__formdelimiter}>
             <Button fullWidth type={'submit'}>

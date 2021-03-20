@@ -73,4 +73,4 @@ const CartItem = ({ item, index, handleQtyData, handleSelectData }) => {
   );
 };
 
-export default CartItem;
+export default React.memo(CartItem);

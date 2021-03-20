@@ -51,4 +51,26 @@
 
 .filter__formdelimiter{
   display: block;
+
+  &:last-child{
+    padding: 20px 0;
+  }
+
+  .form__row{
+    padding: 5px 0;
+  }
+}
+
+.filter__key{
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .app__radio label{
+    margin-bottom: 5px;
+  }
 }

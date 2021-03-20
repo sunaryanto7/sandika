@@ -21,8 +21,11 @@ const ProductSlider = ({ productData, config }) => {
               src={data.image.url}
               alt={data.image.label}
               productName={data.name}
-              productFinalPrice={Math.round(data.price)}
-              productOldPrice={Math.round(data.price + 20)}
+              productPrice={{
+                price_range: data.price_range,
+                price_tiers: data.price_tiers,
+                __typename: data.__typename
+              }}
               productBrand={data.categories}
               style={styles.swipper__product_item}
             />

@@ -1,5 +1,12 @@
 /*
 @@  
+@@  VIEW LEVEL CONTEXT
+@@  
+*/
+import store from '@sandika_environment/context/view';
+
+/*
+@@  
 @@  GLOBAL STYLES
 @@  
 */
@@ -18,7 +25,7 @@ import PropTypes from 'prop-types';
 @@  SANDIKA CONTEXT PROVIDER CLIENT SIDE
 @@  
 */
-import AppContextProvider from '@sandika_environment/context';
+import AppContextProvider from '@sandika_environment/context/app';
 
 /*
 @@  
@@ -39,7 +46,7 @@ library.add(faShoppingCart, faBars, faArrowLeft, faFilter);
 
 const Sandika = ({ Component, pageProps }) => {
   return (
-    <AppContextProvider>
+    <AppContextProvider value={store}>
       <Component {...pageProps} />
     </AppContextProvider>
   );
